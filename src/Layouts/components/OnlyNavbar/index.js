@@ -14,7 +14,7 @@ function OnlyNavbar() {
     <div className={cx("wrapper")}>
       <div className={cx("container")}>
         <div className={cx("navbar__left")}>
-          <ul>
+          <ul className={cx("list__left")}>
             <li>Kênh Người Bán</li>
             <li>Tải Ứng Dụng</li>
             <li>
