@@ -16,7 +16,7 @@ function Application() {
           {dataBase.application.appMobile.map((item, index) => {
             return (
               <div key={index} className={cx('item--app')}>
-                <img className={cx("app-logo")} src={item.imgUrl} alt={item.name} />
+                <img className={cx()} src={item.imgUrl} alt={item.name} />
               </div>
             );
           })}

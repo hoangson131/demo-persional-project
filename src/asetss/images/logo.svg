@@ -1,8 +1,8 @@
-<svg
+<svg 
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 192 65"
-    class="shopee-svg-icon header-with-search__shopee-logo icon-shopee-logo"
-    fill="#fff"
+    class="shopee-svg-icon header-with-search__shopee-logo icon-shopee-logo logo"
+    fill="currentColor"
 >
     <g fill-rule="evenodd" >
         <path

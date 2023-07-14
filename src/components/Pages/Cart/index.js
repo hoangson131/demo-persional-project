@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
+import CartContainer from "./CartContainer";
+import HeaderCart from "./HeaderCart";
+import CartContainerProducts from "./CartContainerProducts";
 
 function Cart() {
     return (
-    <h1>
-        Cart Page
-        <Link to="/" >Home</Link>
-    </h1>
+        <div wrapper>
+            <HeaderCart/>
+            <CartContainer/>
+            <CartContainerProducts />
+        </div>
     );
 }
 

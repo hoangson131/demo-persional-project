@@ -2,6 +2,7 @@ import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faBell, faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 
 import styles from "./OnlyNavbar.module.scss";
 import { faEarthAsia } from "@fortawesome/free-solid-svg-icons";
@@ -9,9 +10,10 @@ import images from "~/asetss/images";
 
 const cx = classNames.bind(styles);
 
-function OnlyNavbar() {
+function OnlyNavbar({className}) {
+
   return (
-    <div className={cx("wrapper")}>
+    <div className={cx("wrapper", `${className}`)}>
       <div className={cx("container")}>
         <div className={cx("navbar__left")}>
           <ul className={cx("list__left")}>
@@ -26,10 +28,12 @@ function OnlyNavbar() {
         </div>
         <div className={cx("navbar__right")}>
           <ul>
-            <li>
-              <FontAwesomeIcon className={cx("icon")} icon={faBell} />
-              <span>Thông Báo</span>
-            </li>
+            <Link to="/notification">
+              <li>
+                <FontAwesomeIcon className={cx("icon")} icon={faBell} />
+                <span>Thông Báo</span>
+              </li>
+            </Link>
             <li>
               <FontAwesomeIcon className={cx("icon")} icon={faCircleQuestion} />
               <span>Hỗ Trợ</span>
