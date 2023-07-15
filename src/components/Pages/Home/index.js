@@ -1,8 +1,13 @@
+import BannerHome from "./BannerHome";
+import Contentinfo from "./Contentinfo";
+
 function Home() {
     return (
-    <h1>
-        Home Page
-    </h1>
+    <div>
+        <BannerHome/>
+
+        <Contentinfo/>  
+    </div>
     );
 }
 

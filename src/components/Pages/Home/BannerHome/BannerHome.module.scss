@@ -1,0 +1,83 @@
+.wrapper{
+    height: 383px;
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+    background-color: #fff;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1200px;
+}
+
+.main-banner{
+    width: 100%;
+    height: 235px;
+}
+
+.banner-slider{
+    
+}
+
+.slide--image{
+    background-image: url("https://cf.shopee.vn/file/vn-50009109-1716bbadb14e5337ccc1551fac16aeee_xxhdpi");
+    object-fit: cover;
+    height: 235px;
+    width: 796px;
+}
+
+.banner-images{
+
+}
+
+.box__image{
+
+}
+
+.banner__list--catalog{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 108px;
+    margin: 10px 0 0;
+}
+
+.box__list--items{
+    display: flex;
+    align-items: center;
+
+}
+
+.box__items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100px;
+    height: 81px;
+}
+
+.box__logo{
+
+}
+
+.logo{
+    height: 45px;
+    width: 45px;
+}
+
+.box__title{
+    line-height: .875rem;
+    max-width: 150px;
+    font-size: 13px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 0 0 8px;
+    color: #222222;
+}

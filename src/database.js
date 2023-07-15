@@ -1,6 +1,50 @@
 import { faFacebook, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 export const dataBase = {
+  "banner": {
+    "listCatalog": [
+      {
+        "title": "Khung Giờ Săn Sale",
+        "imgUrl": "https://cf.shopee.vn/file/e4a404283b3824c211c1549aedd28d5f_xhdpi"
+      },
+      {
+        "title": "Miễn Phí Ship - Có Shopee",
+        "imgUrl": "https://cf.shopee.vn/file/a8d76bca057ba0b117dcf8e1ef068d16_xhdpi"
+      },
+      {
+        "title": "Voucher Giảm Đến 200.000Đ",
+        "imgUrl": "https://cf.shopee.vn/file/vn-50009109-11d9732a464d895d3699ca40431d0bfd_xhdpi"
+      },
+      {
+        "title": "Hàng Hiệu Outlet Giảm 50%",
+        "imgUrl": "https://cf.shopee.vn/file/vn-50009109-852300c407c5e79bf5dc1854aa0cfeef_xhdpi"
+      },
+      {
+        "title": "Mã Giảm Giá",
+        "imgUrl": "https://cf.shopee.vn/file/vn-50009109-8a387d78a7ad954ec489d3ef9abd60b4_xhdpi"
+      },
+      {
+        "title": "Bắt Trend - Giá Sốc",
+        "imgUrl": "https://cf.shopee.vn/file/vn-50009109-1975fb1af4ae3c22878d04f6f440b6f9_xhdpi"
+      },
+      {
+        "title": "Nạp Thẻ, Dịch Vụ & Vé Máy Bay",
+        "imgUrl": "https://cf.shopee.vn/file/9df57ba80ca225e67c08a8a0d8cc7b85_xhdpi"
+      },
+      {
+        "title": "Nhận Free 15.000 Xu",
+        "imgUrl": "https://cf.shopee.vn/file/vn-50009109-3a85ae8415fb49b0fcff8d69ee6a29f0_xhdpi"
+      },
+      {
+        "title": "Quốc Tế - Deal Siêu Rẻ",
+        "imgUrl": "https://cf.shopee.vn/file/vn-50009109-29961f92098bc9153b88332110a91c87_xhdpi"
+      },
+      {
+        "title": "Gì Cũng Rẻ - Mua Là Freeship",
+        "imgUrl": "https://cf.shopee.vn/file/b3535d7e56c58c4ebe9a87672d38cc5e_xhdpi"
+      }
+    ],
+  },
   "customerCare": [
     "Trung Tâm Trợ Giúp",
     "Shopee Blog",
