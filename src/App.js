@@ -2,9 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Fragment } from "react";
 
 import { publicRoutes } from "~/routes";
-// import Content from "~/Layouts/Content/Content";
-// import Heading from "~/Layouts/Header/Heading";
-import { DefaultLayout } from "~/Layouts";
+// import Content from "~/layouts/Content/Content";
+// import Heading from "~/layouts/Header/Heading";
+import { DefaultLayout } from "~/layouts";
 
 function App() {
   return (

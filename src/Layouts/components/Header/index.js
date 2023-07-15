@@ -1,10 +1,12 @@
 import classNames from 'classnames/bind'
 import styles from './Header.module.scss'
-import OnlyNavbar from '../OnlyNavbar';
-import images from '~/asetss/images';
+import OnlyNavbar from '~/layouts/components/OnlyNavbar';
+// import images from '~/asetss/images';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import  Logo  from '~/assets/images/logo';
 
 const cx = classNames.bind(styles)
 
@@ -15,7 +17,7 @@ function Header() {
         <OnlyNavbar className={cx('navbar')}/>
         <div className={cx('main__header')}>
             <Link to='/' className={cx('box__logo--shopee')}>
-                <img className={cx('logo--shoppe')} src={images.logo} alt='logo' />
+                <Logo className={cx('logo--shoppe')} />
             </Link>
             <search className={cx('search__container')}>
                 <div className={cx('searchbar')}>

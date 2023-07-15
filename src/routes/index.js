@@ -1,9 +1,9 @@
-import Home from '~/components/pages/Home'
-import Profile from'~/components/pages/Profile'
-import Notification from '~/components/pages/Notification'
-import Cart from '~/components/pages/Cart'
+import Home from '~/pages/Home'
+import Profile from'~/pages/Profile'
+import Notification from '~/pages/Notification'
+import Cart from '~/pages/Cart'
 
-import { LayoutFootandNav } from '~/Layouts'
+import { LayoutFootandNav } from '~/layouts'
 
 
 const publicRoutes = [

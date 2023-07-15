@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 
-import OnlyNavbar from '~/Layouts/components/OnlyNavbar'
-import Footer from "~/Layouts/components/Footer";
+import OnlyNavbar from '~/layouts/components/OnlyNavbar'
+import Footer from "~/layouts/components/Footer";
 import styles from './LayoutFootandNav.module.scss'
 
 const cx = classNames.bind(styles)

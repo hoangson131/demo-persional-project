@@ -1,4 +1,5 @@
-import images from "~/asetss/images";
+// import images from "~/asetss/images";
+import Logo from "~/assets/images/logo";
 
 import styles from "./HeaderCart.module.scss";
 import classNames from "classnames/bind";
@@ -13,7 +14,7 @@ function HeaderCart() {
         <div className={cx("cart__header--logo")}>
           <Link to="/">
             <div className={cx("box--logo")}>
-              <img className={cx("logo")} src={images.logo} alt="logo" />
+              <Logo className={cx("logo")}/>
             </div>
           </Link>
           <span className={cx("page--name")}>Giỏ Hàng</span>

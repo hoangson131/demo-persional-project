@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import styles from "./OnlyNavbar.module.scss";
 import { faEarthAsia } from "@fortawesome/free-solid-svg-icons";
-import images from "~/asetss/images";
+import images from "~/assets/images";
 
 const cx = classNames.bind(styles);
 
