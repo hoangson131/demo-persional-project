@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind'
 import styles from './Header.module.scss'
 import OnlyNavbar from '~/layouts/components/OnlyNavbar';
-// import images from '~/asetss/images';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';

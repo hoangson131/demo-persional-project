@@ -1,7 +1,7 @@
 import CatalogContent from "./CatalogContent";
 import ContentInfoShopee from "./ContentInfoShopee";
 
-function Contentinfo() {
+function FooterHomePage() {
     return ( 
        <div>
             <ContentInfoShopee/>
@@ -10,4 +10,4 @@ function Contentinfo() {
     );
 }
 
-export default Contentinfo;
+export default FooterHomePage;

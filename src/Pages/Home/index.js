@@ -1,12 +1,18 @@
+import classNames from "classnames/bind";
+
 import BannerHome from "./BannerHome";
-import Contentinfo from "./Contentinfo";
+import ContainerHomePage from "./Container";
+import FooterHomePage from "./FooterHomePage";
+import styles from './Home.module.scss'
+
+const cx = classNames.bind(styles)
 
 function Home() {
     return (
-    <div>
+    <div className={cx('wrapper')}>
         <BannerHome/>
-
-        <Contentinfo/>  
+        <ContainerHomePage/>
+        <FooterHomePage/>
     </div>
     );
 }
