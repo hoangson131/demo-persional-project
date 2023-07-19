@@ -21,19 +21,6 @@
     display: flex;
 }
 
-.banner-slider{
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-}
-
-.slide--image{
-    background-image: url("https://cf.shopee.vn/file/vn-50009109-1716bbadb14e5337ccc1551fac16aeee_xxhdpi");
-    object-fit: cover;
-    height: 235px;
-    width: 796px;
-    border-radius: 2px;
-}
-
 .banner-images{
     display: flex;
     flex-direction: column;
@@ -47,54 +34,15 @@
 }
 
 .box__image{
-    background-color: #999;
+    height: 115px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.item--image{
     height: 100%;
+    width: 100% ;
+    object-fit: cover;
     border-radius: 2px;
-
 }
 
-.banner__list--catalog{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    min-height: 108px;
-    margin: 10px 0 0;
-}
-
-.box__list--items{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100px;
-    height: 108px;
-}
-
-.box__items{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 4px;
-    width: 100px;
-    height: 81px;
-}
-
-.box__logo{
-
-}
-
-.logo{
-    height: 45px;
-    width: 45px;
-}
-
-.box__title{
-    line-height: .875rem;
-    max-width: 150px;
-    font-size: 12px;
-    font-weight: 500;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    text-align: center;
-    color: #222222;
-}

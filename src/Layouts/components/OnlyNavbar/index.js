@@ -42,16 +42,18 @@ function OnlyNavbar({className}) {
               <FontAwesomeIcon className={cx("icon")} icon={faEarthAsia} />
               <span>Language</span>
             </li>
-            <li>
-              <div className={cx("user")}>
-                <img
-                  className={cx("avatar")}
-                  src={images.avatar}
-                  alt="avatar"
-                />
-                <span className={cx("username")}>Username</span>
-              </div>
-            </li>
+            <Link to='/profile'>
+              <li>
+                <div className={cx("user")}>
+                  <img
+                    className={cx("avatar")}
+                    src={images.avatar}
+                    alt="avatar"
+                  />
+                  <span className={cx("username")}>Username</span>
+                </div>
+              </li>
+            </Link>
           </ul>
         </div>
       </div>

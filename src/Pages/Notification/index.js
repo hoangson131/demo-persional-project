@@ -1,9 +1,17 @@
+
+import classNames from "classnames/bind";
+
+import styles from "./Notification.module.scss";
+
+const cx = classNames.bind(styles);
+
 function Notification() {
-    return (
-    <h1>
+  
+  return (
+      <div>
         Notification Page
-    </h1>
-    );
+      </div>
+  );
 }
 
 export default Notification;
