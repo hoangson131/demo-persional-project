@@ -5,6 +5,7 @@ import OnlyNavbar from '~/layouts/components/OnlyNavbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { searchIcon } from '~/assets/icon'
 import  Logo  from '~/assets/images/logo';
 
 const cx = classNames.bind(styles)
@@ -24,7 +25,7 @@ function Header() {
                         <input className={cx('input')}  placeholder='TÌM THỨ BẠN MUỐN Ở ĐÂY NHA!!!'/>
                     </div>
                     <button className={cx('seachr__btn')}>
-                        TIM
+                        <searchIcon/>
                     </button>
                 </div>
                 <div className={cx('list-search')}></div>

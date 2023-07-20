@@ -54,7 +54,7 @@ function SlideShow() {
       listSlideRef.current.style.transform = `translateX(${
         widthItem * -active
       }px)`;
-      let lastActiveDots = [...dotsRef.current.children];
+      const lastActiveDots = [...dotsRef.current.children];
       lastActiveDots.forEach((item) => item.classList.remove(cx("active")));
       dotsRef.current.children[active].classList.add(cx("active"));
     }
