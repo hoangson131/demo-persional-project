@@ -1,7 +1,38 @@
 import { faFacebook, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 export const dataBase = {
-  
+  "shopeeMall": {
+    'slider':[
+      {
+        'id': '1',
+        'imgUrl': 'https://cf.shopee.vn/file/vn-50009109-ab993229f5ebe5ae3b6998d0536e0d8c'
+      },
+      {
+        'id': '2',
+        'imgUrl': 'https://cf.shopee.vn/file/vn-50009109-3a148f9b54afe669725bdafa0d15f536'
+      },
+      {
+        'id': '3',
+        'imgUrl': 'https://cf.shopee.vn/file/vn-50009109-27069f43126140dfb62222541e68dbd9'
+      },
+      {
+        'id': '4',
+        'imgUrl': 'https://cf.shopee.vn/file/vn-50009109-61518cc8864641deda6c62ebfd35397e'
+      },
+      {
+        'id': '5',
+        'imgUrl': 'https://cf.shopee.vn/file/vn-50009109-9e3ea8ff53196df900895258324ef90d'
+      },
+      {
+        'id': '6',
+        'imgUrl': 'https://cf.shopee.vn/file/vn-50009109-6df4529319e0e1212e5196da1880f867'
+      },
+      {
+        'id': '7',
+        'imgUrl': 'https://cf.shopee.vn/file/vn-50009109-d064c7415ff49038e1e674e0cbdbeeae'
+      }
+    ]
+  },
   "banner": {
     "listCatalog": [
       // {

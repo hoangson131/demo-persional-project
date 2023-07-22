@@ -10,26 +10,10 @@ function SlideShow() {
   const listSlideRef = useRef();
   const dotsRef = useRef();
   const autoSlideIntervalId = useRef();
-
+  
   let active = 0;
   let lengthItems = dataBase.banner.slideImage.length;
   let widthItem = 0;
-
-  // useEffect(() => {
-  // console.log('listSlideRef.current.children', listSlideRef.current.children)
-  // if(listSlideRef.current.children && listSlideRef.current){
-  // widthItem = listSlideRef.current.children[0].offsetWidth;
-  // }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  // const lisDots = [...dotsRef.current.children];
-  // lisDots.forEach((dot, index) => {
-  //   dot.onclick = () => {
-  //     active = index;
-  //     reloadSlide();
-  //   };
-  // });
-  // }, [])
 
   const startAutoSlide = () => {
     if (autoSlideIntervalId.current) {

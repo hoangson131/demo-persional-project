@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
 import styles from "./FlashSaleProducts.module.scss";
+import Button from "~/components/Button";
 
 const cx = classNames.bind(styles);
 
@@ -27,13 +28,13 @@ function FlashSaleProducts() {
             </div>
           </div>
         </div>
-      <button className={cx("btn", "prev")} >
-            &#10094;
-          </button>
-      <button className={cx("btn", "next")} >
-            &#10095;
-          </button>
       </div>
+      <Button className={cx('btn', 'prev')}>
+          &#10094;
+      </Button>
+      <Button className={cx('btn', 'next')}>
+      &#10095;
+      </Button>
     </div>
   );
 }
