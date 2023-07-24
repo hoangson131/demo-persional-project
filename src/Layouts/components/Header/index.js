@@ -5,7 +5,7 @@ import OnlyNavbar from '~/layouts/components/OnlyNavbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { searchIcon } from '~/assets/icon'
+import { SearchIcon, CarIcon } from '~/assets/icon';
 import  Logo  from '~/assets/images/logo';
 
 const cx = classNames.bind(styles)
@@ -19,19 +19,19 @@ function Header() {
             <Link to='/' className={cx('box__logo--shopee')}>
                 <Logo className={cx('logo--shoppe')} />
             </Link>
-            <search className={cx('search__container')}>
+            <div className={cx('search__container')}>
                 <div className={cx('searchbar')}>
                     <div className={cx('seacrch__input')}>
                         <input className={cx('input')}  placeholder='TÌM THỨ BẠN MUỐN Ở ĐÂY NHA!!!'/>
                     </div>
                     <button className={cx('seachr__btn')}>
-                        <searchIcon/>
+                        <SearchIcon color={"#fff"} />
                     </button>
                 </div>
                 <div className={cx('list-search')}></div>
-            </search>
+            </div>
             <Link to="/cart" className={cx('box__logo--cart')}>
-                <FontAwesomeIcon  className={cx('logo--cart')} icon={faShoppingCart}/>
+                <CarIcon/>
             </Link>
         </div>
     </header>

@@ -9,9 +9,14 @@
     box-shadow: 0 1px 12px 0 rgba(0,0,0,.12);
     transition: .5s ease-in-out;
     cursor: pointer;
+
+    &:hover .title{
+      font-size: 20px;
+    }
 }
 .title {
     font-style: 14px;
+    transition: .5s;
 }
 
 // Ẩn 
@@ -22,3 +27,14 @@
 .show{
     display: block;
   }
+
+
+  // Types Button
+.rectangle {
+    width: 35px;
+    height: 60px;
+    background-color: #0000002e;
+    border-radius: 3px;
+    color: #fff;
+  }
+

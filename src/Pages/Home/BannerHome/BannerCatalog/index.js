@@ -10,8 +10,8 @@ function BannerCatalog() {
         <div className={cx("banner__list--catalog")}>
           {dataBase.banner.listCatalog.map((item, index) => {
             return (
-              <div className={cx("box__list--items")}>
-                <div className={cx("box__items")} key={index}>
+              <div key={index} className={cx("box__list--items")}>
+                <div className={cx("box__items")} >
                   <div className={cx("box__logo")}>
                     <img
                       className={cx("logo")}

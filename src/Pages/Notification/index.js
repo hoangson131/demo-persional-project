@@ -9,11 +9,13 @@ const cx = classNames.bind(styles);
 
 function Notification() {
   const data = dataBase.shopeeMall.slider
-
   return (
       <div className={cx('wrapper')}>
         <div className={cx('wrapper__slide')}>
-          <Slide  data={data} width={389} height={463} countdown={3000}/>
+          <Slide  data={data} width={389} height={463} countdown={3000} rectangle/>
+        </div>
+        <div>
+          
         </div>
       </div>
   );

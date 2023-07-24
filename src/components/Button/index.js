@@ -10,6 +10,7 @@ const Button = forwardRef(function Button({
     to,
     href,
     disabled = false,
+    rectangle = false,
     leftIcon,
     rightIcon,
     children,
@@ -47,6 +48,7 @@ const Button = forwardRef(function Button({
 
     const classes = cx('wrapper', {
         [className]: className,
+        rectangle,
         disabled,
 
     })
