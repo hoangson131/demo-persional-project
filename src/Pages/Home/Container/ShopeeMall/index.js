@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleRight } from "@fortawesome/free-solid-svg-icons";
 import Slide from "~/components/Slide";
 import { dataBase } from "~/database";
+import ProductsMall from "./ProductsMall";
 
 const cx = classNames.bind(styles)
 
@@ -30,7 +31,7 @@ function ShopeeMall() {
             <div className={cx('wrapper__content')}>
                 <div className={cx('wrapper__slide')}><Slide data={data} width={389} height={463} rectangle countdown={3000}/></div>
 
-                {/* ListProduct */}  
+                <div className={cx('wrapper__productsMall')}><ProductsMall/></div>
             </div>
         </div>
      );

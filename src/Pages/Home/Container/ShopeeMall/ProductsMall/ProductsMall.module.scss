@@ -1,0 +1,73 @@
+
+
+.wrapper{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.company__wapper--list{
+    height: 463px;
+    overflow: hidden;
+    width: 800px;
+}
+
+.company--list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 1400px;
+    max-height: 480px;
+}
+
+.item--company{
+    width: 200px;
+    height: 236px;
+}
+
+.item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.image{
+    width: 175px;
+    height: auto;
+}
+
+.title{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    text-align: center;
+    position: absolute;
+    width: 175px;
+    height: 27px;
+    bottom: 15px;
+    line-height: 27px;
+    font-size: 18px;
+    overflow: hidden;
+    color: #d0011b;
+}
+
+.btn{
+    display: flex;
+    position: absolute;
+    width: var(--button--width);
+    height: var(--button--height);
+    
+    &:hover{
+        --button--width: 40px;
+        --button--height: 40px;
+    }
+} 
+.prev{
+    left: calc(var(--button--width)/ -2);
+
+} 
+.next{
+    right: calc(var(--button--width)/ -2);
+} 

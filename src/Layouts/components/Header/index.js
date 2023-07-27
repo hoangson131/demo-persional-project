@@ -2,8 +2,6 @@ import classNames from 'classnames/bind'
 import styles from './Header.module.scss'
 import OnlyNavbar from '~/layouts/components/OnlyNavbar';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { SearchIcon, CarIcon } from '~/assets/icon';
 import  Logo  from '~/assets/images/logo';

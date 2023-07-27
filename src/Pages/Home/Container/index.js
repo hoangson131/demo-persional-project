@@ -1,7 +1,9 @@
 import BannerSub from "./Bannersub";
 import FlashSale from "./FlashSale";
 import HeaderHomePage from "./HeaderHomePage";
+import SeachTrend from "./SeachTrend";
 import ShopeeMall from "./ShopeeMall";
+import Suggest from "./Suggest";
 
 function ContainerHomePage() {
     return ( 
@@ -10,6 +12,8 @@ function ContainerHomePage() {
             <FlashSale/>
             <BannerSub/>
             <ShopeeMall/>
+            <SeachTrend/>
+            <Suggest/>
         </>
      );
 }

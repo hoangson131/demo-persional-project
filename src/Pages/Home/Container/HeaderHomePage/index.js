@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 import { dataBase } from "~/database";
 import styles from "./HeaderHomePage.module.scss";
 import Button from "~/components/Button";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const cx = classNames.bind(styles);
 

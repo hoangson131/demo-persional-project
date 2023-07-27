@@ -1,6 +1,5 @@
 import classNames from "classnames/bind";
 
-import { dataBase } from "~/database";
 import styles from "./BannerHome.module.scss";
 import SlideShow from "./SlideShow";
 import BannerCatalog from "./BannerCatalog";

@@ -21,7 +21,7 @@ function SlideShow() {
     }
     autoSlideIntervalId.current = setInterval(() => {
       handleNextSlide();
-    }, 3000);
+    }, 5000);
   };
 
   useEffect(() => {
@@ -29,6 +29,7 @@ function SlideShow() {
     return () => {
       clearInterval(autoSlideIntervalId.current);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const reloadSlide = () => {
