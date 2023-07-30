@@ -30,7 +30,7 @@ function ProductCart() {
                         <div className={cx('common--text', 'box--item5','quantity')}>
                             <div className={cx('number-input')}>
                                 <button className={cx('btn')}>&#8722;</button>
-                                <input type="number" value={1} min={0}/>
+                                <input type="number"  min={0}/>
                                 <button className={cx('btn')}>&#43;</button>
                             </div>
                         </div>

@@ -18,7 +18,7 @@ function CartContainer() {
                 <MainCart/>
             </div>
             <div className={cx('')}>
-                <Bill/>
+                {/* <Bill/> */}
             </div>
         </div>
      );

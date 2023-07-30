@@ -9,7 +9,7 @@ function MainCart() {
         <div className={cx('wrapper')}>
             <div className={cx('wrapper__title')}>
                 <div className={cx('checkbox', 'flex__box1')}>
-                    <input type="checkbox" onChange={(e) => console.log(e.target.value)}/>
+                    <input type="checkbox" />
                 </div>
                 <div className={cx('text', 'flex__box2')}>Sản Phẩm</div>
                 <div className={cx('text', 'flex__box3')}>Đơn Giá</div>

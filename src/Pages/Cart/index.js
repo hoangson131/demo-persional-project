@@ -4,7 +4,7 @@ import CartContainerProducts from "./CartContainerProducts";
 
 function Cart() {
     return (
-        <div wrapper>
+        <div>
             <HeaderCart/>
             <CartContainer/>
             <CartContainerProducts />
