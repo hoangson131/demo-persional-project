@@ -3,13 +3,40 @@ import classNames from "classnames/bind";
 import styles from './ProductsMall.module.scss'
 import Button from "~/components/Button";
 import { dataBase } from "~/database";
+import {  useRef } from "react";
 
 const cx = classNames.bind(styles)
 function ProductsMall() {
+    const listRef = useRef()
+    const prevRef = useRef(null)
+    const nextRef = useRef(null)
+    const widthlist = useRef(null)
+    
+    const handleClick = (desc) => {
+        widthlist.current = listRef.current.offsetWidth
+        if(desc === 'next' && listRef.current) {
+          listRef.current.style.transform = `translateX(-${widthlist.current - 800}px)`
+          show(prevRef)
+          hide(nextRef)
+        }
+        else if(desc === 'prev' && listRef.current) {
+          listRef.current.style.transform ='translateX(0px)'
+          hide(prevRef)
+          show(nextRef)
+        }
+      }
+    function show(btn) {
+        btn.current.style.display = 'block'
+      }
+    
+      function hide(btn) {
+        btn.current.style.display = 'none'
+      }
+    
     return ( 
         <div className={cx('wrapper')}>
             <div className={cx('company__wapper--list')}>
-                <ul className={cx('company--list')}>
+                <ul ref={listRef} className={cx('company--list')}>
                     {dataBase.shopeeMall.listCompanyBrand.map((item,index) => {
                         return (
                             <li key={index} className={cx('item--company')}>
@@ -22,8 +49,8 @@ function ProductsMall() {
                     })}
                 </ul>
             </div>
-            <Button className={cx('btn', 'prev')}>&#10094;</Button>
-            <Button className={cx('btn', 'next')}>&#10095;</Button>
+            <Button ref={prevRef} className={cx('btn', 'prev')} onClick={() => handleClick('prev')}>&#10094;</Button>
+            <Button ref={nextRef} className={cx('btn', 'next')} onClick={() => handleClick('next')}>&#10095;</Button>
         </div>
      );
 }

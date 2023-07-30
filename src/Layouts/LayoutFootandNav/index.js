@@ -10,7 +10,7 @@ function LayoutFootandNav({children }) {
     return ( 
         <div className={cx('wrapper')}>
             <OnlyNavbar/>
-            <div className="content">
+            <div className={cx('content')}>
                 {children}
             </div>
             <Footer/>
