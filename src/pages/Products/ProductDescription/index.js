@@ -7,16 +7,18 @@ import { faStar } from "@fortawesome/free-regular-svg-icons";
 
 
 const cx = classNames.bind(styles)
-function ProductDescription() {
+function ProductDescription({data}) {
+    console.log('Product Description',data);
+    const dataShow = data[0]
     return ( 
         <div className={cx('wrapper')}>
             <div className={cx('description')} >
                 <div className={cx('icon--review')}>logo</div>
-                <span className={cx('description__content')}>Roksana Ổ cắm điện đa năng 7 Cổng Sạc USB 2 Cáp USB 3 Và 5M Dây Cáp Dày Chất Lượng Cao 100% Chính Hãng 2023New 040401</span>
+                <span className={cx('description__content')}>{dataShow.description}</span>
             </div>
             <div className={cx('evalute--product')}>
                 <div className={cx('rating--product')}>
-                    <div className={cx('underline', 'number--rating')}>4.5</div>
+                    <div className={cx('underline', 'number--rating')}>{dataShow.rate}</div>
                     <div className={cx('icons--start')}>
                         <FontAwesomeIcon className={cx('start')} icon={faStar}/>
                         <FontAwesomeIcon className={cx('start')} icon={faStar}/>
@@ -26,11 +28,11 @@ function ProductDescription() {
                     </div>
                 </div>
                 <div className={cx('review--product')}>
-                    <div className={cx('underline','text--medium', 'amount')}>1.5k</div>
+                    <div className={cx('underline','text--medium', 'amount')}>{dataShow.reviewNumber}k</div>
                     <div className={cx('text--small', 'title--amount')}>Đánh Giá</div>
                 </div>
                 <div className={cx('review--product')}>
-                    <div className={cx('text--medium', 'amount')}>5.8k</div>
+                    <div className={cx('text--medium', 'amount')}>{dataShow.sold}k</div>
                     <div className={cx('text--small', 'title--amount')}>Đã Bán</div>
                 </div>
                 <button className={cx('text--small', 'spam')}>Tố cáo</button>
@@ -44,7 +46,7 @@ function ProductDescription() {
                 </div>
                 <div className={cx('wrapper__price--afterEvent')} >
                     <div className={cx('price--affterEvent')}>
-                        <div className={cx('text--medium', 'cost')}>₫115.000</div>
+                        <div className={cx('text--medium', 'cost')}>₫{dataShow.models[0].price}</div>
                         <div className={cx('price')}>
                             <div className={cx('price--afterVoucher')}>₫28.000</div>
                             <div className={cx('product--voucher')}>voucher</div>

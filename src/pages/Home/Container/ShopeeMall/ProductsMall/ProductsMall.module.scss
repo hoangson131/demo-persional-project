@@ -68,6 +68,7 @@
     }
 } 
 .prev{
+    display: none;
     left: calc(var(--button--width)/ -2);
 
 } 
