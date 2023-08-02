@@ -4,29 +4,24 @@ import classNames from "classnames/bind";
 import styles from './Products.module.scss'
 import ProductDescription from "./ProductDescription";
 import ShowPicture from "./ShowPicture";
-import { selectorProducts } from "~/stores/cart/selectors";
-import { useSelector } from "react-redux";
 
 
 const cx = classNames.bind(styles)
 function Products() {
-    const allProducts = useSelector(selectorProducts)
     
     let params = useParams();
-    let productShow 
+    console.log(params.id); // "hotspur"
 
-    if(params.id) {
-        const id = [params.id]
-        productShow = allProducts.filter(product => id.includes(product.id.toString()))
-    } 
-
+    // data show for useSelector Redux dua vao prams.ID
+    const data = {images: ['Url']}
+   
     return ( 
         <div className={cx('wrapper')} >   
             <div className={cx('wrapper__products--pictures')}>
-                <ShowPicture data={productShow}/>
+                <ShowPicture data={data}/>
             </div>
             <div className={cx('wrapper__products--description')}>
-                <ProductDescription data={productShow}/>
+                <ProductDescription/>
             </div>
         </div>
      );

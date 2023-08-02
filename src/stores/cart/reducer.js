@@ -1,5 +1,4 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { products } from "~/allProduct";
 
 import { 
     actions,
@@ -7,7 +6,9 @@ import {
  } from "./actions";
 
 const initialState = {
-    products: products,
+    products: [
+        
+    ],
     cart:[{
         'id': 1,
         'price': 123,
