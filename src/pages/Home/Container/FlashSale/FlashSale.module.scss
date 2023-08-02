@@ -1,0 +1,53 @@
+.wrapper{
+display: flex;
+flex-direction: column;
+width: 1200px;
+height: 308px;
+margin-top: 20px;
+background-color: #fff;
+}
+
+.box_title{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ height: 60px;
+ padding: 0 20px;
+}
+.title--left{
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.title--right{
+    display: flex;
+    align-items: baseline;
+    cursor: pointer;
+}
+
+.viewAll{
+    font-size: 14px;
+    color: var(--primary-clr);
+    padding: 5px 7px;
+}
+
+.icon{
+    color: var(--primary-clr);
+    font-size: 15px;
+}
+
+.countdown{
+
+}
+
+.title{
+    color: #fff;
+    background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/fb1088de81e42c4e538967ec12cb5caa.png');
+    object-fit: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 130px;
+    height: 30px;
+}

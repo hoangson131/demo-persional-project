@@ -1,0 +1,187 @@
+.wrapper {
+  display: flex;
+  width: 1200px;
+}
+
+.box__items {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+
+  .list__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &:not(:last-child) {
+    width: 250px;
+  }
+  &:last-child {
+    width: 200px;
+  }
+}
+
+.title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin: 40px 0 20px;
+}
+
+.item {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #000000a6;
+  margin: 0 0 12px;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--primary-clr);
+  }
+}
+
+//----------------------Pay And Driver Init---------------------------------------
+
+.box--shared {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  li {
+    width: 60px;
+    height: 30px;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.25rem;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0.125rem;
+    cursor: pointer;
+  }
+}
+
+.pay__box {
+  width: 240px;
+  height: 114px;
+  margin: 0 0 16px;
+}
+
+.pay__item--logo {
+}
+
+.driver__box {
+}
+
+.driver--title {
+  margin: 0 0 20px;
+}
+
+.driver__item--logo {
+}
+
+//---------------------------Follow Shopee----------------------------------
+
+.box__items--follow {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 16px;
+}
+
+.follow--item {
+  display: flex;
+  align-items: center;
+  margin: 0 0 12px;
+  cursor: pointer;
+
+  &:hover .item--tile {
+    color: var(--primary-clr);
+  }
+}
+.icon {
+  height: 16px;
+  width: 16px;
+}
+
+.item--tile {
+  margin: 0;
+  padding-left: 8px;
+  font-weight: 500;
+  color: #000000a6;
+}
+
+//-----------------------------Application--------------------------------
+
+.list__app {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.qRCode {
+  height: 5rem;
+  width: 5rem;
+  margin-right: 0.75rem;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.items__appMobile {
+  width: 4.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.item--app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 76px;
+  height: 24px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+//---------------------------Country-------------------------------------
+
+.box__country {
+  width: 1200px;
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.list__country {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .title--country {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+.item--country {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+.text {
+  line-height: 1.125rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}

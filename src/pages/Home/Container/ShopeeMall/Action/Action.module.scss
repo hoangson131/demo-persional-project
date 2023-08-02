@@ -1,0 +1,27 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 15px;
+    padding: 0 0 0 15px;
+    border-left: 1px solid #d8d8d8 ;
+}
+
+.item{
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    &:not(:first-child) {
+        margin-left: 15px;
+    }
+}
+
+.icon{
+    font-size: 14px;
+    margin-right: 6px;
+    color: #d0011b;
+}
+
+.title{
+
+}
