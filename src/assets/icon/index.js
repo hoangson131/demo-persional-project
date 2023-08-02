@@ -6,13 +6,13 @@ export const CarIcon = () => {
   );
 };
 
-export const SearchIcon = ({ color, fontSize }) => {
+export const SearchIcon = ({ color, height, width }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="16"
+      height={height}
       viewBox="0 0 19 19"
-      width="16"
+      width={width}
       fill={color}
     >
       <g fillRule="evenodd" stroke="none" strokeWidth="1">
@@ -37,7 +37,7 @@ export const IconShipping = () => {
       height="12"
       viewBox="0 0 20 12"
       width="20"
-      className="shopee-svg-icon MCA-wE icon-free-shipping"
+      classNameName="shopee-svg-icon MCAWE icon-free-shipping"
     >
       <g fill="none" fillRule="evenodd" transform="">
         <rect
@@ -88,6 +88,91 @@ export const IconShipping = () => {
   );
 };
 
+export const IconBtnAddCart = () => {
+  return (
+    <svg
+      enable-background="new 0 0 15 15"
+      viewBox="0 0 15 15"
+      x="0"
+      y="0"
+      className="shopee-svg-icon tDviDD icon-add-to-cart"
+    >
+      <g>
+        <g>
+          <polyline
+            fill="none"
+            points=".5 .5 2.7 .5 5.2 11 12.4 11 14.5 3.5 3.7 3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            stroke-miterlimit="10"
+          ></polyline>
+          <circle cx="6" cy="13.5" r="1" stroke="none"></circle>
+          <circle cx="11.5" cy="13.5" r="1" stroke="none"></circle>
+        </g>
+        <line
+          fill="none"
+          strokeLinecap="round"
+          stroke-miterlimit="10"
+          x1="7.5"
+          x2="10.5"
+          y1="7"
+          y2="7"
+        ></line>
+        <line
+          fill="none"
+          strokeLinecap="round"
+          stroke-miterlimit="10"
+          x1="9"
+          x2="9"
+          y1="8.5"
+          y2="5.5"
+        ></line>
+      </g>
+    </svg>
+  );
+};
+
+export const IconFlashSale = () => {
+  return (
+    <svg
+      viewBox="0 0 108 21"
+      height="21"
+      width="108"
+      className="shopee-svg-icon icon-flash-sale ZS65vT"
+    >
+      <g fill="currentColor" fillRule="evenodd">
+        <path d="M0 16.195h3.402v-5.233h4.237V8H3.402V5.037h5.112V2.075H0zm29.784 0l-.855-2.962h-4.335l-.836 2.962H20.26l4.723-14.12h3.576l4.724 14.12zM26.791 5.294h-.04s-.31 1.54-.563 2.43l-.797 2.744h2.74l-.777-2.745c-.252-.889-.563-2.43-.563-2.43zm7.017 9.124s1.807 2.014 5.073 2.014c3.13 0 4.898-2.034 4.898-4.384 0-4.463-6.259-4.147-6.259-5.925 0-.79.778-1.106 1.477-1.106 1.672 0 3.071 1.245 3.071 1.245l1.439-2.824s-1.477-1.6-4.47-1.6c-2.76 0-4.918 1.718-4.918 4.325 0 4.345 6.258 4.285 6.258 5.964 0 .85-.758 1.126-1.457 1.126-1.75 0-3.324-1.462-3.324-1.462zm12.303 1.777h3.402v-5.53h5.054v5.53h3.401V2.075h-3.401v5.648h-5.054V2.075h-3.402zm18.64-1.678s1.692 1.915 4.763 1.915c2.877 0 4.548-1.876 4.548-4.107 0-4.483-6.492-3.871-6.492-6.36 0-.987.914-1.678 2.08-1.678 1.73 0 3.052 1.224 3.052 1.224l1.088-2.073s-1.4-1.501-4.12-1.501c-2.644 0-4.627 1.738-4.627 4.068 0 4.305 6.512 3.87 6.512 6.379 0 1.145-.952 1.698-2.002 1.698-1.944 0-3.44-1.48-3.44-1.48zm19.846 1.678l-1.166-3.594h-4.84l-1.166 3.594H74.84L79.7 2.174h2.623l4.86 14.021zM81.04 4.603h-.039s-.31 1.382-.583 2.172l-1.224 3.752h3.615l-1.224-3.752c-.253-.79-.545-2.172-.545-2.172zm7.911 11.592h8.475v-2.192H91.46V2.173H88.95zm10.477 0H108v-2.192h-6.064v-3.772h4.645V8.04h-4.645V4.366h5.753V2.174h-8.26zM14.255.808l6.142.163-3.391 5.698 3.87 1.086-8.028 12.437.642-8.42-3.613-1.025z"></path>
+      </g>
+    </svg>
+  );
+};
+
+export const IconClock = () => {
+  return (
+    <svg
+      height="20"
+      viewBox="0 0 20 20"
+      width="20"
+      className="shopee-svg-icon r+DNfj"
+    >
+      <g
+        fill="none"
+        fillRule="evenodd"
+        stroke="#fff"
+        strokeWidth="1.8"
+        transform="translate(1 1)"
+      >
+        <circle cx="9" cy="9" r="9"></circle>
+        <path
+          d="m11.5639648 5.05283203v4.71571528l-2.72832027 1.57129639"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          transform="matrix(-1 0 0 1 20.39961 0)"
+        ></path>
+      </g>
+    </svg>
+  );
+};
 // export const IconVoucher = () => {
 //   return (
 //     <svg

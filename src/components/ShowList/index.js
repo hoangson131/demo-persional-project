@@ -2,6 +2,7 @@ import classNames from "classnames/bind";
 
 import styles from './ShowList.module.scss'
 import { forwardRef } from "react";
+import Button from "../Button";
 
 const cx = classNames.bind(styles)
 
@@ -30,11 +31,17 @@ const ShowList =  forwardRef(function ShowList({
             <ul>
                 {data.map((item,index) => {
                     return (
-                        <li key={index}>
-                            <div></div>
-                        </li>
+
+                            <li key={index}>
+
+                                <div>{item.imgUrl && <img src={item.imgUrl} alt={item.id} />}</div>
+
+                            </li>
+
                     )
                 })}
+                <Button>&#10094;</Button>
+                <Button>&#10095;</Button>
             </ul>
         </div>
      );

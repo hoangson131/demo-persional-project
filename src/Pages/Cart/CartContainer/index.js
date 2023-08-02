@@ -3,7 +3,7 @@ import classNames from 'classnames/bind'
 import MainCart from "./MainCart";
 import styles from './CartContainer.module.scss'
 import { IconShipping } from '~/assets/icon';
-import Bill from './Bill';
+// import Bill from './Bill';
 
 const cx = classNames.bind(styles)
 

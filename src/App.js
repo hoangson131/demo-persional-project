@@ -21,6 +21,11 @@ function App() {
             }
             return (
               <Route
+                // loader={({params})=> {
+                //   console.log(params.id);
+                // }}
+                // action={({params})=>{}}
+
                 key={index}
                 path={route.path}
                 element={

@@ -1,31 +1,34 @@
-import classNames from "classnames/bind";
-import styles from './Notification.module.scss'
-import BannerCatalog from "../Home/BannerHome/BannerCatalog";
-import { dataBase } from "~/database";
-import Slide from "~/components/Slide";
+import { Link, Route, useParams } from "react-router-dom";
 
-const cx = classNames.bind(styles)
+<Route
+  // this path will match URLs like
+  // - /teams/hotspur
+  // - /teams/real
+  path="/frofile/:teamId"
+  // the matching param will be available to the loader
+  loader={({ params }) => {
+    console.log(params.teamId); // "hotspur"
+  }}
+  // and the action
+  action={({ params }) => {}}
+  element={<Team />}
+/>;
 
-function Notication() {
-  const data = dataBase.banner.slideImage
+// and the element through `useParams`
+function Team() {
+  let params = useParams();
+  console.log(params.teamId); // "hotspur"
+}
+function Notification() {
+  const products ={
+    id: 1,
+    title:'Product 1',
+}
   return ( 
-    <div className={cx("wrapper")}>
-      <div className={cx("container")}>
-        <div className={cx("main-banner")}>
-          <div className={cx('wrapper__slide')}><Slide data={data} width={796} height={235} rectangle countdown={5000}/></div>
-          <div className={cx("banner-images")}>
-            <div className={cx("box__image")}>
-              <img src="https://cf.shopee.vn/file/vn-50009109-eb59c33017a7c1bdb9f89ade65a9ea47_xhdpi" className={cx('item--image')} alt="slide1" />
-            </div>
-            <div className={cx("box__image")}>
-              <img src="https://cf.shopee.vn/file/vn-50009109-ba54e34c1fd64fcf9602427143c971aa_xhdpi" className={cx('item--image')} alt="slide2" />
-            </div>
-          </div>
-        </div>
-        <BannerCatalog/>
-      </div>
+    <div>
+      <Link to={`/products/${products.id}`}>Notifications page</Link>
     </div>
    );
 }
 
-export default Notication;
+export default Notification;

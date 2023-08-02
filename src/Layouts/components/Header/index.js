@@ -20,10 +20,10 @@ function Header() {
             <div className={cx('search__container')}>
                 <div className={cx('searchbar')}>
                     <div className={cx('seacrch__input')}>
-                        <input className={cx('input')}  placeholder='TÌM THỨ BẠN MUỐN Ở ĐÂY NHA!!!'/>
+                        <input className={cx('input')} placeholder='TÌM THỨ BẠN MUỐN Ở ĐÂY NHA!!!'/>
                     </div>
                     <button className={cx('seachr__btn')}>
-                        <SearchIcon color={"#fff"} />
+                        <SearchIcon height={14} width={14} color={"#fff"} />
                     </button>
                 </div>
                 <div className={cx('list-search')}></div>
