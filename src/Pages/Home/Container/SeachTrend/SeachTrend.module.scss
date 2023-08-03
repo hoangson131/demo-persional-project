@@ -1,0 +1,115 @@
+.wrapper{
+    margin-top: 20px;
+    width: 1200px;
+    height: 350px;
+    background-color: #fff;
+}
+
+// Title
+
+.title__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.title{
+    font-size: 16px;
+    color: #ee4d2d;
+}
+
+.viewAll--text{
+    font-size: 14px;
+    color: #ee4d2d;
+}
+
+.icon{
+
+}
+
+// Search Products Trend
+.prodTrend--wrapper{
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 290px;
+}
+
+.prodTrend--list{
+
+}
+
+.products__list{
+    display: flex;
+}
+.item--products{
+    width: 200px;
+    height: 290px;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 265px;
+    padding: 20px 10px;
+}
+
+.logo--top{
+    background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/06720e49514cbd94b7552496b4de454a.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 2rem;
+    height: 2.5rem;
+    background-size: 2rem 2.5rem;
+}   
+
+.banner{
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+.imgBackgr{
+    width: 180px;
+    height: 180px;
+    background-repeat: no-repeat;
+    object-fit: contain;
+}
+.SalesPerMonth{
+    background-color: #00000042;
+    color: #fff;
+    height: 25px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+.name{
+    margin: 20px 0 0;
+    font-weight: 500;
+    font-size: 18px;
+    color: #555555;
+}
+
+
+
+// Button CSS
+.btn{
+    display: flex;
+    position: absolute;
+}
+
+.prev{
+    left: calc(var(--button--width) / -2);
+}
+
+.next{
+    right: calc(var(--button--width) / -2);  
+}
