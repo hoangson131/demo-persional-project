@@ -37,7 +37,7 @@ export const IconShipping = () => {
       height="12"
       viewBox="0 0 20 12"
       width="20"
-      classNameName="shopee-svg-icon MCAWE icon-free-shipping"
+      className="shopee-svg-icon MCAWE icon-free-shipping"
     >
       <g fill="none" fillRule="evenodd" transform="">
         <rect

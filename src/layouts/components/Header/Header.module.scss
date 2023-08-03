@@ -1,0 +1,102 @@
+.wrapper {
+    background-image: linear-gradient(#f53d2d,#ff6633) !important;
+    height: 119px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
+
+.navbar {
+    background-color: transparent !important;
+}
+
+.main__header{
+    width: 1200px;
+    height: 85px;
+    padding: 16px 0 10px;    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box__logo--shopee{
+    width: 202px;
+    height: 59px;
+    padding: 0 40px 0 0;
+    margin-bottom: 5px;
+}
+
+.box__logo--cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    width: 138px;
+    height: 59px;
+}
+
+.logo--shoppe {
+    width: 162px;
+    height: 50px;
+    fill: #fff;
+}
+
+.logo--cart{
+    width: 30px;
+    height: 30px;
+}
+
+//-----------------SEARCH------------------------
+
+.search__container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 840px;
+    height: 59px;
+}
+
+.searchbar{
+    align-items: center;
+    display: flex;
+    padding: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    width: 100%;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.09);
+}
+
+.seacrch__input{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    height: 34px;
+}
+
+.input{
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.seachr__btn{
+    width: 60px;
+    height: 34px;
+    padding: 0 15px;
+    border-radius: 2px;
+    background-color: #fb5533;
+    cursor: pointer;
+}
+
+.list-search{
+    width: 100%;
+    height: 24px;
+    padding: 3px 0 0 ;
+    display: flex;
+    flex-wrap: wrap;
+}
