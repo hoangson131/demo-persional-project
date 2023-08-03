@@ -1,15 +1,16 @@
 import classNames from 'classnames/bind';
 
-import OnlyNavbar from '~/layouts/components/OnlyNavbar'
-import Footer from "~/layouts/components/Footer";
+
 import styles from './LayoutFootandNav.module.scss'
+import Footer from "../components/Footer";
+import { OnlyNavbar } from '~/Layouts/components';
 
 const cx = classNames.bind(styles)
 
 function LayoutFootandNav({children }) {
     return ( 
         <div className={cx('wrapper')}>
-            <OnlyNavbar/>
+            <OnlyNavbar/>        
             <div className={cx('content')}>
                 {children}
             </div>

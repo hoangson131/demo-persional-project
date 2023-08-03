@@ -1,11 +1,11 @@
-import Home from '~/pages/Home'
-import Profile from'~/pages/Profile'
-import Notification from '~/pages/Notification'
-import Cart from '~/pages/Cart'
+import Home from '~/Pages/Home'
+import Profile from'~/Pages/Profile'
+import Notification from '~/Pages/Notification'
+import Cart from '~/Pages/Cart'
 
-import { DefaultLayout, LayoutFootandNav } from '~/layouts'
+import { DefaultLayout, LayoutFootandNav } from '~/Layouts'
 import NotFound from './notFound'
-import Products from '~/pages/Products'
+import Products from '~/Pages/Products'
 
 
 const publicRoutes = [

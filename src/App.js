@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import { publicRoutes } from "~/routes";
 // import Content from "~/layouts/Content/Content";
 // import Heading from "~/layouts/Header/Heading";
-import { DefaultLayout } from "~/layouts";
+import { DefaultLayout } from "~/Layouts";
 
 function App() {
   return (

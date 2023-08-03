@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 import styles from './Header.module.scss'
-import OnlyNavbar from '~/layouts/components/OnlyNavbar';
+import OnlyNavbar from '~/Layouts/components/OnlyNavbar';
 
 import { Link } from 'react-router-dom';
 import { SearchIcon, CarIcon } from '~/assets/icon';
