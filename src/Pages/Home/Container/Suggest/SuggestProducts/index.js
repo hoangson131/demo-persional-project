@@ -2,13 +2,44 @@
 import classNames from "classnames/bind";
 
 import styles from "./SuggestProducts.module.scss";
+import { selectorProducts } from "~/stores/cart/selectors";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
 function SuggestProducts({voucher = false}) {
+  const productsShow = useSelector(selectorProducts)
+  console.log(productsShow[0].imgUrl[0]);
+ 
+
   return (
       <div className={cx('wrapper')}>
         <ul className={cx('products__list')}>
+          {productsShow.map((product) => {
+            return (
+              <li className={cx('product__item')} key={product.id}>
+                <Link to={`/products/${product.id}`}>
+                  <div className={cx('product')} >
+                    <div className={cx('picture')}>
+                      <img className={cx('image')} src={product.imgUrl[0]} alt={product.id}/>
+                    </div>
+                    <div className={cx('content')} >
+                      <div className={cx('content--top')} >
+                        <div className={cx('description')} >{product.description}</div>
+                        {voucher && <div className={cx('voucher')}>Voucher</div>}
+                      </div>
+                      <div className={cx('content--bottom')} >
+                        <div className={cx('price')}><span className={cx('vnd')}>₫</span>{product.models[0].price.toFixed(3)}</div>
+                        <div className={cx('sold')}>Đã bán {product.sold}</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+                <div className={cx('search--similar')}>Tìm sản phẩm tương tự</div>
+              </li>
+            )
+          })}
           <li className={cx('product__item')}>
             <div className={cx('product')} >
               <div className={cx('picture')}>

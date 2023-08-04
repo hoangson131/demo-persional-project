@@ -4,16 +4,11 @@ import {
     actions,
     buyProduct
  } from "./actions";
+import { products as allProducts } from "~/allProduct"; 
 
 const initialState = {
-    products: [
-        
-    ],
-    cart:[{
-        'id': 1,
-        'price': 123,
-        'quantity': 100
-      }]
+    products: allProducts,
+    cart:[]
 }
 
 const productsReducer = createReducer(initialState, (builder) => {

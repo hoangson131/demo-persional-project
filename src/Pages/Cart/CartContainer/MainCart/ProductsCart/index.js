@@ -4,6 +4,7 @@ import styles from './ProductsCart.module.scss'
 const cx = classNames.bind(styles)
 
 function ProductCart() {
+    
     return ( 
         <div className={cx('wrapper__product--list')}>
                 <div className={cx('box--item1', 'shop--name' )}>
@@ -25,7 +26,7 @@ function ProductCart() {
                                 </div>
                             </div>
                         </div>
-                        <div className={cx('common--text', 'box--item3')}></div>
+                        <div className={cx('common--text', 'box--item3')}>Phân Loại Hàng</div>
                         <div className={cx('common--text', 'box--item4')}>Đơn Giá</div>
                         <div className={cx('common--text', 'box--item5','quantity')}>
                             <div className={cx('number-input')}>

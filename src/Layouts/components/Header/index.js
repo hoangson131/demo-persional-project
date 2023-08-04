@@ -6,10 +6,13 @@ import { Link } from 'react-router-dom';
 import { SearchIcon, CarIcon } from '~/assets/icon';
 import  Logo  from '~/assets/images/logo';
 import OnlyNavbar from '../OnlyNavbar';
+import { selectorCart } from '~/stores/cart/selectors';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles)
 
 function Header() {
+    const productsInCart = useSelector(selectorCart)
 
     return (
     <header className={cx('wrapper')}>
@@ -31,6 +34,8 @@ function Header() {
             </div>
             <Link to="/cart" className={cx('box__logo--cart')}>
                 <CarIcon/>
+                {productsInCart.length > 0 ? <div className={cx('cart--products-amount')}>{productsInCart.length}</div> : <></>}
+                
             </Link>
         </div>
     </header>

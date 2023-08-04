@@ -4,19 +4,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import { IconClock, IconFlashSale } from "~/assets/icon";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
-
+import { useDispatch } from "react-redux";
+import { buyProduct } from "~/stores/cart/actions";
 
 const cx = classNames.bind(styles)
-function ProductDescription() {
+function ProductDescription({data}) {
+    const dispatch = useDispatch()
+    const showData = data[0]
+
+    //====Handle Click================================
+    const handleAddCart = (id,models) => {
+        dispatch(buyProduct({id,models}))
+        console.log(id);
+    }
+
     return ( 
         <div className={cx('wrapper')}>
             <div className={cx('description')} >
                 <div className={cx('icon--review')}>logo</div>
-                <span className={cx('description__content')}>Roksana Ổ cắm điện đa năng 7 Cổng Sạc USB 2 Cáp USB 3 Và 5M Dây Cáp Dày Chất Lượng Cao 100% Chính Hãng 2023New 040401</span>
+                <span className={cx('description__content')}>{showData.description}</span>
             </div>
             <div className={cx('evalute--product')}>
                 <div className={cx('rating--product')}>
-                    <div className={cx('underline', 'number--rating')}>4.5</div>
+                    <div className={cx('underline', 'number--rating')}>{showData.rate}</div>
                     <div className={cx('icons--start')}>
                         <FontAwesomeIcon className={cx('start')} icon={faStar}/>
                         <FontAwesomeIcon className={cx('start')} icon={faStar}/>
@@ -26,11 +36,11 @@ function ProductDescription() {
                     </div>
                 </div>
                 <div className={cx('review--product')}>
-                    <div className={cx('underline','text--medium', 'amount')}>1.5k</div>
+                    <div className={cx('underline','text--medium', 'amount')}>{showData.reviewNumber}k</div>
                     <div className={cx('text--small', 'title--amount')}>Đánh Giá</div>
                 </div>
                 <div className={cx('review--product')}>
-                    <div className={cx('text--medium', 'amount')}>5.8k</div>
+                    <div className={cx('text--medium', 'amount')}>{showData.sold}k</div>
                     <div className={cx('text--small', 'title--amount')}>Đã Bán</div>
                 </div>
                 <button className={cx('text--small', 'spam')}>Tố cáo</button>
@@ -44,9 +54,9 @@ function ProductDescription() {
                 </div>
                 <div className={cx('wrapper__price--afterEvent')} >
                     <div className={cx('price--affterEvent')}>
-                        <div className={cx('text--medium', 'cost')}>₫115.000</div>
+                        <div className={cx('text--medium', 'cost')}>{showData.models[0].price.toFixed(3)}</div>
                         <div className={cx('price')}>
-                            <div className={cx('price--afterVoucher')}>₫28.000</div>
+                            <div className={cx('price--afterVoucher')}>{showData.models[0].price.toFixed(3)}</div>
                             <div className={cx('product--voucher')}>voucher</div>
                         </div>
                     </div>
@@ -58,10 +68,10 @@ function ProductDescription() {
                     <button className={cx('btn--product--cart')}>
                         <div className={cx('content__btn--addCart')}>
                             <FontAwesomeIcon icon={faCartPlus}/>
-                            <div className={cx('text--medium', 'text__add--cart')}>Thêm Vào Giỏ Hàng</div>
+                            <div className={cx('text--medium', 'text__add--cart')} onClick={() => handleAddCart(showData.id, showData.models)}>Thêm Vào Giỏ Hàng</div>
                         </div>
                     </button>
-                    <button className={cx('text--medium', 'buy--now')}>Mua Ngay</button>
+                    <button className={cx('text--medium', 'buy--now')} >Mua Ngay</button>
                 </div>
             </div>
             <div className={cx('ensuar--shopee')}>

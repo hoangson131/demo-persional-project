@@ -13,7 +13,7 @@ function ProductsMall() {
     const widthlist = useRef(null)
     
     const handleClick = (desc) => {
-        widthlist.current = listRef.current.offsetWidth
+        widthlist.current = listRef.current.offsetWidth 
         if(desc === 'next' && listRef.current) {
           listRef.current.style.transform = `translateX(-${widthlist.current - 800}px)`
           show(prevRef)
