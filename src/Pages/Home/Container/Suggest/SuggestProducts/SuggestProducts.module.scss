@@ -83,6 +83,64 @@
     object-fit: cover;
 }
 
+
+
+.isProduct--logo{
+    position: absolute;
+    left: 0;
+    top: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1;
+    max-width: 70%;
+}
+
+.wrapper__isProduct--text{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 0.9375rem;
+    font-size: .5625rem;
+    line-height: .6875rem;
+    font-weight: 500;
+    padding: 0 4px;
+    border-top-right-radius: 0.125rem;
+    border-bottom-right-radius: 0.125rem;
+    background: currentColor;
+    left: -0.1875rem;
+
+    color: rgb(242, 82, 32);
+
+    padding: 0 0.25rem;
+    height: auto!important;
+
+    text-align: center;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        bottom: -0.1875rem;
+        border-top: 0.1875rem solid;
+        border-left: 0.1875rem solid transparent;
+        -webkit-filter: brightness(60%);
+        filter: brightness(60%);
+    }
+}
+
+.isProduct--text{
+    color: #fff;
+    font-size: .75rem;
+    line-height: .875rem;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+//================================================================
 .content{
     height: 92px;
     padding: 8px;

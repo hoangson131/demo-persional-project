@@ -6,6 +6,7 @@ import { IconClock, IconFlashSale } from "~/assets/icon";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { useDispatch } from "react-redux";
 import { buyProduct } from "~/stores/cart/actions";
+import CustomProduct from "./components/CustomProduct";
 
 const cx = classNames.bind(styles)
 function ProductDescription({data}) {
@@ -62,7 +63,7 @@ function ProductDescription({data}) {
                     </div>
                 </div>
             </div>
-            <div className={cx('')}></div>
+            <CustomProduct/>
             <div className={cx('product--buy')}>
                 <div className={cx('wrapper__btns--buy')}>
                     <button className={cx('btn--product--cart')}>

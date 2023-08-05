@@ -3,14 +3,16 @@ import { createSelector } from "reselect";
 export const selectorProducts = (state) => state.store.products
 export const selectorCart = (state) => state.store.cart;
 
-export const listCartSelector = createSelector(
+export const productsCartSelector = createSelector(
     selectorProducts,
     selectorCart,
     (listProduct, productsCart) => {
         const listIdProductCart = productsCart.map(product => product.id)
-        return listProduct.filter(product => product.includes(listIdProductCart))
+        return listProduct.filter(product => listIdProductCart.includes(product.id))
     }
 )
+
+
 
 export const totalPriceCart = createSelector(
     selectorCart,
@@ -20,3 +22,4 @@ export const totalPriceCart = createSelector(
         },0)
     }
 )
+

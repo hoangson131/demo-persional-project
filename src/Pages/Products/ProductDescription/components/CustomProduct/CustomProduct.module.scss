@@ -1,0 +1,61 @@
+.wrapper{
+    width: inherit;
+    margin-top: 25px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text--shared{
+    font-size: 14px;
+    color: #888888;
+}
+
+.icon{
+
+}
+
+.wrapper--transport{
+    display: flex;
+}
+
+.wrapper__transport--content{
+    display: flex;
+    flex-direction: column;
+}
+
+.transport--voucher{
+    display: flex;
+}
+
+.wrapper__transport--from{
+    display: flex;
+}
+
+.transport__from--top{
+    display: flex;
+}
+
+.transport--content{
+    display: flex;
+}
+
+.transport--fee{
+    display: flex;
+}
+
+.wrapper--products--model{
+
+}
+
+.wrapper--productType{
+
+}
+
+.wrapper__btns--type{
+
+}
+
+.wrapper--quantity{
+    display: flex;
+}

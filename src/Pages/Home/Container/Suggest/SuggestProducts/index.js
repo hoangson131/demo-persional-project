@@ -23,6 +23,13 @@ function SuggestProducts({voucher = false}) {
                   <div className={cx('product')} >
                     <div className={cx('picture')}>
                       <img className={cx('image')} src={product.imgUrl[0]} alt={product.id}/>
+                      {product.like > 1000 && (
+                        <div className={cx('isProduct--logo')}>
+                        <div className={cx('wrapper__isProduct--text')}>
+                          <span className={cx('isProduct--text')}>Yêu thích{product.like > 2000 && <span>+</span>}</span>
+                        </div>
+                      </div>
+                      )}
                     </div>
                     <div className={cx('content')} >
                       <div className={cx('content--top')} >

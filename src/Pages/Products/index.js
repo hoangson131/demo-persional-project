@@ -10,14 +10,15 @@ import { useSelector } from "react-redux";
 
 const cx = classNames.bind(styles)
 function Products() {
+    console.log('render Products Page...');
     const productsAll = useSelector(selectorProducts)
     let params = useParams();
-    console.log(params.id); // "hotspur"
-    const [iD] = params.id
+    const iD = [params.id]
 
     // data show for useSelector Redux dua vao prams.ID
-    const productsShow = productsAll.filter(product => iD.includes(product.id))
-    console.log(productsShow);
+    const productsShow = productsAll.filter(product => {
+        return iD.includes(product.id)
+    })
    
     return ( 
         <div className={cx('wrapper')} >   

@@ -4,7 +4,7 @@ import styles from './ShowPicture.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookMessenger, faFacebook, faPinterest, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const cx = classNames.bind(styles)
 
@@ -14,27 +14,25 @@ function ShowPicture({data}) {
     const btnPrevRef = useRef()
     const widthItem = useRef()
     const listImgRef = useRef()
-    const showBigImage = useRef()
+
+    const [showImg, setShowImg] = useState(data[0].imgUrl[0])
 
     
     // Handle click btn 
     const handleMouseOver = (index) => {
-        console.log(index);
-        if (index && data[0].imgUrl[index]){
-            showBigImage.current.src = data[0].imgUrl[index]
-            return
+        if(data[0].imgUrl[index]) {
+            setShowImg(data[0].imgUrl[index]) 
+        } else {
+            console.error("Invalid Foundation Image")
         }
     }
-    console.log('re-render');
-    const handleNextClick = () => {
-        
+    const handleNextClick = () => { 
         widthItem.current = listImgRef.current.children[1].offsetWidth
         console.log(listImgRef.current.getBoundingClientRect());
         listImgRef.current.style.transform = `translateX(-${widthItem.current}px)`;
     }
 
     const handlePrevClick = () => {
-        
         widthItem.current = listImgRef.current.children[1].offsetWidth
         console.log(listImgRef.current.getBoundingClientRect());
         listImgRef.current.style.transform = `translateX(0px)`;
@@ -56,7 +54,7 @@ function ShowPicture({data}) {
         <div className={cx('wrapper')}>
             <div className={cx('wrapper__show--image')}>
                 <div className={cx('show--image')}>
-                    <img ref={showBigImage} className={cx('screen--image')} src={data[0].imgUrl[0]} alt={'1'}/>
+                    <img className={cx('screen--image')} src={showImg} alt={'1'}/>
                 </div>
                 <div className={cx('wrapper--showList')}>
                     <div className={cx('wrapper__list--image')}>
@@ -70,8 +68,8 @@ function ShowPicture({data}) {
                             })}
                         </ul>
                     </div>
-                    <button ref={btnPrevRef} className={cx('btn', 'prev')} onClick={()=>handleClickBtn('prev')}>&#10094;</button>
-                    <button ref={btnNextRef} className={cx('btn', 'next')} onClick={()=>handleClickBtn('next')}>&#10095;</button>
+                    {data[0].imgUrl.length > 5 && <button ref={btnPrevRef} className={cx('btn', 'prev')} onClick={()=>handleClickBtn('prev')}>&#10094;</button>}
+                    {data[0].imgUrl.length > 5 && <button ref={btnNextRef} className={cx('btn', 'next')} onClick={()=>handleClickBtn('next')}>&#10095;</button>}
                 </div>
             </div>
             <div className={cx('wrapper__share')}>
