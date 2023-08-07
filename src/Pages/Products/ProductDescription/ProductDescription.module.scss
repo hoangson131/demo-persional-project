@@ -57,14 +57,29 @@
     border-color: var(--primary-clr);
 }
 
-.icons--start{
-    padding-left: 5px;
-    font-size: 15px;
-    color: var(--primary-clr);
+.start--outer{
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 1.5rem;
+
+    &::before{
+        content: '\2606 \2606 \2606 \2606 \2606';
+        color: var(--primary-clr);
+    }
 }
 
-.start{
-    
+.start--inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    &::before{
+        content: '\2605 \2605 \2605 \2605 \2605';
+        color: var(--primary-clr);
+    }
 }
 
 .review--product{

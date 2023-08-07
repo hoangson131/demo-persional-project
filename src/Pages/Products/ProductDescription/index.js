@@ -3,7 +3,6 @@ import styles from './ProductDescription.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import { IconClock, IconFlashSale } from "~/assets/icon";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { useDispatch } from "react-redux";
 import { buyProduct } from "~/stores/cart/actions";
 import CustomProduct from "./components/CustomProduct";
@@ -19,6 +18,10 @@ function ProductDescription({data}) {
         console.log(id);
     }
 
+    const coverAmount = (number) => {
+       return new Intl.NumberFormat("de-DE").format(number)
+    }
+
     return ( 
         <div className={cx('wrapper')}>
             <div className={cx('description')} >
@@ -27,13 +30,9 @@ function ProductDescription({data}) {
             </div>
             <div className={cx('evalute--product')}>
                 <div className={cx('rating--product')}>
-                    <div className={cx('underline', 'number--rating')}>{showData.rate}</div>
-                    <div className={cx('icons--start')}>
-                        <FontAwesomeIcon className={cx('start')} icon={faStar}/>
-                        <FontAwesomeIcon className={cx('start')} icon={faStar}/>
-                        <FontAwesomeIcon className={cx('start')} icon={faStar}/>
-                        <FontAwesomeIcon className={cx('start')} icon={faStar}/>
-                        <FontAwesomeIcon className={cx('start')} icon={faStar}/>
+                    <div className={cx('underline', 'number--rating')}>{showData.rate.toFixed(1)}</div>
+                    <div className={cx('start--outer')}>
+                        <div className={cx('start--inner')} style={{width: showData.rate / 5 * 100 + '%'}}></div>
                     </div>
                 </div>
                 <div className={cx('review--product')}>
@@ -55,9 +54,9 @@ function ProductDescription({data}) {
                 </div>
                 <div className={cx('wrapper__price--afterEvent')} >
                     <div className={cx('price--affterEvent')}>
-                        <div className={cx('text--medium', 'cost')}>{showData.models[0].price.toFixed(3)}</div>
+                        <div className={cx('text--medium', 'cost')}>{coverAmount(showData.models[0].price)}</div>
                         <div className={cx('price')}>
-                            <div className={cx('price--afterVoucher')}>{showData.models[0].price.toFixed(3)}</div>
+                            <div className={cx('price--afterVoucher')}>{coverAmount(showData.models[0].price)}</div>
                             <div className={cx('product--voucher')}>voucher</div>
                         </div>
                     </div>

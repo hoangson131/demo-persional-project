@@ -3,6 +3,7 @@ import styles from "./ProductsCart.module.scss";
 import { useSelector } from "react-redux";
 import { productsCartSelector, selectorCart } from "~/stores/cart/selectors";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -14,6 +15,11 @@ function ProductCart() {
 
   const infoProductsShow = useSelector(selectorCart);
   console.log(infoProductsShow);
+  //======Handle number================================
+  const coverAmount = (number) => {
+    return new Intl.NumberFormat("de-DE").format(number)
+  }
+
 
   //=====Handle Onclick================================
   const handedDecrease = () => {
@@ -33,7 +39,7 @@ function ProductCart() {
           <div key={product.id}>
             <div className={cx("box--item1", "shop--name")}>
               <input type="checkbox" />
-              <div className={cx("common--text", "name")}></div>
+              <div className={cx("common--text", "name")}>{product.infoShop.shopName}</div>
             </div>
             <div className={cx("list__product--shop")}>
               <div className={cx("voucher__shop")}>voucher Combo</div>
@@ -42,19 +48,21 @@ function ProductCart() {
                   <input type="checkbox" />
                 </div>
                 <div className={cx("common--text", "box--item2")}>
-                  <div className={cx("product--description")}>
-                    <img
-                      src={product.imgUrl[0]}
-                      className={cx("image")}
-                      alt={product.id}
-                    />
-                    <div className={cx("content")}>
-                      <div className={cx("description--text")}>
-                        {product.description}
+                  <Link to={`/products/${product.id}`}>
+                    <div className={cx("product--description")}>
+                      <img
+                        src={product.imgUrl[0]}
+                        className={cx("image")}
+                        alt={product.id}
+                      />
+                      <div className={cx("content")}>
+                        <div className={cx("description--text")}>
+                          {product.description}
+                        </div>
+                        <div className={cx("voucher--list")}>voucher__icon</div>
                       </div>
-                      <div className={cx("voucher--list")}>voucher__icon</div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
                 <div className={cx("common--text", "box--item3")}>
                   Phân Loại Hàng
@@ -62,11 +70,11 @@ function ProductCart() {
                 <div className={cx("common--text", "box--item4")}>
                   <div className={cx("price--cost")}>
                     <span>₫</span>
-                    {product.models[0].price.toFixed(3)}
+                    {coverAmount(product.models[0].price)}
                   </div>
                   <div className={cx("price--beforeVoucher")}>
                     <span>₫</span>
-                    {product.models[0].price.toFixed(3)}
+                    {coverAmount(product.models[0].price)}
                   </div>
                 </div>
                 <div className={cx("common--text", "box--item5", "quantity")}>
