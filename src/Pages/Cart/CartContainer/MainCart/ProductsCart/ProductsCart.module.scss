@@ -64,15 +64,15 @@
     justify-content: center;
 }
 
-input[type="text"] {
-//   -webkit-appearance: textfield;
-//   -moz-appearance: textfield;
-//   appearance: textfield;
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
-input[type=text]::-webkit-inner-spin-button,
-input[type=text]::-webkit-outer-spin-button {
-//   -webkit-appearance: none;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 .quantity{
@@ -80,7 +80,7 @@ input[type=text]::-webkit-outer-spin-button {
     justify-content: center;
     align-items: center;
     width: 15%;
-    input[type=text]{
+    input[type=number]{
         width: 50px;
         height: 32px;
         text-align: center;

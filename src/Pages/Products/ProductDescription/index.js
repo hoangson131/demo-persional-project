@@ -6,6 +6,7 @@ import { IconClock, IconFlashSale } from "~/assets/icon";
 import { useDispatch } from "react-redux";
 import { buyProduct } from "~/stores/cart/actions";
 import CustomProduct from "./components/CustomProduct";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles)
 function ProductDescription({data}) {
@@ -71,7 +72,7 @@ function ProductDescription({data}) {
                             <div className={cx('text--medium', 'text__add--cart')} onClick={() => handleAddCart(showData.id, showData.models)}>Thêm Vào Giỏ Hàng</div>
                         </div>
                     </button>
-                    <button className={cx('text--medium', 'buy--now')} >Mua Ngay</button>
+                    <button onClick={() => handleAddCart(showData.id, showData.models)} className={cx('text--medium', 'buy--now')} ><Link to={'/cart'}>Mua Ngay</Link></button>
                 </div>
             </div>
             <div className={cx('ensuar--shopee')}>

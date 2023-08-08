@@ -80,7 +80,7 @@ function ProductCart() {
                 <div className={cx("common--text", "box--item5", "quantity")}>
                   <div className={cx("number-input")}>
                     <button className={cx("btn")} onClick={() => handedDecrease()}>&#8722;</button>
-                    <input type="text" value={amount} min={1} onChange={e => {setAmount(Number(e.target.value))}}/>
+                    <input type="number" value={amount} onChange={e => {setAmount(Number(e.target.value))}}/>
                     <button className={cx("btn")} onClick={() => handeIncrease()}>&#43;</button>
                   </div>
                 </div>

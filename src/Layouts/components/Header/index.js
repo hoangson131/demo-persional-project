@@ -8,14 +8,16 @@ import  Logo  from '~/assets/images/logo';
 import OnlyNavbar from '../OnlyNavbar';
 import { selectorCart } from '~/stores/cart/selectors';
 import { useSelector } from 'react-redux';
+import { forwardRef } from 'react';
 
 const cx = classNames.bind(styles)
 
-function Header() {
+
+function Header(props,ref) {
     const productsInCart = useSelector(selectorCart)
 
     return (
-    <header className={cx('wrapper')}>
+    <div ref={ref} className={cx('wrapper')}>
         <OnlyNavbar className={cx('navbar')}/>
         <div className={cx('main__header')}>
             <Link to='/' className={cx('box__logo--shopee')}>
@@ -38,8 +40,8 @@ function Header() {
                 
             </Link>
         </div>
-    </header>
+    </div>
     );
 }
 
-export default Header;
+export default forwardRef(Header);

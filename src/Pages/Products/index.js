@@ -14,11 +14,11 @@ function Products() {
     const productsAll = useSelector(selectorProducts)
     let params = useParams()
     const iD = [Number(params.id)]
-
     // data show for useSelector Redux dua vao prams.ID
     const productsShow = productsAll.filter(product => {
         return iD.includes(product.id)
     })
+    
 
 
     return ( 
