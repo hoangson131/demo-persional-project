@@ -11,6 +11,7 @@ function Suggest() {
             <div className={cx('wapper__products--suggest')}>
                 <SuggestProducts/>
             </div>
+            <button className={cx('btn--moreview')}>Xem Thêm</button>
         </div>
      );
 }

@@ -3,9 +3,10 @@ import Profile from'~/Pages/Profile'
 import Notification from '~/Pages/Notification'
 import Cart from '~/Pages/Cart'
 
-import { DefaultLayout, LayoutFootandNav } from '~/Layouts'
+import { DefaultLayout, LayoutFootandNav, OnlyFooterLayout } from '~/Layouts'
 import NotFound from './notFound'
 import Products from '~/Pages/Products'
+import Login from '~/Pages/Login'
 
 
 const publicRoutes = [
@@ -13,7 +14,8 @@ const publicRoutes = [
     {path: '/profile', component: Profile},
     {path: '/notification', component: Notification},
     {path: '/cart', component: Cart, layout: LayoutFootandNav},
-    {path: '/products/:id', component: Products, layout: DefaultLayout, },
+    {path: '/products/:id', component: Products, layout: DefaultLayout },
+    {path: '/login', component: Login, layout: OnlyFooterLayout},
 
     {path: '/*', component: NotFound, layout:DefaultLayout},
 ]

@@ -1,9 +1,13 @@
 .wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin-top: 30px;
     width: 1200px;
 }
 
 .title{
+    width: inherit;
     display: flex;
     position: sticky;
     position: -webkit-sticky;
@@ -21,5 +25,19 @@
 }
 
 .wapper__products--suggest{
-    height: 1000vh;
+    
+}
+
+.btn--moreview{
+    margin-top: 20px;
+    width: 390px;
+    height: 40px;
+    color: #555;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,.09);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.03);
+
+    &:hover{
+        background-color: #f0f0f0;
+    }
 }
