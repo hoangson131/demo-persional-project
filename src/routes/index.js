@@ -7,6 +7,7 @@ import { DefaultLayout, LayoutFootandNav, OnlyFooterLayout } from '~/Layouts'
 import NotFound from './notFound'
 import Products from '~/Pages/Products'
 import Login from '~/Pages/Login'
+import Register from '~/Pages/Register'
 
 
 const publicRoutes = [
@@ -16,6 +17,7 @@ const publicRoutes = [
     {path: '/cart', component: Cart, layout: LayoutFootandNav},
     {path: '/products/:id', component: Products, layout: DefaultLayout },
     {path: '/login', component: Login, layout: OnlyFooterLayout},
+    {path: '/register', component: Register, layout: OnlyFooterLayout},
 
     {path: '/*', component: NotFound, layout:DefaultLayout},
 ]

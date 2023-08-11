@@ -3,6 +3,7 @@ import classNames from "classnames/bind";
 
 import styles from "./SlideShow.module.scss";
 import { dataBase } from "~/database";
+import Button from "~/components/Button";
 
 const cx = classNames.bind(styles);
 
@@ -88,12 +89,12 @@ function SlideShow() {
               );
             })}
           </div>
-          <button className={cx("btn", "prev")} onClick={handlePrevSlide}>
+          <Button className={cx("btn", "prev")} btnBanner onClick={handlePrevSlide}>
             &#10094;
-          </button>
-          <button className={cx("btn", "next")} onClick={handleNextSlide}>
+          </Button>
+          <Button className={cx("btn", "next")} btnBanner onClick={handleNextSlide}>
             &#10095;
-          </button>
+          </Button>
         </div>
         <div ref={dotsRef} className={cx("box__dot")}>
           <span

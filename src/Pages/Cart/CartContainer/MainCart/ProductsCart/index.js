@@ -86,7 +86,7 @@ function ProductCart() {
                 </div>
                 <div className={cx("common--text", "box--item6")}>
                   <span>₫</span>
-                  99.000
+                  {coverAmount(product.models[0].price) * amount}
                 </div>
                 <div className={cx("common--text", "box--item7")}>
                   <div className={cx("operation")}>

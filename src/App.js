@@ -5,11 +5,13 @@ import { publicRoutes } from "~/routes";
 // import Content from "~/layouts/Content/Content";
 // import Heading from "~/layouts/Header/Heading";
 import { DefaultLayout } from "~/Layouts";
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollTop/>
         <Routes>
           {publicRoutes.map((route, index) => {
             let Layout = DefaultLayout;

@@ -1,18 +1,11 @@
 .wrapper{
-    width: 25px;
-    height: 25px;
     border-radius: 50%;
     display: flex;
     background-color: #fff;
     justify-content: center;
     align-items: center;
     box-shadow: 0 1px 12px 0 rgba(0,0,0,.12);
-    transition: .5s ease-in-out;
     cursor: pointer;
-
-    &:hover .title{
-      font-size: 20px;
-    }
 }
 .title {
     font-style: 14px;
@@ -28,13 +21,26 @@
     display: block;
   }
 
+.disabled{
+  opacity: 0.5;
+  cursor: none;
+}
 
   // Types Button
-.rectangle {
+.btnBanner {
     width: 35px;
     height: 60px;
     background-color: #0000002e;
     border-radius: 3px;
     color: #fff;
+
+    &:hover{
+      background-color: #00000052;
+    }
+    
+    
+    font-size: 25px;
+
+    
   }
 

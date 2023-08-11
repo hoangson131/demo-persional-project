@@ -1,4 +1,7 @@
-
+:root {
+    --button--width: 25px;
+    --button--height: 25px;
+}
 
 .wrapper{
     display: flex;
@@ -11,6 +14,7 @@
     height: 463px;
     overflow: hidden;
     width: 800px;
+    
 }
 
 .company--list{
@@ -20,6 +24,16 @@
     width: 1400px;
     max-height: 480px;
     transition: 1s;
+
+    :hover {    
+        .next{
+            --button--width: 40px;
+            --button--height: 40px;
+
+        }  
+    }
+    
+    
 }
 
 .item--company{
@@ -36,6 +50,7 @@
 }
 
 .image{
+    cursor: pointer;
     width: 175px;
     height: auto;
 }
@@ -62,12 +77,11 @@
     width: var(--button--width);
     height: var(--button--height);
     
-    &:hover{
-        --button--width: 40px;
-        --button--height: 40px;
-    }
+    
 } 
+
 .prev{
+    display: none;
     left: calc(var(--button--width)/ -2);
 
 } 

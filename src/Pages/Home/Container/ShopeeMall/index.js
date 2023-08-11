@@ -35,7 +35,6 @@ function ShopeeMall() {
             data={data}
             width={389}
             height={463}
-            rectangle
             countdown={5000}
           />
         </div>

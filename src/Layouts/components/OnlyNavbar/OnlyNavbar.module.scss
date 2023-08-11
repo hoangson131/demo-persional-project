@@ -20,8 +20,7 @@
   li {
     display: flex;
     align-items: center;
-    font-size: 0.8rem;
-    font-weight: 400;
+    font-size: 13px;
     color: #fff;
 
     &:hover {
@@ -33,8 +32,12 @@
 
 .navbar__left {
   li {
-    padding: 4px 6px;
+    padding: 4px;
     position: relative;
+  }
+  li:not(:first-child) {
+    margin: 0 0 0 10px;
+    
   }
 
   li:last-child
@@ -42,16 +45,24 @@
     cursor: auto;
     color: #fff;
   }
-
-  li:nth-child(2)::after {
+  li:not(:last-child)::after {
     content: '';
-    width: 100%;
-    height: 1rem;
+    width: 1px;
+    background-color: hsla(0,0%,100%,.22);
+    height: 50%;
+    right: -5px;
     position: absolute;
-    left: 0;
-    border-right: 1px solid hsla(0,0%,100%,.22);
-    border-left: 1px solid hsla(0,0%,100%,.22);
   }
+
+  // li:nth-child(2)::after {
+  //   content: '';
+  //   width: 100%;
+  //   height: 1rem;
+  //   position: absolute;
+  //   left: 0;
+  //   border-right: 1px solid hsla(0,0%,100%,.22);
+  //   border-left: 1px solid hsla(0,0%,100%,.22);
+  // }
 
   // li + li {
   //     content: '';
@@ -69,12 +80,55 @@
 
 .navbar__right {
   li {
-    padding: 4px 6px;
   }
   span {
-    margin-left: 4px;
+  }
+
+  li:last-child {
+    // border-left: 1px solid hsla(0,0%,100%,.22);
   }
 }
+.notification{
+
+  span{
+    margin-left: 0.3125rem;
+  }
+  .icon{
+    width: 14px;
+    height: 18px;
+  }
+}
+
+.support{
+  padding: 0 10px 0 0;
+
+  .icon{
+    margin-right: 0.3125rem;
+    margin-left: 0.5rem;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.language{
+  padding: 7px 10px;
+
+  span{
+    margin: 0 5px;
+  }
+}
+
+.register{
+  padding: 0 10px;
+}
+
+.login{
+  padding: 0 10px;
+
+  border-left: 1px solid hsla(0,0%,100%,.22);
+}
+
+
 
 .user {
   display: flex;

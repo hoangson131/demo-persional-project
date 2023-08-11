@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 
 import ShowPicture from "./ShowPicture";
 import styles from './Products.module.scss'
-import ScrollTop from "~/components/ScrollTop";
 import ProductDescription from "./ProductDescription";
 import { selectorProducts } from "~/stores/cart/selectors";
 
@@ -23,7 +22,6 @@ function Products() {
 
     return ( 
         <div className={cx('wrapper')} >
-            <ScrollTop/>
             <div className={cx('wrapper__products--pictures')}>
                 <ShowPicture data={productsShow}/>
             </div>

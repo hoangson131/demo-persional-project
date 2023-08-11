@@ -69,6 +69,7 @@
     position: fixed;
     display: flex;
     align-items: center;
+    gap: 10px;
     width: 100px;
     height: 48px;
     bottom: 0;
@@ -88,7 +89,6 @@
     color: var(--primary-clr);   
     width: 24px;
     height: 24px; 
-    margin-right: 5px;
 }
 
 .chat--text{

@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 
 const cx = classNames.bind(styles);
 
-function Slide({ data, width, height, countdown, typeBtn, rectangle }) {
+function Slide({ data, width, height, countdown }) {
   const listRef = useRef(null);
   const imgRef = useRef(null);
   const dotsRef = useRef(null);
@@ -117,10 +117,10 @@ function Slide({ data, width, height, countdown, typeBtn, rectangle }) {
             );
           })}
         </div>
-        <Button className={cx("btn", "prev")} rectangle onClick={handlePrevSlide}>
+        <Button className={cx("btn","prev")} btnBanner onClick={handlePrevSlide}>
           &#10094;
         </Button>
-        <Button className={cx("btn", "next")} rectangle onClick={handleNextSlide}>
+        <Button className={cx("btn","next")} btnBanner onClick={handleNextSlide}>
           &#10095;
         </Button>
       </div>

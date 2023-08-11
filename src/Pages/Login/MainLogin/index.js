@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
 import styles from "./MainLogin.module.scss";
 import { IconEyeShow } from "~/assets/icon";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 function MainLogin() {
@@ -69,7 +70,7 @@ function MainLogin() {
             </div>
             <div className={cx("login__fe")}>
               <div className={cx('fe--text')}>Bạn mới biết đến Shopee?</div>
-              <a className={cx('register')} href="/">Đăng ký</a>
+              <Link to={'/register'}><div className={cx('register')}>Đăng ký</div></Link>
             </div>
           </div>
         </div>
