@@ -55,7 +55,7 @@
   }
 
   // li:nth-child(2)::after {
-  //   content: '';
+  //   content: ;
   //   width: 100%;
   //   height: 1rem;
   //   position: absolute;
@@ -65,7 +65,7 @@
   // }
 
   // li + li {
-  //     content: '';
+  //     content: ;
   //     position: absolute;
   //     width: 1px;
   //     height: 16px;
@@ -145,3 +145,170 @@
   width: 16px;
   height: 16px;
 }
+
+//===Popper application================================================================
+
+.popper--app{
+  width: 184px;
+  height: 240px;
+  padding: 2px;
+
+}
+
+.popper--inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr--image{
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 2px;
+
+}
+
+.list-app{
+  padding: 0 15px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.item--app{
+  width: 4.375rem;
+}
+
+.img--item{
+  object-fit: cover;
+  width: 100%;
+}
+
+//===========Popper Notification=====================================
+.notigication--popper{
+  position: relative;
+  width: 400px;
+  height: 350px;
+  background-color: #fff;
+  box-shadow: 0 1px 3.125rem 0 rgba(0,0,0,.2);
+  border-radius: 0.125rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    border-bottom: 10px solid rgb(255, 255, 255);
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    top: -10px;
+    right: 30px;
+    width: 0;
+    height: 0;
+  }
+}
+
+.popper__notication--inner{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content{
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ overflow: hidden;
+}
+
+.img--outner{
+
+}
+
+.image{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.note{
+  font-size: 14px;
+  margin: 20px 0 0;
+  color: rgba(0,0,0,.8);
+}
+
+
+.btn--outner{
+  height: 40px;
+  display: flex;
+  align-items: center;
+  .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    width: 200px;
+    height: 100%;
+    padding: 1px 6px;
+    cursor: pointer;
+    &:hover{
+      background-color: #E8E8E8;
+      color: var(--primary-clr);
+    }
+  }
+}
+
+
+
+//===============Popper Language=================================================
+
+.popper--language{
+  margin-top: -9px;
+  box-shadow: 0 0.0625rem 3.125rem 0 rgba(0,0,0,.2);
+  background-color: #fff;
+  min-width: 200px;
+  border-radius: 2px;
+  border-top: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &::after{
+    content: '';
+    position: absolute;
+    border-bottom: 10px solid rgb(255, 255, 255);
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    top: -8px;
+    right: 44px;
+    width: 0;
+    height: 0;
+  }
+}
+
+.language--list{
+  display: flex;
+  flex-direction: column;
+  min-height: 80px;
+  overflow: hidden;
+}
+
+.btn{
+  text-align: left;
+  color: rgba(0,0,0,.87);
+  padding: 0.625rem;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  background-color: initial;
+  border: 0;
+
+  cursor: pointer;
+
+  &:hover{
+    color: var(--primary-clr)
+  }
+}
+

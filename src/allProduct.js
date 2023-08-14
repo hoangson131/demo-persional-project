@@ -1433,4 +1433,474 @@ export const products = [
         reviewNumber: 3,
         like: 19, 
     },
+    {
+        id: 29,
+        infoShop: {
+            shopId: 1,
+            shopName: 'vuadochoiz',
+            avatarShop: 'https://down-vn.img.susercontent.com/file/51e2ceda6de681883abe640198dc0910_tn',
+            review: 109.7,
+            products: 172,
+            timeJoin: 4,
+            followers: 375.2,
+            reponseRate: 100,
+            reponseTime:  'trong vài ngày'
+        },
+        imgUrl: [
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfb2n91eo80442',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfb2n91f3o90b0',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfb2n91epmkke9',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfb2n91ev8uc4c',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfb2n91esfpgba',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfb2n91etu9w3c',
+        ],
+        description:'[1030 Chi Tiết] Mô hình LEGO Máy Ảnh Cổ Điển Welleadz Retro Camera chụp phim, lấy nét thủ công',
+        titleProduct: 'Mô hình LEGO',
+        voucher: {
+            voucher10: false,
+            voucher20: false,
+            voucher30: false,
+            voucher50: false
+        },
+        models: [
+            {
+                typeID: 1,
+                typeName: 'Đen',
+                inventory: 46,
+                price: 276000,
+            }
+        ],
+        rate: 5,
+        sold: 61,
+        reviewNumber: 20,
+        like: 944, 
+    },
+    {
+        id: 30,
+        infoShop: {
+            shopId: 1,
+            shopName: 'funnykid88',
+            avatarShop: 'https://down-vn.img.susercontent.com/file/792a351679c1c3e06abf5f5c98df63d6_tn',
+            review: 109.7,
+            products: 172,
+            timeJoin: 4,
+            followers: 375.2,
+            reponseRate: 100,
+            reponseTime:  'trong vài ngày'
+        },
+        imgUrl: [
+            'https://down-vn.img.susercontent.com/file/83cee48988434a92999870ccc304e21e',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgynz0qad2k2f8',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgynz0q0hovm65',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgynz0qad2pf38',
+            'https://down-vn.img.susercontent.com/file/294f47689bbc2c1aaeea60bc9cfbaf84',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgynz0q0dh6a64',
+        ],
+        description:'Xe ô tô điều khiển từ xa new 2023 pin sạc, ô tô điều khiển từ xa xoay 360 di chuyển 6 hướng,đồ chơi thông minh cho bé',
+        titleProduct: 'Xe ô tô điều khiển từ xa',
+        voucher: {
+            voucher10: false,
+            voucher20: false,
+            voucher30: false,
+            voucher50: false
+        },
+        models: [
+            {
+                typeID: 1,
+                typeName: 'Xanh cao cấp',
+                inventory: 46,
+                price: 300000,
+            },
+            {
+                typeID: 2,
+                typeName: 'Bạc',
+                inventory: 46,
+                price: 300000,
+            },
+            {
+                typeID: 3,
+                typeName: 'Đen cao cấp',
+                inventory: 46,
+                price: 300000,
+            }
+        ],
+        rate: 4.9,
+        sold: 199,
+        reviewNumber: 45,
+        like: 109, 
+    },
+    {
+        id: 31,
+        infoShop: {
+            shopId: 1,
+            shopName: '',
+            avatarShop: '',
+            review: 109.7,
+            products: 172,
+            timeJoin: 4,
+            followers: 375.2,
+            reponseRate: 100,
+            reponseTime:  'trong vài ngày'
+        },
+        imgUrl: [
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lglzh9igsxkjaf',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lglzh9ifplo358',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lglzh9ifr08j5d',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lglzh9iguc4z05',
+            'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lglzh9ifo73nbb',
+        ],
+        description:'Asahai Màn hình 27 inch 144HZ 1K không viền siêu rõ nét Màn hình làm mờ DC 24 inch giám sát bề mặt cong màn 32 inch 75',
+        titleProduct: 'Asahai Màn hình 27 inch',
+        voucher: {
+            voucher10: false,
+            voucher20: false,
+            voucher30: false,
+            voucher50: false
+        },
+        models: [
+            {
+                typeID: 1,
+                typeName: 'Đen',
+                inventory: 46,
+                price: 2995000,
+            }
+        ],
+        rate: 5,
+        sold: 4,
+        reviewNumber: 4,
+        like: 38, 
+    },
+    // {
+    //     id: 32,
+    //     infoShop: {
+    //         shopId: 1,
+    //         shopName: '',
+    //         avatarShop: '',
+    //         review: 109.7,
+    //         products: 172,
+    //         timeJoin: 4,
+    //         followers: 375.2,
+    //         reponseRate: 100,
+    //         reponseTime:  'trong vài ngày'
+    //     },
+    //     imgUrl: [
+    //         '',
+    //     ],
+    //     description:'',
+    //     titleProduct: '',
+    //     voucher: {
+    //         voucher10: false,
+    //         voucher20: false,
+    //         voucher30: false,
+    //         voucher50: false
+    //     },
+    //     models: [
+    //         {
+    //             typeID: 1,
+    //             typeName: 'Đen',
+    //             inventory: 46,
+    //             price: 300000,
+    //         }
+    //     ],
+    //     rate: 5,
+    //     sold: 10,
+    //     reviewNumber: 3,
+    //     like: 19, 
+    // },
+    // {
+    //     id: 33,
+    //     infoShop: {
+    //         shopId: 1,
+    //         shopName: '',
+    //         avatarShop: '',
+    //         review: 109.7,
+    //         products: 172,
+    //         timeJoin: 4,
+    //         followers: 375.2,
+    //         reponseRate: 100,
+    //         reponseTime:  'trong vài ngày'
+    //     },
+    //     imgUrl: [
+    //         '',
+    //     ],
+    //     description:'',
+    //     titleProduct: '',
+    //     voucher: {
+    //         voucher10: false,
+    //         voucher20: false,
+    //         voucher30: false,
+    //         voucher50: false
+    //     },
+    //     models: [
+    //         {
+    //             typeID: 1,
+    //             typeName: 'Đen',
+    //             inventory: 46,
+    //             price: 300000,
+    //         }
+    //     ],
+    //     rate: 5,
+    //     sold: 10,
+    //     reviewNumber: 3,
+    //     like: 19, 
+    // },
+    // {
+    //     id: 34,
+    //     infoShop: {
+    //         shopId: 1,
+    //         shopName: '',
+    //         avatarShop: '',
+    //         review: 109.7,
+    //         products: 172,
+    //         timeJoin: 4,
+    //         followers: 375.2,
+    //         reponseRate: 100,
+    //         reponseTime:  'trong vài ngày'
+    //     },
+    //     imgUrl: [
+    //         '',
+    //     ],
+    //     description:'',
+    //     titleProduct: '',
+    //     voucher: {
+    //         voucher10: false,
+    //         voucher20: false,
+    //         voucher30: false,
+    //         voucher50: false
+    //     },
+    //     models: [
+    //         {
+    //             typeID: 1,
+    //             typeName: 'Đen',
+    //             inventory: 46,
+    //             price: 300000,
+    //         }
+    //     ],
+    //     rate: 5,
+    //     sold: 10,
+    //     reviewNumber: 3,
+    //     like: 19, 
+    // },
+    // {
+    //     id: 35,
+    //     infoShop: {
+    //         shopId: 1,
+    //         shopName: '',
+    //         avatarShop: '',
+    //         review: 109.7,
+    //         products: 172,
+    //         timeJoin: 4,
+    //         followers: 375.2,
+    //         reponseRate: 100,
+    //         reponseTime:  'trong vài ngày'
+    //     },
+    //     imgUrl: [
+    //         '',
+    //     ],
+    //     description:'',
+    //     titleProduct: '',
+    //     voucher: {
+    //         voucher10: false,
+    //         voucher20: false,
+    //         voucher30: false,
+    //         voucher50: false
+    //     },
+    //     models: [
+    //         {
+    //             typeID: 1,
+    //             typeName: 'Đen',
+    //             inventory: 46,
+    //             price: 300000,
+    //         }
+    //     ],
+    //     rate: 5,
+    //     sold: 10,
+    //     reviewNumber: 3,
+    //     like: 19, 
+    // },
+    // {
+    //     id: 36,
+    //     infoShop: {
+    //         shopId: 1,
+    //         shopName: '',
+    //         avatarShop: '',
+    //         review: 109.7,
+    //         products: 172,
+    //         timeJoin: 4,
+    //         followers: 375.2,
+    //         reponseRate: 100,
+    //         reponseTime:  'trong vài ngày'
+    //     },
+    //     imgUrl: [
+    //         '',
+    //     ],
+    //     description:'',
+    //     titleProduct: '',
+    //     voucher: {
+    //         voucher10: false,
+    //         voucher20: false,
+    //         voucher30: false,
+    //         voucher50: false
+    //     },
+    //     models: [
+    //         {
+    //             typeID: 1,
+    //             typeName: 'Đen',
+    //             inventory: 46,
+    //             price: 300000,
+    //         }
+    //     ],
+    //     rate: 5,
+    //     sold: 10,
+    //     reviewNumber: 3,
+    //     like: 19, 
+    // },
+    // {
+    //     id: 37,
+    //     infoShop: {
+    //         shopId: 1,
+    //         shopName: '',
+    //         avatarShop: '',
+    //         review: 109.7,
+    //         products: 172,
+    //         timeJoin: 4,
+    //         followers: 375.2,
+    //         reponseRate: 100,
+    //         reponseTime:  'trong vài ngày'
+    //     },
+    //     imgUrl: [
+    //         '',
+    //     ],
+    //     description:'',
+    //     titleProduct: '',
+    //     voucher: {
+    //         voucher10: false,
+    //         voucher20: false,
+    //         voucher30: false,
+    //         voucher50: false
+    //     },
+    //     models: [
+    //         {
+    //             typeID: 1,
+    //             typeName: 'Đen',
+    //             inventory: 46,
+    //             price: 300000,
+    //         }
+    //     ],
+    //     rate: 5,
+    //     sold: 10,
+    //     reviewNumber: 3,
+    //     like: 19, 
+    // },
+    // {
+    //     id: 38,
+    //     infoShop: {
+    //         shopId: 1,
+    //         shopName: '',
+    //         avatarShop: '',
+    //         review: 109.7,
+    //         products: 172,
+    //         timeJoin: 4,
+    //         followers: 375.2,
+    //         reponseRate: 100,
+    //         reponseTime:  'trong vài ngày'
+    //     },
+    //     imgUrl: [
+    //         '',
+    //     ],
+    //     description:'',
+    //     titleProduct: '',
+    //     voucher: {
+    //         voucher10: false,
+    //         voucher20: false,
+    //         voucher30: false,
+    //         voucher50: false
+    //     },
+    //     models: [
+    //         {
+    //             typeID: 1,
+    //             typeName: 'Đen',
+    //             inventory: 46,
+    //             price: 300000,
+    //         }
+    //     ],
+    //     rate: 5,
+    //     sold: 10,
+    //     reviewNumber: 3,
+    //     like: 19, 
+    // },
+    // {
+    //     id: 39,
+    //     infoShop: {
+    //         shopId: 1,
+    //         shopName: '',
+    //         avatarShop: '',
+    //         review: 109.7,
+    //         products: 172,
+    //         timeJoin: 4,
+    //         followers: 375.2,
+    //         reponseRate: 100,
+    //         reponseTime:  'trong vài ngày'
+    //     },
+    //     imgUrl: [
+    //         '',
+    //     ],
+    //     description:'',
+    //     titleProduct: '',
+    //     voucher: {
+    //         voucher10: false,
+    //         voucher20: false,
+    //         voucher30: false,
+    //         voucher50: false
+    //     },
+    //     models: [
+    //         {
+    //             typeID: 1,
+    //             typeName: 'Đen',
+    //             inventory: 46,
+    //             price: 300000,
+    //         }
+    //     ],
+    //     rate: 5,
+    //     sold: 10,
+    //     reviewNumber: 3,
+    //     like: 19, 
+    // },
+    // {
+    //     id: 40,
+    //     infoShop: {
+    //         shopId: 1,
+    //         shopName: '',
+    //         avatarShop: '',
+    //         review: 109.7,
+    //         products: 172,
+    //         timeJoin: 4,
+    //         followers: 375.2,
+    //         reponseRate: 100,
+    //         reponseTime:  'trong vài ngày'
+    //     },
+    //     imgUrl: [
+    //         '',
+    //     ],
+    //     description:'',
+    //     titleProduct: '',
+    //     voucher: {
+    //         voucher10: false,
+    //         voucher20: false,
+    //         voucher30: false,
+    //         voucher50: false
+    //     },
+    //     models: [
+    //         {
+    //             typeID: 1,
+    //             typeName: 'Đen',
+    //             inventory: 46,
+    //             price: 300000,
+    //         }
+    //     ],
+    //     rate: 5,
+    //     sold: 10,
+    //     reviewNumber: 3,
+    //     like: 19, 
+    // },
 ]

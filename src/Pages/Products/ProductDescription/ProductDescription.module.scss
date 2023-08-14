@@ -19,7 +19,17 @@
 }
 
 .icon--review{
+    height: 18px;
     display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 2px;
+    transform: translateY(-0.125rem);
+    font-size: .75rem;
+    background-color: var(--primary-clr);
+    color: #fff;
+    padding: 0.1875rem 0.25rem;
 }
 
 .description__content{

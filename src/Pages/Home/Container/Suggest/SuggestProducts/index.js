@@ -27,9 +27,9 @@ function SuggestProducts({voucher = false}) {
                     <div className={cx('picture')}>
                       <img className={cx('image')} src={product.imgUrl[0]} alt={product.id}/>
                       {product.like > 300 && (
-                        <div className={cx('isProduct--logo')}>
+                      <div className={cx('isProduct--logo')}>
                         <div className={cx('wrapper__isProduct--text')}>
-                          <span className={cx('isProduct--text')}>Yêu thích{product.like > 2000 && <span>+</span>}</span>
+                          <span className={cx('isProduct--text')}>Yêu thích{product.like > 1000 && <span>+</span>}</span>
                         </div>
                       </div>
                       )}

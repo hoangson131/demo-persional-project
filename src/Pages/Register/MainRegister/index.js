@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
 import styles from "./MainRegister.module.scss";
 import { Link } from "react-router-dom";
+import { config } from "~/config";
 
 const cx = classNames.bind(styles);
 function MainRegister() {
@@ -49,7 +50,7 @@ function MainRegister() {
             </div>
             <div className={cx("register__fe")}>
               <div className={cx('fe--text')}>Bạn đã có tài khoản?</div>
-              <Link to={'/login'}><div className={cx('register')} >Đăng nhập</div></Link>
+              <Link to={config.login}><div className={cx('register')} >Đăng nhập</div></Link>
             </div>
           </div>
         </div>

@@ -298,15 +298,9 @@ export const IconNotication = () => {
   );
 };
 
-export const IconHelp = ({className}) => {
+export const IconHelp = ({ className }) => {
   return (
-    <svg
-
-      height="16"
-      viewBox="0 0 16 16"
-      width="16"
-      className={className}
-    >
+    <svg height="16" viewBox="0 0 16 16" width="16" className={className}>
       <g fill="none" fillRule="evenodd" transform="translate(1)">
         <circle cx="7" cy="8" r="7" stroke="currentColor"></circle>
         <path
@@ -317,6 +311,7 @@ export const IconHelp = ({className}) => {
     </svg>
   );
 };
+
 // export const IconVoucher = () => {
 //   return (
 //     <svg

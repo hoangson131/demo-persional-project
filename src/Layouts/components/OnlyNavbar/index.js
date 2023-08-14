@@ -1,36 +1,55 @@
 import classNames from "classnames/bind";
+import Tippy from "@tippyjs/react/headless";
+import { Wrapper as PopperWrapper } from '~/components/Popper'
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+import { faEarthAsia } from "@fortawesome/free-solid-svg-icons";
+import images from "~/assets/images";
 
 import styles from "./OnlyNavbar.module.scss";
-import { faEarthAsia } from "@fortawesome/free-solid-svg-icons";
-// import images from "~/assets/images";
-import Tippy from "@tippyjs/react/headless";
 import { IconArowDown, IconHelp, IconNotication } from "~/assets/icon";
+import { config } from "~/config";
 
 const cx = classNames.bind(styles);
 
 function OnlyNavbar({className}) {
-
+  const currentUser = false
   return (
     <div className={cx("wrapper", `${className}`)}>
       <div className={cx("container")}>
         <div className={cx("navbar__left")}>
           <ul className={cx("list__left")}>
             <li>Kênh Người Bán</li>
-            <li>Trở Thành Người bán Shopee</li>
+            <li>Trở thành Người bán Shopee</li>
             <Tippy
-              render={attrs => {
-                <div className={cx('box')} tabIndex="-1" {...attrs}>
-                  My tippy box
+              interactive
+              placement="bottom-start"
+              render={attrs => (
+                <div className={cx('popper--app')} tabIndex="-1" {...attrs}>
+                  <PopperWrapper >
+                    <div className={cx('popper--inner')}>
+                      <img className={cx('qr--image')} src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/d91264e165ed6facc6178994d5afae79.png" alt="qr"/>
+                      <div className={cx('list-app')}>
+                        <div className={cx('item--app')}>
+                          <img className={cx('img--item')} src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/39f189e19764dab688d3850742f13718.png" alt=""/>
+                        </div>
+                        <div className={cx('item--app')}>
+                          <img className={cx('img--item')} src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/f4f5426ce757aea491dce94201560583.png" alt=""/>
+                        </div>
+                        <div className={cx('item--app')}>
+                          <img className={cx('img--item')} src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/1ae215920a31f2fc75b00d4ee9ae8551.png" alt=""/>
+                        </div>
+                      </div>
+                    </div>    
+                  </PopperWrapper>
                 </div>
-              }}  
+              )}
             >
-              <li>Tải Ứng Dụng</li>
+              <li>Tải ứng dụng</li>
             </Tippy>
             <li>
-              Kết Nối
+              Kết nối
               <FontAwesomeIcon className={cx("icon")} icon={faFacebook} />
               <FontAwesomeIcon className={cx("icon")} icon={faInstagram} />
             </li>
@@ -38,24 +57,62 @@ function OnlyNavbar({className}) {
         </div>
         <div className={cx("navbar__right")}>
           <ul>
-            <Link to="/notification">
-              <li className={cx('notification')}>
-                <IconNotication className={cx("icon")} />
-                <span>Thông Báo</span>
-              </li>
-            </Link>
+            <Tippy
+              interactive
+              placement="bottom-end"
+              render={attrs => (
+                <div className={cx('notigication--popper')} tabIndex="-1" {...attrs}>
+                  <PopperWrapper >
+                    <div className={cx('popper__notication--inner')}>
+                      <div className={cx('content')}>
+                        <div className="img--outner">
+                          <img className={cx('image')} src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/99e561e3944805a023e87a81d4869600.png" alt=""/>
+                        </div>
+                        <p className={cx('note')}>Đăng nhập để xem Thông báo</p>
+                      </div>
+                      <div className={cx('btn--outner')}>
+                        <button className={cx('btn')}>Đăng ký</button>
+                        <button className={cx('btn')}>Đăng nhập</button>
+                      </div>
+                    </div>
+                  </PopperWrapper>
+                </div>
+              )}
+            >
+              <Link to="/notification">
+                <li className={cx('notification')}>
+                  <IconNotication className={cx("icon")} />
+                  <span>Thông Báo</span>
+                </li>
+              </Link>
+            </Tippy>
             <li className={cx('support')}>
               <IconHelp className={cx("icon")} />
               <span>Hỗ Trợ</span>
             </li>
-            <li className={cx('language')}>
-              <FontAwesomeIcon className={cx("icon")} icon={faEarthAsia} />
-              <span>Tiếng Việt</span>
-              <IconArowDown/>
-            </li>
-            <Link to={'/register'}><li className={cx('register')}>Đăng Ký</li></Link>
-            <Link to={'/login'}><li className={cx('login')}>Đăng Nhập</li></Link>
-            {/* <Link to='/profile'>
+            <Tippy
+              interactive
+              placement="bottom-end"
+              render={attrs => (
+                <div className={cx('popper--language')} tabIndex="-1" {...attrs}>
+                  <PopperWrapper >
+                    <div className={cx('language--list')}>
+                      <button className={cx('btn')}>Tiếng Việt</button>
+                      <button className={cx('btn')}>Tiếng Anh</button>
+                    </div>
+                  </PopperWrapper>
+                </div>
+              )}
+            >
+              <li className={cx('language')}>
+                <FontAwesomeIcon className={cx("icon")} icon={faEarthAsia} />
+                <span>Tiếng Việt</span>
+                <IconArowDown/>
+              </li>
+            </Tippy>
+
+            { currentUser ? (
+            <Link to='/profile'>
               <li>
                 <div className={cx("user")}>
                   <img
@@ -66,7 +123,14 @@ function OnlyNavbar({className}) {
                   <span className={cx("username")}>Username</span>
                 </div>
               </li>
-            </Link> */}
+            </Link>) : (
+              <>
+                <Link to={config.register}><li className={cx('register')}>Đăng Ký</li></Link>
+                <Link to={config.login}><li className={cx('login')}>Đăng Nhập</li></Link>
+              </>
+            )}
+            
+            
           </ul>
         </div>
       </div>

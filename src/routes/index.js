@@ -8,18 +8,19 @@ import NotFound from './notFound'
 import Products from '~/Pages/Products'
 import Login from '~/Pages/Login'
 import Register from '~/Pages/Register'
+import { config } from '~/config'
 
 
 const publicRoutes = [
-    {path: '/', component: Home},
-    {path: '/profile', component: Profile},
-    {path: '/notification', component: Notification},
-    {path: '/cart', component: Cart, layout: LayoutFootandNav},
-    {path: '/products/:id', component: Products, layout: DefaultLayout },
-    {path: '/login', component: Login, layout: OnlyFooterLayout},
-    {path: '/register', component: Register, layout: OnlyFooterLayout},
+    {path: config.home, component: Home},
+    {path: config.profile, component: Profile},
+    {path: config.notification, component: Notification},
+    {path: config.cart, component: Cart, layout: LayoutFootandNav},
+    {path: config.products, component: Products, layout: DefaultLayout },
+    {path: config.login, component: Login, layout: OnlyFooterLayout},
+    {path: config.register, component: Register, layout: OnlyFooterLayout},
 
-    {path: '/*', component: NotFound, layout:DefaultLayout},
+    {path: config.notFound, component: NotFound, layout:DefaultLayout},
 ]
 
 const privateRoutes = [

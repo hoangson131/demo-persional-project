@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { buyProduct } from "~/stores/cart/actions";
 import CustomProduct from "./components/CustomProduct";
 import { Link } from "react-router-dom";
+import { config } from "~/config";
 
 const cx = classNames.bind(styles)
 function ProductDescription({data}) {
@@ -26,7 +27,7 @@ function ProductDescription({data}) {
     return ( 
         <div className={cx('wrapper')}>
             <div className={cx('description')} >
-                <div className={cx('icon--review')}>logo</div>
+                {showData.like > 300 && <div className={cx('icon--review')}>Yêu Thích {showData.like > 1000 && <span>+</span>}</div>}
                 <span className={cx('description__content')}>{showData.description}</span>
             </div>
             <div className={cx('evalute--product')}>
@@ -63,7 +64,7 @@ function ProductDescription({data}) {
                     </div>
                 </div>
             </div>
-            <CustomProduct/>
+            <CustomProduct models={showData.models}/>
             <div className={cx('product--buy')}>
                 <div className={cx('wrapper__btns--buy')}>
                     <button className={cx('btn--product--cart')}>
@@ -72,7 +73,7 @@ function ProductDescription({data}) {
                             <div className={cx('text--medium', 'text__add--cart')} onClick={() => handleAddCart(showData.id, showData.models)}>Thêm Vào Giỏ Hàng</div>
                         </div>
                     </button>
-                    <button onClick={() => handleAddCart(showData.id, showData.models)} className={cx('text--medium', 'buy--now')} ><Link to={'/cart'}>Mua Ngay</Link></button>
+                    <button onClick={() => handleAddCart(showData.id, showData.models)} className={cx('text--medium', 'buy--now')} ><Link to={config.cart}>Mua Ngay</Link></button>
                 </div>
             </div>
             <div className={cx('ensuar--shopee')}>

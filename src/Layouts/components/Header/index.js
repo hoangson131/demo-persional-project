@@ -9,6 +9,7 @@ import OnlyNavbar from '../OnlyNavbar';
 import { selectorCart } from '~/stores/cart/selectors';
 import { useSelector } from 'react-redux';
 import { forwardRef } from 'react';
+import { config } from '~/config';
 
 const cx = classNames.bind(styles)
 
@@ -20,7 +21,7 @@ function Header(props,ref) {
     <div ref={ref} className={cx('wrapper')}>
         <OnlyNavbar className={cx('navbar')}/>
         <div className={cx('main__header')}>
-            <Link to='/' className={cx('box__logo--shopee')}>
+            <Link to={config.home} className={cx('box__logo--shopee')}>
                 <Logo    className={cx('logo--shoppe')} />
             </Link>
             <div className={cx('search__container')}>
@@ -34,7 +35,7 @@ function Header(props,ref) {
                 </div>
                 <div className={cx('list-search')}></div>
             </div>
-            <Link to="/cart" className={cx('box__logo--cart')}>
+            <Link to={config.cart} className={cx('box__logo--cart')}>
                 <CarIcon/>
                 {productsInCart.length > 0 ? <div className={cx('cart--products-amount')}>{productsInCart.length}</div> : <></>}
                 
