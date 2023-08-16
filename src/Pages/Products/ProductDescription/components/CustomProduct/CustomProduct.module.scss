@@ -134,7 +134,7 @@ input[type="text"] {
         background-color: #fff;
         font-size: 18px;
     }
- .typeProduct {
+ .btn--typeproduct {
         position: relative;
         display: flex;
         align-items: center;
@@ -149,6 +149,7 @@ input[type="text"] {
         border: 1px solid rgba(0,0,0,.09);
         background-color: #fff;
         overflow: hidden;
+        cursor: pointer;
     
         &:hover{
           color: var(--primary-clr);
@@ -156,7 +157,7 @@ input[type="text"] {
         }
       }
 
-.typeActive{
+.type--active{
     position: relative;
     color: var(--primary-clr);
     border-color: var(--primary-clr);

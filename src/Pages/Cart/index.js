@@ -2,15 +2,21 @@ import CartContainer from "./CartContainer";
 import HeaderCart from "./HeaderCart";
 import CartContainerProducts from "./CartContainerProducts";
 import ScrollTop from "~/components/ScrollTop";
+import { useSelector } from "react-redux";
+import { selectorCart } from "~/stores/cart/selectors";
+import NotProduct from "./NotProduct";
+
 
 function Cart() {
+    const productInCart = useSelector(selectorCart)
+
     return (
-        <div>
+        <>
             <ScrollTop/>
             <HeaderCart/>
-            <CartContainer/>
+            {productInCart.length > 0 ? <CartContainer /> : <NotProduct/>}
             <CartContainerProducts />
-        </div>
+        </>
     );
 }
 

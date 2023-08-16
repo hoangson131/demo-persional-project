@@ -8,18 +8,19 @@ import { buyProduct } from "~/stores/cart/actions";
 import CustomProduct from "./components/CustomProduct";
 import { Link } from "react-router-dom";
 import { config } from "~/config";
+import { useEffect, useRef } from "react";
 
 const cx = classNames.bind(styles)
 function ProductDescription({data}) {
+    const typeRef = useRef()
     const dispatch = useDispatch()
     const showData = data[0]
 
     //====Handle Click================================
-    const handleAddCart = (id,models) => {
-        dispatch(buyProduct({id,models}))
-        console.log(id);
+    const handleAddCart = (idProduct) => {
+        dispatch(buyProduct({...typeRef.current, idProduct: idProduct}))
     }
-
+ 
     const coverAmount = (number) => {
        return new Intl.NumberFormat("de-DE").format(number)
     }
@@ -64,16 +65,16 @@ function ProductDescription({data}) {
                     </div>
                 </div>
             </div>
-            <CustomProduct models={showData.models}/>
+            <CustomProduct models={showData.models} ref={typeRef}/>
             <div className={cx('product--buy')}>
                 <div className={cx('wrapper__btns--buy')}>
                     <button className={cx('btn--product--cart')}>
                         <div className={cx('content__btn--addCart')}>
                             <FontAwesomeIcon icon={faCartPlus}/>
-                            <div className={cx('text--medium', 'text__add--cart')} onClick={() => handleAddCart(showData.id, showData.models)}>Thêm Vào Giỏ Hàng</div>
+                            <div className={cx('text--medium', 'text__add--cart')} onClick={() => handleAddCart(showData.id)}>Thêm Vào Giỏ Hàng</div>
                         </div>
                     </button>
-                    <button onClick={() => handleAddCart(showData.id, showData.models)} className={cx('text--medium', 'buy--now')} ><Link to={config.cart}>Mua Ngay</Link></button>
+                    <button onClick={() => handleAddCart(showData.id)} className={cx('text--medium', 'buy--now')} ><Link to={config.cart}>Mua Ngay</Link></button>
                 </div>
             </div>
             <div className={cx('ensuar--shopee')}>

@@ -1,35 +1,53 @@
 import classNames from "classnames/bind";
 import styles from "./ProductsCart.module.scss";
-import { useSelector } from "react-redux";
 import { productsCartSelector, selectorCart } from "~/stores/cart/selectors";
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { decreaseProduct, increaseProduct, removeProduct, updateProduct } from "~/stores/cart/actions";
 
 const cx = classNames.bind(styles);
 
 function ProductCart() {
-    const [amount, setAmount] = useState(1)
-
+  const dispatch = useDispatch()
+  const infoProductSelector = useSelector(selectorCart);
+  console.log(infoProductSelector);
+  
   const infoProductsCart = useSelector(productsCartSelector);
   console.log(infoProductsCart);
 
-  const infoProductsShow = useSelector(selectorCart);
-  console.log(infoProductsShow);
+
+
   //======Handle number================================
   const coverAmount = (number) => {
     return new Intl.NumberFormat("de-DE").format(number)
   }
 
-
   //=====Handle Onclick================================
-  const handedDecrease = () => {
-    if(amount - 1 > 0) {
-        setAmount(amount - 1)
-    }
-    return
+  const handedDecrease = (id) => {
+    dispatch(decreaseProduct({id}))
+    // if(amount - 1 > 0) {
+    //   setAmount(amount - 1)
+    //   dispatch(updateProduct({id, amount}))
+    // }
+    // return
   }
-  const handeIncrease = () => {
-    setAmount(amount + 1)
+  const handeIncrease = (id) => {
+    // setAmount(amount + 1)
+    dispatch(increaseProduct({id}))
+
+  }
+  const handleRemoveProduct = (id) => {
+    dispatch(removeProduct(id))
+  }
+
+  const filterValueofId = (id) => {
+    let productId = [id]
+    return infoProductSelector.filter(prod => productId.includes(prod.idProduct)); 
+  }
+  const handleUpdateProduct = (id, value) => {
+    console.log(id, value);
+    dispatch(updateProduct({id, value}))
   }
 
   return (
@@ -70,27 +88,27 @@ function ProductCart() {
                 <div className={cx("common--text", "box--item4")}>
                   <div className={cx("price--cost")}>
                     <span>₫</span>
-                    {coverAmount(product.models[0].price)}
+                    {coverAmount(filterValueofId(product.id)[0].price)}
                   </div>
                   <div className={cx("price--beforeVoucher")}>
                     <span>₫</span>
-                    {coverAmount(product.models[0].price)}
+                    {coverAmount(filterValueofId(product.id)[0].price)}   
                   </div>
                 </div>
                 <div className={cx("common--text", "box--item5", "quantity")}>
                   <div className={cx("number-input")}>
-                    <button className={cx("btn")} onClick={() => handedDecrease()}>&#8722;</button>
-                    <input type="number" value={amount} onChange={e => {setAmount(Number(e.target.value))}}/>
-                    <button className={cx("btn")} onClick={() => handeIncrease()}>&#43;</button>
+                    <button className={cx("btn")} onClick={()=>{handedDecrease(product.id)}}>&#8722;</button>
+                    <input type="number" value={filterValueofId(product.id)[0].quanlity} onChange={(e) => handleUpdateProduct(product.id,e.target.value)}/>
+                    <button className={cx("btn")} onClick={()=> {handeIncrease(product.id)}}>&#43;</button>
                   </div>
                 </div>
                 <div className={cx("common--text", "box--item6")}>
                   <span>₫</span>
-                  {coverAmount(product.models[0].price) * amount}
+                  {coverAmount((filterValueofId(product.id)[0].price) * filterValueofId(product.id)[0].quanlity)}
                 </div>
                 <div className={cx("common--text", "box--item7")}>
                   <div className={cx("operation")}>
-                    <button className={cx()}>Xóa</button>
+                    <button className={cx()} onClick={() => handleRemoveProduct(product.id)} >Xóa</button>
                     <button className={cx("find--product")}>
                       <span>Tìm sản phẩm tương tự</span>
                       <div>&#9660;</div>

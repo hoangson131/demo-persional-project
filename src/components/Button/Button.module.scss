@@ -35,7 +35,7 @@
     &:hover{
       background-color: #00000052;
     }
-  }
+}
 
   .typeProduct {
     position: relative;
@@ -87,15 +87,6 @@
     }
   }
 
-  .disabled{
-    opacity: 0.5;
-    cursor: not-allowed;
-  
-    &:hover{
-      border: 1px solid rgba(0,0,0,.09);
-      color: rgba(0,0,0,.8); 
-    }
-  }
 .typeactive{
     position: relative;
     color: var(--primary-clr);
@@ -121,5 +112,15 @@
       z-index: 1;
       width: 8px;
       height: 8px;
+    }
+  }
+
+  .disabled {
+    opacity: 0.5 ; 
+    cursor: not-allowed !important;
+  
+    &:hover{
+      border: 1px solid rgba(0,0,0,.09)!important;
+      color: rgba(0,0,0,.8) !important; 
     }
   }

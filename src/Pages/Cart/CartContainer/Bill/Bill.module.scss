@@ -1,0 +1,205 @@
+.wrapper{
+    margin-top: 0.75rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    bottom: 0;
+    font-size: 16px;
+    z-index: 2;
+    border-radius: 2px;
+    box-shadow: 0 20px 20px 30px rgba(0, 0, 0, 0.04);
+}
+
+.voucher--outner{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px dashed #e4e4e4;
+}
+
+.voucher--inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    width: 515px;
+}
+
+.voucher--content{
+    display: flex;
+}
+
+.voucher--title{
+    margin-left: 5px;
+    color: #222;;
+}
+
+.coin--ouner{
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    opacity: 0.5;
+
+}
+
+.btn--voucher{
+    margin-right: 30px;
+    color: #05a;
+}
+
+.coin--check{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 12px 16px 20px;
+    height: 50px;
+}
+
+.input--checkcoin{
+    height: 17px;
+    width: 17px;
+
+    input[type="checkboxx"]{
+        background-color: #e7e7e7;
+
+    }
+}
+
+.coin--main{
+    display: flex;
+    align-items: center;
+    width: 325px;
+    height: 18px;
+}
+
+.coin--text{
+    padding-left: 8px;
+}
+
+.coin--cover{
+    display: flex;
+    justify-content: flex-end;
+    width: 190px;
+    padding-right: 30px;
+}
+
+.bill--total{
+    border-top: 1px dashed #e4e4e4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 12px 0;
+}
+
+.product--selector{
+    display: flex;
+}
+
+.text{
+    font-size: 16px;
+    padding: 1px 6px;
+}
+
+.btn{
+    margin: 0 8px;
+}
+
+.save--favorite{
+    color: var(--primary-clr);
+    margin: 0 8px;
+    max-width: 168px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.checkbox--all{
+    width: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkinput--all{
+    width: 18px;
+    height: 18px;
+
+    &:checked{
+        background-color: var(--primary-clr);
+    }
+}
+
+.total--products{
+}
+
+.total--ounner{
+    display: flex;
+    align-items: center;
+}
+
+.total--inner{
+    
+    display: flex;
+}
+
+.total--content{
+    display: flex;
+    position: relative;
+    align-items: center;
+    
+}   
+
+.total--title{
+    color: #222;
+    line-height: 19px;
+}
+
+.total--number{
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    font-size: 24px;
+    line-height: 28px;
+    margin-left: 5px;
+    color: #ee4d2d;
+    gap: 1px;
+
+    span{
+        position: relative;
+        height: inherit;
+        top: -3px;
+        font-size: 16px;
+    }
+        
+
+    
+}
+
+.save--content{
+    display: flex;
+    
+}
+
+.save--text{
+
+}
+
+.save--number{
+
+}
+
+.btn--buy{
+    width: 210px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-clr);
+    color: #fff;
+    padding: 13px 36px;
+    margin: 0 22px 0 15px;
+    border-radius: 2px;
+}
