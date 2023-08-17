@@ -31,7 +31,7 @@ export const products = [
         models: [
             {
                 typeID: 1,
-                typeName:   'Đen',
+                typeName: 'Đen',
                 inventory: 962,
                 price: 274000,
             },
