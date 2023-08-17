@@ -46,7 +46,6 @@ function ProductCart() {
     return infoProductSelector.filter(prod => productId.includes(prod.idProduct)); 
   }
   const handleUpdateProduct = (id, value) => {
-    console.log(id, value);
     dispatch(updateProduct({id, value}))
   }
 
@@ -98,7 +97,7 @@ function ProductCart() {
                 <div className={cx("common--text", "box--item5", "quantity")}>
                   <div className={cx("number-input")}>
                     <button className={cx("btn")} onClick={()=>{handedDecrease(product.id)}}>&#8722;</button>
-                    <input type="number" value={filterValueofId(product.id)[0].quanlity} onChange={(e) => handleUpdateProduct(product.id,e.target.value)}/>
+                    <input type="number" value={filterValueofId(product.id)[0].quanlity} onChange={(e) => handleUpdateProduct(product.id,Number(e.target.value))}/>
                     <button className={cx("btn")} onClick={()=> {handeIncrease(product.id)}}>&#43;</button>
                   </div>
                 </div>
