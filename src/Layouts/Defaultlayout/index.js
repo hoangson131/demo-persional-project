@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import styles from "./DefaultLayout.module.scss";
 
 import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 const cx = classNames.bind(styles);
 
 function DefaultLayout({ children }) {
