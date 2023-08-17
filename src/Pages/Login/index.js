@@ -1,4 +1,4 @@
-import Footer from "~/components/Footer";
+import Footer from "~/Layouts/components/Footer";
 import HeaderLogin from "./HeaderLogin";
 import MainLogin from "./MainLogin";
 
