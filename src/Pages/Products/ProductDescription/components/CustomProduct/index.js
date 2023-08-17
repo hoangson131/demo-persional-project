@@ -6,34 +6,21 @@ import {
   faPlaneDeparture,
 } from "@fortawesome/free-solid-svg-icons";
 import { IconShipping } from "~/assets/icon";
-import { Fragment, forwardRef, useState, useRef } from "react";
-import Button from "~/components/Button";
+import { useRef, useState } from "react";
 // import Button from "~/components/Button";
 
 const cx = classNames.bind(styles);
 
-function CustomProduct({ models }, ref) {
+function CustomProduct({ models }) {
+  const btnTypeRef = useRef();
   const [amount, setAmount] = useState(1);
-  // // selector types and quanlity products
-  const idSelector = useRef(null)
-  const priceType = useRef(null)
-  
-  ref.current = { idType: idSelector.current, quanlity: amount, price: priceType.current}
-  
-
-  
-  const [typeProducts, setTypeProducts] = useState({
-    activeObject: null,
-    models,
-  })
-  
+  console.log(models);
   const inventory = models.reduce((total, item) => {
     return total + item.inventory;
   }, 0);
-  
+
   const [totalInventory, setTotalInventory] = useState(inventory);
 
-  
   //=====Handle Click change amount======
 
   const handleDecreament = () => {
@@ -53,31 +40,16 @@ function CustomProduct({ models }, ref) {
     // }
     // return
   };
-  
-  const toogleActive = (index) => {
-    setTypeProducts({...typeProducts, activeObject:typeProducts.models[index]})
-  }
 
-  const toogleActiveStyles = (index) => {
-    if(typeProducts.models[index] === typeProducts.activeObject) {
-      return cx("btn--typeproduct", "type--active")
-    } else {
-      return cx("btn--typeproduct")
-    }
-  }
-
-  const handleSelectorType = (index) => {
-    const selectorId = [index + 1];
+  const handleSelectorType = (typeId) => {
+    const selectorId = [typeId];
     const typeSelector = models.filter((model) => {
       return selectorId.includes(model.typeID);
     });
     setTotalInventory(typeSelector[0].inventory);
-    toogleActive(index);
-    idSelector.current = index;
-    priceType.current = typeSelector[0].price;
+    btnTypeRef.current.classList.toggle(cx('typeActive')) 
+    console.log(btnTypeRef.current);
   };
-
-  
 
   return (
     <div className={cx("wrapper")}>
@@ -119,24 +91,25 @@ function CustomProduct({ models }, ref) {
         </div>
       </div>
       <div className={cx("wrapper--products--model")}>
-        {models.length > 1 ? <div className={cx("wrapper--productType")}>
+        <div className={cx("wrapper--productType")}>
           <div className={cx("text--shared", "box--title")}>Loại</div>
           <div className={cx("wrapper__btns--type")}>
-            {typeProducts.models.map((model,index) => {
+            {models.map((model) => {
               return (
-                <Button
-                  key={index}
-                  className={(toogleActiveStyles(index))}
+                <button
+                  key={model.typeID}
+                  ref={btnTypeRef}
+                  className={cx('typeProduct')}
                   // typeActive={btnTypeRef.current}
                   disabled={model.inventory === 0}
-                  onClick={() => handleSelectorType(index)}
+                  onClick={() => handleSelectorType(model.typeID)}
                 >
                   {model.typeName}
-                </Button>
+                </button>
               );
             })}
           </div>
-        </div> : <Fragment/>}
+        </div>
         <div className={cx("wrapper--quantity")}>
           <div className={cx("text--shared", "box--title")}>Số Lượng</div>
           <div className={cx("quantity--content")}>
@@ -165,4 +138,4 @@ function CustomProduct({ models }, ref) {
   );
 }
 
-export default forwardRef(CustomProduct);
+export default CustomProduct;

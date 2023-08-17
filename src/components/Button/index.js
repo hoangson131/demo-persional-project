@@ -35,8 +35,8 @@ const Button = forwardRef(function Button({
 
     if (disabled) {
         Object.keys(props).forEach( key => {
-            if (key.startsWith('on') && typeof props[key] === 'function') {
-                return delete props[key];
+            if (key.startsWith('on') && props[key] === 'function') {
+                delete props[key];
             }
         })
     }
@@ -60,7 +60,7 @@ const Button = forwardRef(function Button({
     })
     
     return ( 
-        <Comp ref={ref} {...props} className={classes} >
+        <Comp ref={ref} className={classes} {...props}>
             {leftIcon && <span className={cx('leftIcon')}>{leftIcon}</span>}
             {children && <span className={cx('title')}>{children}</span>}
             {rightIcon && <span className={cx('rightIcon')}>{rightIcon}</span>}

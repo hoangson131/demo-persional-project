@@ -7,6 +7,7 @@ import styles from './Products.module.scss'
 import ProductDescription from "./ProductDescription";
 import { selectorProducts } from "~/stores/cart/selectors";
 
+
 const cx = classNames.bind(styles)
 function Products() {
     const productsAll = useSelector(selectorProducts)
@@ -17,6 +18,8 @@ function Products() {
         return iD.includes(product.id)
     })
     
+
+
     return ( 
         <div className={cx('wrapper')} >
             <div className={cx('wrapper__products--pictures')}>

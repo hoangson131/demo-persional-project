@@ -7,7 +7,7 @@ export const productsCartSelector = createSelector(
     selectorProducts,
     selectorCart,
     (listProduct, productsCart) => {
-        const listIdProductCart = productsCart.map(product => product.idProduct)
+        const listIdProductCart = productsCart.map(product => product.id)
         return listProduct.filter(product => listIdProductCart.includes(product.id))
     }
 )
