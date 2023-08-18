@@ -19,7 +19,6 @@ const publicRoutes = [
     {path: config.products, component: Products, layout: DefaultLayout },
     {path: config.login, component: Login, layout: OnlyFooterLayout},
     {path: config.register, component: Register, layout: OnlyFooterLayout},
-
     {path: config.notFound, component: NotFound, layout:DefaultLayout},
 ]
 
