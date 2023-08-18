@@ -6,6 +6,8 @@ import {
     decreaseProduct,
     increaseProduct,
     removeProduct,
+    toggleCheckedAll,
+    toggleCheckedProduct,
     updateProduct
  } from "./actions";
 import { products as allProducts } from "~/allProduct"; 
@@ -22,6 +24,8 @@ const productsReducer = createReducer(initialState, (builder) => {
     .addCase(decreaseProduct, actions.decreaseProduct)
     .addCase(removeProduct, actions.removeProduct)
     .addCase(updateProduct, actions.updateProduct)
+    .addCase(toggleCheckedProduct, actions.toggleCheckedProduct)
+    .addCase(toggleCheckedAll, actions.toggleCheckedAll)
     .addDefaultCase(state => state)
 })
 
