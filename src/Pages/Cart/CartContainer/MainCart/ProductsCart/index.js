@@ -4,17 +4,15 @@ import { productsCartSelector, selectorCart } from "~/stores/cart/selectors";
 // import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { decreaseProduct, increaseProduct, removeProduct, updateProduct } from "~/stores/cart/actions";
+import { decreaseProduct, increaseProduct, removeProduct, toggleCheckedProduct, updateProduct } from "~/stores/cart/actions";
 
 const cx = classNames.bind(styles);
 
 function ProductCart() {
   const dispatch = useDispatch()
   const infoProductSelector = useSelector(selectorCart);
-  console.log(infoProductSelector);
   
   const infoProductsCart = useSelector(productsCartSelector);
-  console.log(infoProductsCart);
 
 
 
@@ -45,6 +43,11 @@ function ProductCart() {
     let productId = [id]
     return infoProductSelector.filter(prod => productId.includes(prod.idProduct)); 
   }
+
+  const handleCheckProduct = (id) => {
+    dispatch(toggleCheckedProduct(id))
+  }
+
   const handleUpdateProduct = (id, value) => {
     dispatch(updateProduct({id, value}))
   }
@@ -53,7 +56,7 @@ function ProductCart() {
     <div className={cx("wrapper__product--list")}>
       {infoProductsCart.map((product) => {
         return (
-          <div key={product.id}>
+          <div key={product.id} className={cx('wrapper__product--item')}>
             <div className={cx("box--item1", "shop--name")}>
               <input type="checkbox" />
               <div className={cx("common--text", "name")}>{product.infoShop.shopName}</div>
@@ -62,7 +65,7 @@ function ProductCart() {
               <div className={cx("voucher__shop")}>voucher Combo</div>
               <div className={cx("product--item")}>
                 <div className={cx("checkbox", "box--item1")}>
-                  <input type="checkbox" />
+                  <input type="checkbox" checked={filterValueofId(product.id)[0].checked} onClick={() => handleCheckProduct(product.id)}/>
                 </div>
                 <div className={cx("common--text", "box--item2")}>
                   <Link to={`/products/${product.id}`}>
@@ -107,7 +110,7 @@ function ProductCart() {
                 </div>
                 <div className={cx("common--text", "box--item7")}>
                   <div className={cx("operation")}>
-                    <button className={cx()} onClick={() => handleRemoveProduct(product.id)} >Xóa</button>
+                    <button className={cx('btn--remove')} onClick={() => handleRemoveProduct(product.id)} >Xóa</button>
                     <button className={cx("find--product")}>
                       <span>Tìm sản phẩm tương tự</span>
                       <div>&#9660;</div>

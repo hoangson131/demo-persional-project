@@ -17,8 +17,9 @@ export const productsCartSelector = createSelector(
 export const totalPriceCart = createSelector(
     selectorCart,
     products => {
-        products.reduce((totalPrice,product) => {
-            return totalPrice + (product.quantity * product.price) * product.voucher
+        let productCheck = products.filter(product => product.checked === true)
+        return productCheck.reduce((sum, product) => {
+            return sum += product.price * product.quanlity
         },0)
     }
 )

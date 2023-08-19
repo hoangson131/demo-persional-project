@@ -1,11 +1,15 @@
 .wrapper__product--list{
     width: inherit;
     display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    
+    flex-direction: column;    
 }
 
+.wrapper__product--item{
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    border-radius: 0.125rem;
+}
 //common point
 .common--text{
     font-size: 14px;
@@ -193,6 +197,17 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    button{
+        cursor: pointer;
+    }
+}
+
+.btn--remove{
+
+    &:hover{
+        color: var(--primary-clr);
+    }
 }
 
 .find--product{

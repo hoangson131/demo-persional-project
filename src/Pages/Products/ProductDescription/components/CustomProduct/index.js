@@ -18,7 +18,7 @@ function CustomProduct({ models }, ref) {
   const idSelector = useRef(null)
   const priceType = useRef(null)
   
-  ref.current = { idType: idSelector.current, quanlity: amount, price: priceType.current}
+  ref.current = { idType: idSelector.current, quanlity: amount, price: priceType.current, checked: false}
   
 
   

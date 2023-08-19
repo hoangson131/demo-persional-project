@@ -1,7 +1,6 @@
 import CartContainer from "./CartContainer";
 import HeaderCart from "./HeaderCart";
 import CartContainerProducts from "./CartContainerProducts";
-import ScrollTop from "~/components/ScrollTop";
 import { useSelector } from "react-redux";
 import { selectorCart } from "~/stores/cart/selectors";
 import NotProduct from "./NotProduct";
@@ -12,7 +11,6 @@ function Cart() {
 
     return (
         <>
-            <ScrollTop/>
             <HeaderCart/>
             {productInCart.length > 0 ? <CartContainer /> : <NotProduct/>}
             <CartContainerProducts />

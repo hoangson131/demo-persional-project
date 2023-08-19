@@ -1,24 +1,25 @@
-import classNames from 'classnames/bind'
+import classNames from "classnames/bind";
 
 import MainCart from "./MainCart";
-import styles from './CartContainer.module.scss'
-import Bill from './Bill';
+import styles from "./CartContainer.module.scss";
+import Bill from "./Bill";
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
 function CartContainer() {
-    return ( 
-        <div className={cx('wrapper')}>
-            <div>
-                <div className={cx('tip')} >
-                    <div className={cx('icon')}></div>
-                    <div className={cx('text')}>Nhấn vào mục Mã giảm giá ở cuối trang để hưởng miễn phí vận chuyển bạn nhé!</div>
-                </div>
-                <MainCart/>
-            </div>
-            <Bill/>
+  return (
+    <div className={cx("wrapper")}>
+      <div className={cx("tip")}>
+        <div className={cx("icon")}></div>
+        <div className={cx("text")}>
+          Nhấn vào mục Mã giảm giá ở cuối trang để hưởng miễn phí vận chuyển bạn
+          nhé!
         </div>
-     );
+      </div>
+      <MainCart />
+      <Bill />
+    </div>
+  );
 }
 
 export default CartContainer;
