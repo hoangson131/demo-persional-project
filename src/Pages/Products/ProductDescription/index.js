@@ -16,9 +16,18 @@ function ProductDescription({data}) {
     const dispatch = useDispatch()
     const showData = data[0]
 
+    useEffect( () => {
+        console.log(typeRef.current);
+    },[])
+
     //====Handle Click================================
     const handleAddCart = (idProduct) => {
-        dispatch(buyProduct({...typeRef.current, idProduct: idProduct}))
+        if(typeRef.current.idType === null) {
+            console.warn("Please select a product")
+        } else {
+            console.log("idType:",typeRef.current.idType);
+            dispatch(buyProduct({...typeRef.current, idProduct: idProduct}))
+        }
     }
  
     const coverAmount = (number) => {

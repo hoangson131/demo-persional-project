@@ -28,7 +28,7 @@
     transform: translateY(-0.125rem);
     font-size: .75rem;
     background-color: var(--primary-clr);
-    color: #fff;
+    color: var(--white--clr);
     padding: 0.1875rem 0.25rem;
 }
 
@@ -126,7 +126,7 @@
     background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/4323ad4dc2b3c72d0474d51f20fb83e8.jpg');
     align-items: center;
     padding: 0 10px;
-    color: #fff;
+    color: var(--white--clr);
     font-size: 14px;
     height: 36px;
 }
@@ -134,7 +134,7 @@
 .logo--flashsale{
     width: 122px;
     height: 21px;
-    color: #fff;
+    color: var(--white--clr);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -192,7 +192,7 @@
     display: flex;
     align-items: center;
     font-size: 12px;
-    color: #fff;
+    color: var(--white--clr);
     text-transform: uppercase;
     background: var(--primary-clr);
     border-radius: 2px;
@@ -218,7 +218,7 @@
 
 .btn--product--cart{
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.03);
-    padding: 0 20px;
+    padding: 15px 20px;
     border: 1px solid var(--primary-clr);
     background-color: #ff57221a;
     color: var(--primary-clr);
@@ -240,9 +240,9 @@
 }
 
 .buy--now{
-    padding: 0 20px;
+    padding: 15px 20px;
     background-color: var(--primary-clr);
-    color: #fff;
+    color: var(--white--clr);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.09);
     border-radius: 2px;
     cursor: pointer;
@@ -252,7 +252,7 @@
     }
 
     a {
-        color: #fff;
+        color: var(--white--clr);
     }
 }
 

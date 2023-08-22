@@ -4,7 +4,7 @@ flex-direction: column;
 width: 1200px;
 height: 308px;
 margin-top: 20px;
-background-color: #fff;
+background-color: var(--white--clr);
 }
 
 .box_title{
@@ -43,7 +43,7 @@ background-color: #fff;
 }
 
 .title{
-    color: #fff;
+    color: var(--white--clr);
     background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/fb1088de81e42c4e538967ec12cb5caa.png');
     object-fit: cover;
     background-size: contain;

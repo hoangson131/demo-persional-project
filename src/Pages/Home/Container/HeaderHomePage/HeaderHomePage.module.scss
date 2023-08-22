@@ -1,7 +1,7 @@
 .wrapper {
   width: 1200px;
   margin: 20px 0 0;
-  background-color: #fff;
+  background-color: var(--white--clr);
   box-sizing: border-box;
   // overflow: hidden;
 }
@@ -24,9 +24,8 @@
   align-items: center;
 
   &:hover .btn{
-    width: 35px;
-    height: 35px;
-    font-size: 18px;
+    font-size: calc(var(--size--btn--list)/2);
+    --size--btn--list:40px;
   }
 }
 .category__list {
@@ -80,17 +79,20 @@
 
 
 .btn{
+  width: var(--size--btn--list);
+  height: var(--size--btn--list);
   position: absolute;
+  transition: 0.2s;
   z-index: 9;
 }
 
 .prev{
   display: none;
-  left: calc(var(--button--width)/ -2);
+  left: calc(var(--size--btn--list)/ -2);
 }
 
 .next{
-  right: calc(var(--button--width)/ -2);
+  right: calc(var(--size--btn--list)/ -2);
 }
 
 // .category__list:hover .btn {

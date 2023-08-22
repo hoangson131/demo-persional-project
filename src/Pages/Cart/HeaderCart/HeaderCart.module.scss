@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #fff;
+  background-color: var(--white--clr);
 }
 
 .container__cart--header {
@@ -17,8 +17,7 @@
 .cart__header--logo {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 0 0 0 18px;
+  padding: 8px 0 0 18px;
 }
 
 .box--logo {
@@ -32,10 +31,17 @@
 }
 
 .page--name {
-  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  
+  padding-left: 0.9375rem;
+  height: 30px;
   position: relative;
+  top: 3px;
+  color: var(--primary-clr);
 
-  border-left: 1px solid #ee4d2d;
+  border-left: 1px solid var(--primary-clr);
   &::after {
     content: "";
   }
@@ -45,7 +51,7 @@
   display: flex;
   align-items: center;
   width: 621px;
-  border: 2px solid #ee4d2d;
+  border: 2px solid var(--primary-clr);
   border-radius: 2px;
 }
 
@@ -64,5 +70,5 @@
   width: 80px;
   height: 36px;
   padding: 0 15px;
-  background-color: #ee4d2d;
+  background-color: var(--primary-clr);
 }
