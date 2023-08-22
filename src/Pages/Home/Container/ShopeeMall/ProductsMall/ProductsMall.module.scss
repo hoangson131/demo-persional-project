@@ -1,19 +1,21 @@
-:root {
-    --button--width: 25px;
-    --button--height: 25px;
-}
+
 
 .wrapper{
     display: flex;
     position: relative;
     flex-wrap: wrap;
     align-items: center;
+    &:hover .btn{    
+        --size--btn--list:40px;
+        font-size: 20px;
+    }
 }
 
 .company__wapper--list{
     height: 463px;
     overflow: hidden;
     width: 800px;
+    
     
 }
 
@@ -25,13 +27,7 @@
     max-height: 480px;
     transition: 1s;
 
-    :hover {    
-        .next{
-            --button--width: 40px;
-            --button--height: 40px;
-
-        }  
-    }
+    
     
     
 }
@@ -74,17 +70,16 @@
 .btn{
     display: flex;
     position: absolute;
-    width: var(--button--width);
-    height: var(--button--height);
-    
-    
+    width: var(--size--btn--list);
+    height: var(--size--btn--list);
+ 
 } 
 
 .prev{
     display: none;
-    left: calc(var(--button--width)/ -2);
+    left: calc(var(--size--btn--list)/ -2);
 
 } 
 .next{
-    right: calc(var(--button--width)/ -2);
+    right: calc(var(--size--btn--list)/ -2);
 } 

@@ -1,7 +1,7 @@
 .wrapper{
     border-radius: 50%;
     display: flex;
-    background-color: #fff;
+    background-color: var(--white--clr);
     justify-content: center;
     align-items: center;
     box-shadow: 0 1px 12px 0 rgba(0,0,0,.12);
@@ -30,7 +30,7 @@
     background-color: #0000002e;
     border-radius: 3px;
     font-size: 25px;
-    color: #fff;
+    color: var(--white--clr);
 
     &:hover{
       background-color: #00000052;
@@ -50,7 +50,7 @@
     color: rgba(0,0,0,.8); 
     border-radius: 2px;
     border: 1px solid rgba(0,0,0,.09);
-    background-color: #fff;
+    background-color: var(--white--clr);
     overflow: hidden;
 
     &:hover{
@@ -80,7 +80,7 @@
       position: absolute;
       right: 0;
       bottom: 5px;
-      fill: #fff;
+      fill: var(--white--clr);
       z-index: 1;
       width: 8px;
       height: 8px;
@@ -108,7 +108,7 @@
       position: absolute;
       right: 0;
       bottom: 5px;
-      fill: #fff;
+      fill: var(--white--clr);
       z-index: 1;
       width: 8px;
       height: 8px;

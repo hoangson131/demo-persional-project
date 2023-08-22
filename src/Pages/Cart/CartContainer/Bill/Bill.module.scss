@@ -1,6 +1,6 @@
 .wrapper{
     margin-top: 0.75rem;
-    background-color: #fff;
+    background-color: var(--white--clr);
     display: flex;
     flex-direction: column;
     position: sticky;
@@ -198,7 +198,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--primary-clr);
-    color: #fff;
+    color: var(--white--clr);
     padding: 13px 36px;
     margin: 0 22px 0 15px;
     border-radius: 2px;

@@ -3,14 +3,14 @@
     max-width: 1200px;
     height: 648px;
     display: flex;
-    background-color: #fff;
+    background-color: var(--white--clr);
 }
 
 .wrapper__products--pictures{
     width: 480px;
     height: 100%;
     padding: 15px;
-    background-color: #fff;
+    background-color: var(--white--clr);
 }
 
 .wrapper__products--description{

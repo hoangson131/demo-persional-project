@@ -6,7 +6,7 @@ import {
   faPlaneDeparture,
 } from "@fortawesome/free-solid-svg-icons";
 import { IconShipping } from "~/assets/icon";
-import { Fragment, forwardRef, useState, useRef } from "react";
+import { Fragment, forwardRef, useState, useRef, useEffect } from "react";
 import Button from "~/components/Button";
 // import Button from "~/components/Button";
 
@@ -14,24 +14,33 @@ const cx = classNames.bind(styles);
 
 function CustomProduct({ models }, ref) {
   const [amount, setAmount] = useState(1);
-  // // selector types and quanlity products
-  const idSelector = useRef(null)
-  const priceType = useRef(null)
-  
-  ref.current = { idType: idSelector.current, quanlity: amount, price: priceType.current, checked: false}
-  
+  const btnTypeRef = useRef()
 
-  
-  const [typeProducts, setTypeProducts] = useState({
-    activeObject: null,
-    models,
-  })
-  
   const inventory = models.reduce((total, item) => {
     return total + item.inventory;
   }, 0);
   
   const [totalInventory, setTotalInventory] = useState(inventory);
+
+  // // selector types and quanlity products
+  const idSelector = useRef(null)
+  const priceType = useRef(null)
+  // const [active, setActive] = useState(null)
+  const [activeProduct,setActiveProduct] = useState({
+    activeObject:[],
+    models
+  })
+  
+
+    // set type default when models length is 1
+    if(models.length === 1) {
+      ref.current = { idType: models[0].typeID, quanlity: amount, price: models[0].price, checked: false}
+    } else {
+      ref.current = { idType: idSelector.current, quanlity: amount, price: priceType.current, checked: false}
+    }
+    //================================================================
+
+  
 
   
   //=====Handle Click change amount======
@@ -47,37 +56,37 @@ function CustomProduct({ models }, ref) {
   };
 
   const handleChangeAmount = (e) => {
-    // let value = Number(e.target.value)
     setAmount(e.target.value);
-    // if (value > 0) {
-    // }
-    // return
   };
   
   const toogleActive = (index) => {
-    setTypeProducts({...typeProducts, activeObject:typeProducts.models[index]})
-  }
-
-  const toogleActiveStyles = (index) => {
-    if(typeProducts.models[index] === typeProducts.activeObject) {
-      return cx("btn--typeproduct", "type--active")
+    console.log('set active: ', index);
+    setActiveProduct({...activeProduct, activeObject: activeProduct.models[index]})
+    if(btnTypeRef.current.children[index].classList.contains(cx('active'))) {
+      return btnTypeRef.current.children[index].classList.remove(cx('active'))
     } else {
-      return cx("btn--typeproduct")
+      const listTypeBtn = [...btnTypeRef.current.children]
+      listTypeBtn.forEach(children => children.classList.remove(cx('active')));
+      return btnTypeRef.current.children[index].classList.add(cx('active'))
     }
   }
 
   const handleSelectorType = (index) => {
     const selectorId = [index + 1];
+    
+    // tìm inventory
     const typeSelector = models.filter((model) => {
       return selectorId.includes(model.typeID);
     });
     setTotalInventory(typeSelector[0].inventory);
+    // active css
     toogleActive(index);
+
+    // set data for selected product 
     idSelector.current = index;
     priceType.current = typeSelector[0].price;
   };
 
-  
 
   return (
     <div className={cx("wrapper")}>
@@ -120,19 +129,16 @@ function CustomProduct({ models }, ref) {
       </div>
       <div className={cx("wrapper--products--model")}>
         {models.length > 1 ? <div className={cx("wrapper--productType")}>
-          <div className={cx("text--shared", "box--title")}>Loại</div>
-          <div className={cx("wrapper__btns--type")}>
-            {typeProducts.models.map((model,index) => {
+          <div className={cx("text--shared", "box--title")}>Loại</div> 
+          <div className={cx("wrapper__btns--type")} ref={btnTypeRef}>
+            {models.map((model,index) => {
               return (
-                <Button
-                  key={index}
-                  className={(toogleActiveStyles(index))}
-                  // typeActive={btnTypeRef.current}
-                  disabled={model.inventory === 0}
-                  onClick={() => handleSelectorType(index)}
-                >
-                  {model.typeName}
-                </Button>
+                  <Button
+                    key={index}
+                    disabled={model.inventory === 0}
+                    className={cx('btn--typeproduct')}
+                    onClick={() => handleSelectorType(index)}
+                  >{model.typeName}</Button>
               );
             })}
           </div>
@@ -141,7 +147,7 @@ function CustomProduct({ models }, ref) {
           <div className={cx("text--shared", "box--title")}>Số Lượng</div>
           <div className={cx("quantity--content")}>
             <div className={cx("number-input")}>
-              <button className={cx("btn")} onClick={() => handleDecreament()}>
+              <button className={cx("btn--quanlity")} onClick={() => handleDecreament()}>
                 &#8722;
               </button>
               <input
@@ -150,7 +156,7 @@ function CustomProduct({ models }, ref) {
                 value={amount}
                 onChange={handleChangeAmount}
               />
-              <button className={cx("btn")} onClick={() => handleIncreament()}>
+              <button className={cx("btn--quanlity")} onClick={() => handleIncreament()}>
                 &#43;
               </button>
             </div>

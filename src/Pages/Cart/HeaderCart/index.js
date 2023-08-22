@@ -4,6 +4,8 @@ import Logo from "~/assets/images/logo";
 import styles from "./HeaderCart.module.scss";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
+import { SearchIcon } from "~/assets/icon";
+import { config } from "~/config";
 
 const cx = classNames.bind(styles);
 
@@ -12,11 +14,11 @@ function HeaderCart() {
     <div className={cx("wrapper__cart--header")}>
       <div className={cx("container__cart--header")}>
         <div className={cx("cart__header--logo")}>
-          <Link to="/">
-            <div className={cx("box--logo")}>
+          <div className={cx("box--logo")}>
+            <Link to={config.home}>
               <Logo className={cx("logo")}/>
-            </div>
-          </Link>
+            </Link>
+          </div>
           <span className={cx("page--name")}>Giỏ Hàng</span>
         </div>
         <div className={cx("seacrchbar")}>
@@ -27,7 +29,7 @@ function HeaderCart() {
             />
           </div>
           <button className={cx("seacrch--btn")}>
-            <div>TIM</div>
+            <SearchIcon height={14} width={14} color={'var(--white--clr)'}/>
           </button>
         </div>
       </div>

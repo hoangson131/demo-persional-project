@@ -71,8 +71,8 @@ function OnlyNavbar({className}) {
                         <p className={cx('note')}>Đăng nhập để xem Thông báo</p>
                       </div>
                       <div className={cx('btn--outner')}>
-                        <button className={cx('btn')}>Đăng ký</button>
-                        <button className={cx('btn')}>Đăng nhập</button>
+                        <Link to={config.register} className={cx('btn')}>Đăng ký</Link>
+                        <Link to={config.login} className={cx('btn')}>Đăng nhập</Link>
                       </div>
                     </div>
                   </PopperWrapper>

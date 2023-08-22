@@ -43,7 +43,7 @@
     align-items: center;
     position: relative;
     box-shadow: 0 0.0625rem 0.125rem 0 rgba(0,0,0,.1);
-    background-color: #fff;
+    background-color: var(--white--clr);
     transform: translateY(0);
     transition: 0.1s;
 
@@ -61,7 +61,7 @@
     height: 30px;
     z-index: 2;
     font-size: 14px;
-    color: #fff;
+    color: var(--white--clr);
     text-align: center;
     background-color: #ee4d2d;
     transition: 0.1s;
@@ -131,7 +131,7 @@
 }
 
 .isProduct--text{
-    color: #fff;
+    color: var(--white--clr);
     font-size: .75rem;
     line-height: .875rem;
     width: 100%;

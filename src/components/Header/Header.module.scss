@@ -6,11 +6,11 @@
     align-items: center;
     width: 100%;
     position: var(--header--display--fixed);
-    z-index: 99;
+    z-index: 999;
 }
 
 .box{
-    background-color: #fff;
+    background-color: var(--white--clr);
 }
 
 .navbar {
@@ -38,7 +38,7 @@
 .logo--shoppe {
     width: 162px;
     height: 50px;
-    fill: #fff;
+    fill: var(--white--clr);
 }
 
 .logo--cart{
@@ -61,7 +61,7 @@
     align-items: center;
     display: flex;
     padding: 3px;
-    background-color: #fff;
+    background-color: var(--white--clr);
     border-radius: 2px;
     width: 100%;
     box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.09);
@@ -121,7 +121,7 @@
     font-weight: 500;
     border: 0.125rem solid var(--brand-primary-color,#ee4d2d);
     color: var(--brand-primary-color,#ee4d2d);
-    background-color: #fff;
+    background-color: var(--white--clr);
     top: 10px;
     right: 29%;
 }

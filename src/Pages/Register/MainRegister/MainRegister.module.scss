@@ -46,7 +46,7 @@
 }
 
 .main__register{
-    background-color: #fff;
+    background-color: var(--white--clr);
     box-sizing: border-box;
     width: 400px;
     height: inherit;
@@ -112,7 +112,7 @@
     &::after {
         content: '';
         position: absolute;
-        background-color: #fff;
+        background-color: var(--white--clr);
         width: 40px;
         height: 40px;
         top: 27px;
@@ -154,7 +154,7 @@
     cursor: pointer;
     
     box-shadow: 0 1px 1px rgba(0,0,0,.09);
-    color: #fff;
+    color: var(--white--clr);
     background-color: var(--primary-clr);
 }
 
@@ -192,7 +192,7 @@
 
 .Or{
     color: #ccc;
-    background-color: #fff;
+    background-color: var(--white--clr);
     padding: 0 16px;
     overflow: hidden;
     text-transform: uppercase;
@@ -234,7 +234,7 @@
     box-sizing: border-box;
     outline: none;
     border: 1px solid rgba(0,0,0,.26);
-    background-color: #fff;
+    background-color: var(--white--clr);
     color: rgba(0,0,0,.87);
     padding: 0 2px;
     border-radius: 2px;
