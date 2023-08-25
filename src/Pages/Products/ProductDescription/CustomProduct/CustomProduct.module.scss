@@ -6,6 +6,8 @@
     flex-direction: column;
 }
 
+
+
 .text--shared{
     font-size: 14px;
     color: #888888;
@@ -25,6 +27,10 @@
 
 .wrapper--transport{
     display: flex;
+    margin-top: -4px;
+    margin-bottom: 25px;
+    margin-left: -4px;
+    padding: 4px;
 }
 
 .wrapper__transport--content{
@@ -68,7 +74,26 @@
 }
 
 .wrapper--products--model{
+    margin-top: -4px;
+    margin-bottom: 25px;
+    margin-left: -4px;
+    padding: 4px;
+    color: #222;
+}
 
+.notSelected{
+    position: relative;
+    background: #fff5f5;
+    margin: 15px -35px 0 -20px;
+    padding: 56px 35px 35px 20px;
+
+    &::after {
+        position: absolute;
+        content: 'Vui lòng chọn Phân loại hàng';
+        color: var(--primary-clr);
+        font-size: 16px;
+        margin: 15px 0 0 110px;
+    }
 }
 
 .wrapper--productType{
@@ -85,6 +110,7 @@
 .wrapper--quantity{
     display: flex;
     align-items: center;
+    margin: 16px 0 0;
 }
 
 
@@ -168,7 +194,7 @@ input[type="text"] {
     border-color: var(--primary-clr);
 
     &::after {
-        content: url('../../../../../assets/icon/tickicon.svg');
+        content: url('../../../../assets/icon/tickicon.svg');
         position: absolute;
         height:8px;
         width: 8px;

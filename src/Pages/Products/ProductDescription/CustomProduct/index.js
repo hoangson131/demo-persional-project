@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import styles from "./CustomProduct.module.scss";
+import styles from './CustomProduct.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
@@ -12,10 +12,20 @@ import Button from "~/components/Button";
 
 const cx = classNames.bind(styles);
 
-function CustomProduct({ models }, ref) {
+function CustomProduct({ models,warning, onDataToParent }, ref) {
   const [amount, setAmount] = useState(1);
   const btnTypeRef = useRef()
+  const wapperModelRef=useRef()
+  console.log("ref trong CustomProduct",ref.current);
+  console.log(warning);
 
+
+  // const [warning, setWarning] = useState('')
+  // if (onWarning) {
+  //   setWarning('warning')
+  // } else {
+  //   setWarning('')
+  // }
   const inventory = models.reduce((total, item) => {
     return total + item.inventory;
   }, 0);
@@ -31,6 +41,7 @@ function CustomProduct({ models }, ref) {
     models
   })
   
+
 
     // set type default when models length is 1
     if(models.length === 1) {
@@ -61,10 +72,20 @@ function CustomProduct({ models }, ref) {
   
   const toogleActive = (index) => {
     console.log('set active: ', index);
+    onDataToParent(false)
+
+    if(wapperModelRef.current.classList.contains(cx('notSelected'))) {
+      wapperModelRef.current.classList.remove(cx('notSelected'));
+    }
+
     setActiveProduct({...activeProduct, activeObject: activeProduct.models[index]})
     if(btnTypeRef.current.children[index].classList.contains(cx('active'))) {
+      idSelector.current = null;
+
       return btnTypeRef.current.children[index].classList.remove(cx('active'))
     } else {
+      idSelector.current = index;
+
       const listTypeBtn = [...btnTypeRef.current.children]
       listTypeBtn.forEach(children => children.classList.remove(cx('active')));
       return btnTypeRef.current.children[index].classList.add(cx('active'))
@@ -83,8 +104,8 @@ function CustomProduct({ models }, ref) {
     toogleActive(index);
 
     // set data for selected product 
-    idSelector.current = index;
     priceType.current = typeSelector[0].price;
+    // setWarning("");
   };
 
 
@@ -127,9 +148,9 @@ function CustomProduct({ models }, ref) {
           </div>
         </div>
       </div>
-      <div className={cx("wrapper--products--model")}>
+      <div className={cx("wrapper--products--model", `${warning === true ? "notSelected" : "" }`)}  ref={wapperModelRef}>
         {models.length > 1 ? <div className={cx("wrapper--productType")}>
-          <div className={cx("text--shared", "box--title")}>Loại</div> 
+          <div className={cx("text--shared", "box--title")}>Phân Loại</div> 
           <div className={cx("wrapper__btns--type")} ref={btnTypeRef}>
             {models.map((model,index) => {
               return (
