@@ -5,25 +5,39 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import { IconClock, IconFlashSale } from "~/assets/icon";
 import { useDispatch } from "react-redux";
 import { buyProduct } from "~/stores/cart/actions";
-import CustomProduct from "./components/CustomProduct";
+import CustomProduct from "./CustomProduct";
 import { Link } from "react-router-dom";
 import { config } from "~/config";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const cx = classNames.bind(styles)
 function ProductDescription({data}) {
     const typeRef = useRef()
     const dispatch = useDispatch()
     const showData = data[0]
+//    useEffect(() => {
+//     if (typeRef.current.idType !== null) {
+//         // setNotSelected('')
+//        }
+//    },[])
 
-    useEffect( () => {
-        console.log(typeRef.current);
-    },[])
+    console.log(typeRef.current);
+
+    const [dataFromChild, setDataFromChild] = useState(false)
+
+
+    const handleChildData = (data) => {
+        setDataFromChild(data)
+    }
+
+    console.log('data from children: ',dataFromChild);
+
 
     //====Handle Click================================
     const handleAddCart = (idProduct) => {
         if(typeRef.current.idType === null) {
             console.warn("Please select a product")
+            handleChildData(true)
         } else {
             console.log("idType:",typeRef.current.idType);
             dispatch(buyProduct({...typeRef.current, idProduct: idProduct}))
@@ -74,7 +88,7 @@ function ProductDescription({data}) {
                     </div>
                 </div>
             </div>
-            <CustomProduct models={showData.models} ref={typeRef}/>
+            <CustomProduct models={showData.models} onDataToParent={handleChildData} warning={dataFromChild} ref={typeRef}/>
             <div className={cx('product--buy')}>
                 <div className={cx('wrapper__btns--buy')}>
                     <button className={cx('btn--product--cart')}>
