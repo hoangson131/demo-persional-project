@@ -5,13 +5,16 @@ import styles from "./ShopeeMall.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleRight } from "@fortawesome/free-solid-svg-icons";
 import Slide from "~/components/Slide";
-import { dataBase } from "~/database";
 import ProductsMall from "./ProductsMall";
+
+import { useContext } from "react";
+import { DataContext } from "~/DataProvider/dataProvider";
 
 const cx = classNames.bind(styles);
 
 function ShopeeMall() {
-  const data = dataBase.shopeeMall.slider;
+  const dataAPI = useContext(DataContext)
+  const data = dataAPI ? dataAPI.shopeeMail.slider : false;
 
   return (
     <div className={cx("wrapper")}>
@@ -31,12 +34,12 @@ function ShopeeMall() {
       </div>
       <div className={cx("wrapper__content")}>
         <div className={cx("wrapper__slide")}>
-          <Slide
+          {data && <Slide
             data={data}
             width={389}
             height={463}
             countdown={5000}
-          />
+          />}
         </div>
 
         <div className={cx("wrapper__productsMall")}>

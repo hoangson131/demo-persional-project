@@ -2,9 +2,34 @@ import classNames from "classnames/bind";
 import styles from "./MainRegister.module.scss";
 import { Link } from "react-router-dom";
 import { config } from "~/config";
+import { useRef } from "react";
 
 const cx = classNames.bind(styles);
 function MainRegister() {
+  const valueInput = useRef('')
+
+  const handleNumberInput = (value) => {
+    console.log(value);
+    return valueInput.current = value
+  }
+
+  const handleRegister = () => {
+    fetch('http://localhost:3030/register/',{
+      method: 'POST',
+      body: JSON.stringify({
+        userPhone: valueInput.current
+      })
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch(() => console.error(Error))
+  }
+
+
   return (
     <div className={cx("wrapper")}>
       <div className={cx("mainregister--outner")}>
@@ -19,10 +44,11 @@ function MainRegister() {
                 <input
                   type="text"
                   placeholder="Số điện thoại"
+                  onChange={(e) => handleNumberInput(e.target.value)}
                 />
               </div>
               <div className={cx("register__access")}>
-                <button className={cx("btn--register")}>Tiếp Theo</button>
+                <button onClick={handleRegister} className={cx("btn--register")}>Tiếp Theo</button>
               </div>
               <div className={cx("register__other")}>
                 <div className={cx("or--outner")}>

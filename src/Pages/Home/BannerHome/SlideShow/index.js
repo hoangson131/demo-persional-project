@@ -2,36 +2,41 @@ import { useEffect, useRef } from "react";
 import classNames from "classnames/bind";
 
 import styles from "./SlideShow.module.scss";
-import { dataBase } from "~/database";
 import Button from "~/components/Button";
+import { useContext } from "react";
+import { DataContext } from "~/DataProvider/dataProvider";
 
 const cx = classNames.bind(styles);
 
 function SlideShow() {
+  const data = useContext(DataContext)
   const listSlideRef = useRef();
   const dotsRef = useRef();
   const autoSlideIntervalId = useRef();
   
   let active = 0;
-  let lengthItems = dataBase.banner.slideImage.length;
+  // const [lengthItems.current, setlengthItems] = useState(0)
+  const lengthItems = useRef()
   let widthItem = 0;
 
   const startAutoSlide = () => {
     if (autoSlideIntervalId.current) {
       clearInterval(autoSlideIntervalId.current);
-    }
+    } 
     autoSlideIntervalId.current = setInterval(() => {
       handleNextSlide();
-    }, 5000);
+    }, 3000);
+    
   };
 
   useEffect(() => {
+    lengthItems.current = data && data.banner.slideImage.length
     startAutoSlide();
     return () => {
       clearInterval(autoSlideIntervalId.current);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [data]);
 
   const reloadSlide = () => {
     if (listSlideRef.current && listSlideRef.current.children) {
@@ -47,7 +52,7 @@ function SlideShow() {
   };
 
   const handleNextSlide = () => {
-    if (active + 1 > lengthItems - 1) {
+    if (active + 1 > lengthItems.current - 1) {
       active = 0;
     } else {
       active = active + 1;
@@ -58,7 +63,7 @@ function SlideShow() {
 
   const handlePrevSlide = () => {
     if (active - 1 < 0) {
-      active = lengthItems - 1;
+      active = lengthItems.current - 1;
     } else {
       active = active - 1;
     }
@@ -77,7 +82,7 @@ function SlideShow() {
       <div className={cx("banner__slideshow")}>
         <div className={cx("slideshow__wrapper")}>
           <div ref={listSlideRef} className={cx("slide-images")}>
-            {dataBase.banner.slideImage.map((item, index) => {
+            {data && data.banner.slideImage.map((item, index) => {
               return (
                 <div key={index} className={cx('box__image')}>
                   <img
@@ -89,10 +94,10 @@ function SlideShow() {
               );
             })}
           </div>
-          <Button className={cx("btn", "prev")} btnBanner onClick={handlePrevSlide}>
+          <Button className={cx("btn", "prev")} btnBanner onClick={() => handlePrevSlide()}>
             &#10094;
           </Button>
-          <Button className={cx("btn", "next")} btnBanner onClick={handleNextSlide}>
+          <Button className={cx("btn", "next")} btnBanner onClick={() => handleNextSlide()}>
             &#10095;
           </Button>
         </div>
