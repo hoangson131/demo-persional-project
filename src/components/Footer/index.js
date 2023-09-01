@@ -9,10 +9,10 @@ const cx = classNames.bind(styles)
 
 function Footer() {
     return ( 
-        <div className={cx('wrapper')}>
-            <FooterTop/>
-            <FooterBottom/>
-        </div>
+            <div className={cx('wrapper')}>
+                <FooterTop />
+                <FooterBottom />
+            </div>   
      );
 }
 

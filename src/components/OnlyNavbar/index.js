@@ -79,12 +79,12 @@ function OnlyNavbar({className}) {
                 </div>
               )}
             >
-              <Link to="/notification">
-                <li className={cx('notification')}>
-                  <IconNotication className={cx("icon")} />
-                  <span>Thông Báo</span>
-                </li>
-              </Link>
+                <Link to="/notification">
+                  <li className={cx('notification')}>
+                    <IconNotication className={cx("icon")} />
+                    <span>Thông Báo</span>
+                  </li>
+                </Link>
             </Tippy>
             <li className={cx('support')}>
               <IconHelp className={cx("icon")} />
@@ -129,8 +129,6 @@ function OnlyNavbar({className}) {
                 <Link to={config.login}><li className={cx('login')}>Đăng Nhập</li></Link>
               </>
             )}
-            
-            
           </ul>
         </div>
       </div>

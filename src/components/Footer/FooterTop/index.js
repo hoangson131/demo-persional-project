@@ -6,15 +6,16 @@ import { Application, Country, CustomerCare, FollowShopee, InfoShopee, PayAndDri
 
 const cx = classNames.bind(styles)
 
-function FooterTop() {
+function FooterTop({data}) {
+
     return ( 
         <div>
             <div className={cx('wrapper')}>
-                <CustomerCare/>
-                <InfoShopee/>
-                <PayAndDriver/>
+                <CustomerCare />
+                <InfoShopee />
+                <PayAndDriver />
                 <FollowShopee />
-                <Application/>
+                <Application />
             </div>
             <Country/>
         </div>

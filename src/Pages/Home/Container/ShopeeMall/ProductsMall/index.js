@@ -2,11 +2,12 @@ import classNames from "classnames/bind";
 
 import styles from './ProductsMall.module.scss'
 import Button from "~/components/Button";
-import { dataBase } from "~/database";
-import {  useRef } from "react";
+import {  useContext, useRef } from "react";
+import { DataContext } from "~/DataProvider/dataProvider";
 
 const cx = classNames.bind(styles)
 function ProductsMall() {
+    const data = useContext(DataContext)
     const listRef = useRef()
     const prevRef = useRef(null)
     const nextRef = useRef(null)
@@ -37,7 +38,7 @@ function ProductsMall() {
         <div className={cx('wrapper')}>
             <div className={cx('company__wapper--list')}>
                 <ul ref={listRef} className={cx('company--list')}>
-                    {dataBase.shopeeMall.listCompanyBrand.map((item,index) => {
+                    {data && data.shopeeMail.listCompanyBrand.map((item,index) => {
                         return (
                             <li key={index} className={cx('item--company')}>
                                 <div className={cx('item')}>

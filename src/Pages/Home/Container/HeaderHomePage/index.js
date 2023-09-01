@@ -1,13 +1,15 @@
 import classNames from "classnames/bind";
 
-import { dataBase } from "~/database";
 import styles from "./HeaderHomePage.module.scss";
 import Button from "~/components/Button";
 import { useRef } from "react";
+import { useContext } from "react";
+import { DataContext } from "~/DataProvider/dataProvider";
 
 const cx = classNames.bind(styles);
 
 function HeaderHomePage() {
+  const data = useContext(DataContext)
 
   const listRef = useRef()
   const prevRef = useRef(null)
@@ -59,7 +61,7 @@ function HeaderHomePage() {
       <div className={cx('wrapper__category')}>
         <div className={cx("category__list")}>
           <div ref={listRef} className={cx("box__category--list")}>
-            {dataBase.category.map((item) => {
+            {data && data.category.map((item) => {
               return (
                 <a className={cx("box__list--item")} key={item.id} href="/">
                   <div className={cx("box--item")}>

@@ -194,7 +194,7 @@ input[type="text"] {
     border-color: var(--primary-clr);
 
     &::after {
-        content: url('../../../../assets/icon/tickicon.svg');
+        content: url('../../../../../src/assets/icon/tickicon.svg');
         position: absolute;
         height:8px;
         width: 8px;

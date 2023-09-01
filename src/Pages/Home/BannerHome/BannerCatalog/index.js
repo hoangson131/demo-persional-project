@@ -1,14 +1,17 @@
 import classNames from "classnames/bind";
 
 import styles from './BannerCatalog.module.scss'
-import { dataBase } from "~/database";
+import { useContext } from "react";
+import { DataContext } from "~/DataProvider/dataProvider";
 
 const cx = classNames.bind(styles)
 
 function BannerCatalog() {
+  const data = useContext(DataContext)
+  
     return ( 
         <div className={cx("banner__list--catalog")}>
-          {dataBase.banner.listCatalog.map((item, index) => {
+          {data && data.banner.listCatalog.map((item, index) => {
             return (
               <div key={index} className={cx("box__list--items")}>
                 <div className={cx("box__items")} >
