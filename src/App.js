@@ -8,6 +8,7 @@ import { DefaultLayout } from "~/Layouts";
 import ScrollTop from "./components/ScrollTop";
 
 function App() {
+
   return (
     <Router>
       <div className="App">

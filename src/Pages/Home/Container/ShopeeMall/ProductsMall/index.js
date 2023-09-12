@@ -50,8 +50,8 @@ function ProductsMall() {
                     })}
                 </ul>
             </div>
-            <Button ref={prevRef} className={cx('btn', 'prev')} onClick={() => handleClick('prev')}>&#10094;</Button>
-            <Button ref={nextRef} className={cx('btn', 'next')} onClick={() => handleClick('next')}>&#10095;</Button>
+            <Button ref={prevRef} circle className={cx('btn', 'prev')} onClick={() => handleClick('prev')}>&#10094;</Button>
+            <Button ref={nextRef} circle className={cx('btn', 'next')} onClick={() => handleClick('next')}>&#10095;</Button>
         </div>
      );
 }

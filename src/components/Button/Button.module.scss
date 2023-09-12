@@ -1,5 +1,5 @@
 .wrapper{
-    border-radius: 50%;
+    // border-radius: 50%;
     display: flex;
     background-color: var(--white--clr);
     justify-content: center;
@@ -24,6 +24,15 @@
 
 
   // Types Button
+
+.circle{
+  border-radius: 50%;
+}
+
+.typeLogin{
+
+}
+
 .btnBanner {
     width: 35px;
     height: 60px;
@@ -37,7 +46,7 @@
     }
 }
 
-  .typeProduct {
+.typeProduct {
     position: relative;
     display: flex;
     align-items: center;
@@ -59,7 +68,7 @@
     }
   }
 
-  .typeActive{
+.typeActive{
     position: relative;
     color: var(--primary-clr);
     border-color: var(--primary-clr);
@@ -118,9 +127,4 @@
   .disabled {
     opacity: 0.5 ; 
     cursor: not-allowed !important;
-  
-    &:hover{
-      border: 1px solid rgba(0,0,0,.09)!important;
-      color: rgba(0,0,0,.8) !important; 
-    }
   }

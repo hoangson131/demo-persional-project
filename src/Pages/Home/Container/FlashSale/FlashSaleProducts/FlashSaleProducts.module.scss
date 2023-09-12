@@ -1,13 +1,8 @@
 .wrapper{
     display: flex;
+    position: relative;
     height: 248px;
     align-items: center;
-    position: relative;
-    &:hover .btn{
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
-    }
 }
 
 .product--item{
@@ -111,11 +106,13 @@
     position: absolute;
     display: flex;
     transition: .5s;
+    width: var(--size--btn--list);
+    height: var(--size--btn--list);
 }
 .prev{
-    left: calc(var(--button--width) / -2);
+    left: calc(var(--size--btn--list) / -2);
 }
 
 .next {
-    right: calc(var(--button--width) / -2);
+    right: calc(var(--size--btn--list) / -2);
 }

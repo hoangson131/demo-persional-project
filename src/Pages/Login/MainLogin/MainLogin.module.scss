@@ -28,17 +28,6 @@
   justify-content: flex-end;
   align-items: center;
 }
-.wrapper--banner {
-}
-
-.box__main {
-}
-
-.main {
-}
-
-.main__banner {
-}
 
 .main__login {
   background-color: var(--white--clr);
@@ -127,7 +116,7 @@
 }
 
 .login__main {
-  input[type="text"] {
+  input[id="account"] {
     height: 100%;
     padding: 12px 15px;
 
@@ -140,7 +129,7 @@
     }
   }
 
-  input[type="password"] {
+  input[id="password"] {
     width: 100%;
     height: 100%;
 

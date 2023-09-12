@@ -6,8 +6,7 @@ function Register() {
     return ( 
         <>
             <HeaderRegister/>  
-            <MainRegister/>   
-            <Footer/>
+            <MainRegister/>
         </>
      );
 }
