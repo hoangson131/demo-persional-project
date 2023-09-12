@@ -24,8 +24,7 @@
 .slideshow__wrapper{
     display: flex;
     position: relative;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
     width: var(--slide--banner--width);
 }
 

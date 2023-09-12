@@ -81,23 +81,23 @@ function SlideShow() {
     <div className={cx("banner__wrapper")}>
       <div className={cx("banner__slideshow")}>
         <div className={cx("slideshow__wrapper")}>
-          <div ref={listSlideRef} className={cx("slide-images")}>
+          <ul ref={listSlideRef} className={cx("slide-images")}>
             {data && data.banner.slideImage.map((item, index) => {
               return (
-                <div key={index} className={cx('box__image')}>
+                <li key={index} className={cx('box__image')}>
                   <img
                     src={item.imgUrl}
                     className={cx("image__slide")}
                     alt={item.id}
                   />
-                </div>
+                </li>
               );
             })}
-          </div>
-          <Button className={cx("btn", "prev")} btnBanner onClick={() => handlePrevSlide()}>
+          </ul>
+          <Button btnBanner className={cx("btn", "prev")} onClick={() => handlePrevSlide()}>
             &#10094;
           </Button>
-          <Button className={cx("btn", "next")} btnBanner onClick={() => handleNextSlide()}>
+          <Button btnBanner className={cx("btn", "next")} onClick={() => handleNextSlide()}>
             &#10095;
           </Button>
         </div>
