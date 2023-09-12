@@ -52,8 +52,8 @@ const Button = forwardRef(function Button({
     }
 
     const classes = cx('wrapper', {
-        [className]: className,
         btnBanner,
+        [className]: className,
         typeProduct,
         typeActive,
         typeactive,
