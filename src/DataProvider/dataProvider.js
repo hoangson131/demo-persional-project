@@ -6,7 +6,7 @@ function DataProvider({children}) {
     const [data, setData] = useState()
 
     useEffect(() => {
-        fetch('http://localhost:3030/api/ui/',{
+        fetch('https://demo-server-shopee.onrender.com/api/ui/',{
             method: 'GET',
         })
         .then(response => {
