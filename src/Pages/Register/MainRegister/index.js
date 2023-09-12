@@ -36,7 +36,7 @@ function MainRegister() {
 
   const handleRegister = () => {
     console.log(user);
-    axios.post('http://localhost:3030/register', user)
+    axios.post('https://demo-server-shopee.onrender.com/register', user)
     .then((res) => {
       console.log(res.data);
     })
