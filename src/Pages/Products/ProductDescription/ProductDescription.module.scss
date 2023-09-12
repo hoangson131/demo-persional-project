@@ -3,7 +3,8 @@
 }
 
 .description{
-    display: -webkit-box;
+    // display: -webkit-box;
+    display: inline;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;

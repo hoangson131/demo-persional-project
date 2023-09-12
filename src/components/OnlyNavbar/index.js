@@ -5,16 +5,41 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEarthAsia } from "@fortawesome/free-solid-svg-icons";
-import images from "~/assets/images";
 
 import styles from "./OnlyNavbar.module.scss";
 import { IconArowDown, IconHelp, IconNotication } from "~/assets/icon";
 import { config } from "~/config";
+import Cookies from "js-cookie";
+import jwt_decode from "jwt-decode"
+import { useEffect, useState } from "react";
+import avatar from '~/assets/images/avatar.jpg'
 
 const cx = classNames.bind(styles);
 
 function OnlyNavbar({className}) {
-  const currentUser = false
+  const [currentUser, setCurrentUser] = useState(false)
+  const token = Cookies.get('token')
+
+  const checkLogin = () => {
+    console.log("checklogin......");
+    if(token === undefined) {
+      return
+    } else {
+      try {
+        const decodetoken = jwt_decode(token)
+        setCurrentUser(decodetoken)
+      } catch (error) {
+        console.error("InvalidTokenError");
+      }
+    }
+  }
+  useEffect(() => {
+    checkLogin()
+  },[token])
+
+  console.log(currentUser);
+
+
   return (
     <div className={cx("wrapper", `${className}`)}>
       <div className={cx("container")}>
@@ -112,18 +137,18 @@ function OnlyNavbar({className}) {
             </Tippy>
 
             { currentUser ? (
-            <Link to='/profile'>
+            <Link to={config.profile}>
               <li>
                 <div className={cx("user")}>
                   <img
                     className={cx("avatar")}
-                    src={images.avatar}
+                    src={avatar}
                     alt="avatar"
                   />
-                  <span className={cx("username")}>Username</span>
+                  <span className={cx("username")}>{currentUser.username}</span>
                 </div>
               </li>
-            </Link>) : (
+            </Link>) :   (
               <>
                 <Link to={config.register}><li className={cx('register')}>Đăng Ký</li></Link>
                 <Link to={config.login}><li className={cx('login')}>Đăng Nhập</li></Link>

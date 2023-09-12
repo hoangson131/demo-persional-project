@@ -14,6 +14,8 @@ const Button = forwardRef(function Button({
     typeProduct= false,
     typeActive= false,
     typeactive= false,
+    typeLogin= false,
+    circle=false,
     leftIcon,
     rightIcon,
     children,
@@ -55,6 +57,8 @@ const Button = forwardRef(function Button({
         typeProduct,
         typeActive,
         typeactive,
+        typeLogin,
+        circle,
         disabled,
 
     })

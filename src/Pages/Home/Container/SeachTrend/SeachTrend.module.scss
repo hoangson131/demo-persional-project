@@ -46,15 +46,14 @@
     display: flex;
 }
 .item--products{
-    width: 200px;
-    height: 290px;
+
 }
 .item{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 200px;
-    height: 265px;
+    height: 290px;
     padding: 20px 10px;
 }
 
@@ -104,12 +103,15 @@
 .btn{
     display: flex;
     position: absolute;
+    width: var(--size--btn--list);
+    height: var(--size--btn--list);
 }
 
 .prev{
-    left: calc(var(--button--width) / -2);
+    left: calc(var(--size--btn--list) / -2);
 }
 
 .next{
-    right: calc(var(--button--width) / -2);  
+    right: calc(var(--size--btn--list) / -2);
+
 }

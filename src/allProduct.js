@@ -1393,47 +1393,6 @@ export const products = [
         like: 5700, 
     },
     {
-        id: 28,
-        infoShop: {
-            shopId: 1,
-            shopName: 'bb19092003',
-            avatarShop: 'https://down-vn.img.susercontent.com/file/e5dbc34924c9fd7b0c146353c7476aa1_tn',
-            review: 109.7,
-            products: 172,
-            timeJoin: 4,
-            followers: 375.2,
-            reponseRate: 100,
-            reponseTime:  'trong vài ngày'
-        },
-        imgUrl: [
-            'https://down-vn.img.susercontent.com/file/2e288cd084e0cc99fbf6a99aebfd4ab9',
-            'https://down-vn.img.susercontent.com/file/d1d1a372918bd02ecb98260ea12f1859',
-            'https://down-vn.img.susercontent.com/file/34f1822ebf74f48be82d9074ead7c112',
-            'https://down-vn.img.susercontent.com/file/e7cb9929d996b7e98ad33d99c544148e',
-            'https://down-vn.img.susercontent.com/file/d48c259c0467a4cbe78c6dde11a04434',
-        ],
-        description:'Hộp Mô Hình Hextech Mini OFOSO [CHÍNH HÃNG] - Mô Hình Liên Minh Huyền Thoại - LOL Figure - Shop Mô Hình OFOSO',
-        titleProduct: 'Hộp Mô Hình',
-        voucher: {
-            voucher10: false,
-            voucher20: false,
-            voucher30: false,
-            voucher50: false
-        },
-        models: [
-            {
-                typeID: 1,
-                typeName: 'Đen',
-                inventory: 46,
-                price: 300000,
-            }
-        ],
-        rate: 5,
-        sold: 10,
-        reviewNumber: 3,
-        like: 19, 
-    },
-    {
         id: 29,
         infoShop: {
             shopId: 1,

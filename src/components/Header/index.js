@@ -1,21 +1,32 @@
 import classNames from 'classnames/bind'
+import { useSelector } from 'react-redux';
+import { Fragment, forwardRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+
 import styles from './Header.module.scss'
-
-
-import { Link } from 'react-router-dom';
-import { SearchIcon, CarIcon } from '~/assets/icon';
+import { SearchIcon, IconCart } from '~/assets/icon';
 import  Logo  from '~/assets/images/logo';
 import OnlyNavbar from '../OnlyNavbar';
 import { selectorCart } from '~/stores/cart/selectors';
-import { useSelector } from 'react-redux';
-import { forwardRef } from 'react';
 import { config } from '~/config';
+import Cookies from 'js-cookie';
 
 const cx = classNames.bind(styles)
 
 
 function Header(props,ref) {
     const productsInCart = useSelector(selectorCart)
+    const navigate = useNavigate()
+    
+    const handleCheckUsers = () => {
+        const currentUsertoken = Cookies.get("token")
+            if (currentUsertoken === undefined) {
+                navigate(config.login)
+            } else {
+                navigate(config.cart);
+            }
+        }
 
     return (
     <div ref={ref} className={cx('wrapper')}>
@@ -35,11 +46,10 @@ function Header(props,ref) {
                 </div>
                 <div className={cx('list-search')}></div>
             </div>
-            <Link to={config.cart} className={cx('box__logo--cart')}>
-                <CarIcon/>
-                {productsInCart.length > 0 ? <div className={cx('cart--products-amount')}>{productsInCart.length}</div> : <></>}
-                
-            </Link>
+            <div onClick={() => handleCheckUsers()} className={cx('box__logo--cart')}>
+                <IconCart/>
+                {productsInCart.length > 0 ? <div className={cx('cart--products-amount')}>{productsInCart.length}</div> : Fragment} 
+            </div>
         </div>
     </div>
     );

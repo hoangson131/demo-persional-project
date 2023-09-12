@@ -10,7 +10,6 @@ import Login from '~/Pages/Login'
 import Register from '~/Pages/Register'
 import { config } from '~/config'
 
-
 const publicRoutes = [
     {path: config.home, component: Home},
     {path: config.profile, component: Profile},

@@ -29,14 +29,14 @@ function SuggestProducts({voucher = false}) {
                       {product.like > 300 && (
                       <div className={cx('isProduct--logo')}>
                         <div className={cx('wrapper__isProduct--text')}>
-                          <span className={cx('isProduct--text')}>Yêu thích{product.like > 1000 && <span>+</span>}</span>
+                          <p className={cx('isProduct--text')}>Yêu thích{product.like > 1000 && <span>+</span>}</p>
                         </div>
                       </div>
                       )}
                     </div>
                     <div className={cx('content')} >
                       <div className={cx('content--top')} >
-                        <div className={cx('description')} >{product.description}</div>
+                        <p className={cx('description')} >{product.description}</p>
                         {voucher && <div className={cx('voucher')}>Voucher</div>}
                       </div>
                       <div className={cx('content--bottom')} >

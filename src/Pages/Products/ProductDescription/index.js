@@ -8,7 +8,7 @@ import { buyProduct } from "~/stores/cart/actions";
 import CustomProduct from "./CustomProduct";
 import { Link } from "react-router-dom";
 import { config } from "~/config";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const cx = classNames.bind(styles)
 function ProductDescription({data}) {
@@ -51,8 +51,8 @@ function ProductDescription({data}) {
     return ( 
         <div className={cx('wrapper')}>
             <div className={cx('description')} >
-                {showData.like > 300 && <div className={cx('icon--review')}>Yêu Thích {showData.like > 1000 && <span>+</span>}</div>}
-                <span className={cx('description__content')}>{showData.description}</span>
+                {showData.like > 300 && <span className={cx('icon--review')}>Yêu Thích {showData.like > 1000 && <span>+</span>}</span>}
+                <h4 className={cx('description__content')}>{showData.description}</h4>
             </div>
             <div className={cx('evalute--product')}>
                 <div className={cx('rating--product')}>
@@ -63,7 +63,7 @@ function ProductDescription({data}) {
                 </div>
                 <div className={cx('review--product')}>
                     <div className={cx('underline','text--medium', 'amount')}>{showData.reviewNumber}k</div>
-                    <div className={cx('text--small', 'title--amount')}>Đánh Giá</div>
+                    <p className={cx('text--small', 'title--amount')}>Đánh Giá</p>
                 </div>
                 <div className={cx('review--product')}>
                     <div className={cx('text--medium', 'amount')}>{showData.sold}k</div>

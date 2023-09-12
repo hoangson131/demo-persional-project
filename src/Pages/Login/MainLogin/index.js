@@ -1,11 +1,73 @@
 import classNames from "classnames/bind";
 import styles from "./MainLogin.module.scss";
-import { IconEyeShow } from "~/assets/icon";
-import { Link } from "react-router-dom";
+import { IconEyeHide, IconEyeShow } from "~/assets/icon";
+import { Link, useNavigate } from "react-router-dom";
 import { config } from "~/config";
+import { useRef, useState } from "react";
+import axios from "axios";
+import Button from "~/components/Button";
+import Cookies from "js-cookie";
 
 const cx = classNames.bind(styles);
 function MainLogin() {
+  let navigate = useNavigate()
+  const passwordRef = useRef()
+  const [IconPass, setIcon] = useState(<IconEyeHide/>) 
+  const account = {
+    username: String,
+    password: String
+  }
+
+
+  // handles logic
+
+  const handleAccountChange = (username) => {
+    account.username = username
+  }
+
+  const handlePasswordChange = (password) => {
+    account.password = password
+  }
+
+  const handleShowPassword = () => {
+    if(passwordRef.current.type === 'password') {
+      passwordRef.current.type = 'text'
+      setIcon(IconEyeShow)
+    } else {
+      passwordRef.current.type = 'password'
+      setIcon(IconEyeHide)
+    }
+    // const btnShowPassword = document.getElementById('password')
+    // btnShowPassword.hidden = false
+  }
+
+  const handleEnterPass = (e) => {
+    if(e.keyCode === 13) {
+      if(typeof account.password === 'function' || typeof account.username === 'function') {
+        e.preventDefault()
+        console.log("xu ly loi~ thieu 1 trong 2 key");
+      } else {
+        e.preventDefault();
+        handleLogin()
+      }
+    } 
+  }
+
+  const handleLogin = () => {
+    console.log(account);
+    axios.post('http://localhost:3030/login', account)
+    .then((res) => {
+      console.log(res.data.token);
+      if(res.status === 200) {
+        Cookies.set('token', res.data.token, 1);
+        navigate(`..`)
+      } else {
+        alert(res.status)
+      }
+    })
+    .catch((err) => console.log(err))
+  }
+
   return (
     <div className={cx("wrapper")}>
       <div className={cx("mainlogin--outner")}>
@@ -27,18 +89,33 @@ function MainLogin() {
               </div>
             </div>
             <div className={cx("login__main")}>
-              <div className={cx("login__account")}>
-                <input
-                  type="text"
-                  placeholder="Email/Số điện thoại/Tên đăng nhập"
-                />
-              </div>
-              <div className={cx("login__pass")}>
-                <input type="password" id="password" placeholder="Mật Khẩu" />
-                <button className={cx('btn--pass')}><IconEyeShow width={20} height={16}/></button>
-              </div>
+              <form>
+                <div className={cx("login__account")}>
+                  <input
+                    id="account"
+                    type="text"
+                    placeholder="Email/Số điện thoại/Tên đăng nhập"
+                    onKeyDown={e => handleEnterPass(e)}
+                    onChange={e => handleAccountChange(e.target.value)}
+                  />
+                </div>
+                <div className={cx("login__pass")}>
+                  <input 
+                    type="password" 
+                    ref={passwordRef}
+                    id="password" 
+                    placeholder="Mật Khẩu"
+                    onKeyDown={e => handleEnterPass(e)}
+                    onChange={e => handlePasswordChange(e.target.value)}
+                  />
+                  <button className={cx('btn--pass')} onClick={() => handleShowPassword()}>{IconPass}</button>
+                </div>
+              </form>
               <div className={cx("login__access")}>
-                <button className={cx("btn--login")}>ĐĂNG NHẬP</button>
+                <Button
+                  className={cx("btn--login")}
+                  onClick={() => handleLogin()}
+                >ĐĂNG NHẬP</Button>
                 <div className={cx("access__suport")}>
                   <a className={cx("text")} href="/">
                     Quên mật khẩu
