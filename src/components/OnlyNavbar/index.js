@@ -37,9 +37,6 @@ function OnlyNavbar({className}) {
     checkLogin()
   },[token])
 
-  console.log(currentUser);
-
-
   return (
     <div className={cx("wrapper", `${className}`)}>
       <div className={cx("container")}>
