@@ -49,7 +49,7 @@ function SlideShow() {
       }
     }
     else {
-      alert("images not responding")
+      alert("Waiting for response UI from API")
     }
   };
 
