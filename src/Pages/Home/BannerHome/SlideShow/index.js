@@ -39,15 +39,15 @@ function SlideShow() {
   }, [data]);
 
   const reloadSlide = () => {
-    if (listSlideRef.current && listSlideRef.current.children) {
+    if (listSlideRef.current && listSlideRef.current.children && listSlideRef.current.children[0].offsetWidth) {
       widthItem = listSlideRef.current.children[0].offsetWidth;
-
-      listSlideRef.current.style.transform = `translateX(${
-        widthItem * -active
-      }px)`;
+      listSlideRef.current.style.transform = `translateX(${widthItem * -active}px)`;
       const lastActiveDots = [...dotsRef.current.children];
       lastActiveDots.forEach((item) => item.classList.remove(cx("active")));
       dotsRef.current.children[active].classList.add(cx("active"));
+    }
+    else {
+      alert("images not responding")
     }
   };
 

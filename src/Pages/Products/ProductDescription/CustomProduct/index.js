@@ -6,7 +6,7 @@ import {
   faPlaneDeparture,
 } from "@fortawesome/free-solid-svg-icons";
 import { IconShipping } from "~/assets/icon";
-import { Fragment, forwardRef, useState, useRef, useEffect } from "react";
+import { Fragment, forwardRef, useState, useRef } from "react";
 import Button from "~/components/Button";
 // import Button from "~/components/Button";
 
@@ -131,8 +131,7 @@ function CustomProduct({ models,warning, onDataToParent }, ref) {
                 <div className={cx("text--shared", "transport--text")}>
                   Vận chuyển từ
                 </div>
-                <div className={cx("transport--content")}>
-                  <div className={cx("text--shared")}></div>
+                <div className={cx("text--shared")}>
                   <FontAwesomeIcon icon={faChevronDown} />
                 </div>
               </div>
