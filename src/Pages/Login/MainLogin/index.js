@@ -55,7 +55,7 @@ function MainLogin() {
 
   const handleLogin = () => {
     console.log(account);
-    axios.post('https://demo-server-shopee.onrender.com/login', account)
+    axios.post('https://demo-server-shopee.onrender.com/api/users/login', account)
     .then((res) => {
       console.log(res.data.token);
       if(res.status === 200) {

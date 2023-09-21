@@ -85,18 +85,25 @@ function OnlyNavbar({className}) {
               render={attrs => (
                 <div className={cx('notigication--popper')} tabIndex="-1" {...attrs}>
                   <PopperWrapper >
-                    <div className={cx('popper__notication--inner')}>
-                      <div className={cx('content')}>
-                        <div className="img--outner">
-                          <img className={cx('image')} src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/99e561e3944805a023e87a81d4869600.png" alt=""/>
+                    {currentUser ? (
+                      <div className={cx('popper__notication--inner')}>
+                        <p className={cx("title--nocitcation")} >Tất cả các thông báo</p>
+                        <div className={cx('content')}></div>
+                      </div>
+                    ) : (
+                      <div className={cx('popper__notication--inner')}>
+                        <div className={cx('content')}>
+                          <div className="img--outner">
+                            <img className={cx('image')} src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/99e561e3944805a023e87a81d4869600.png" alt=""/>
+                          </div>
+                          <p className={cx('note')}>Đăng nhập để xem Thông báo</p>
                         </div>
-                        <p className={cx('note')}>Đăng nhập để xem Thông báo</p>
+                        <div className={cx('btn--outner')}>
+                          <Link to={config.register} className={cx('btn')}>Đăng ký</Link>
+                          <Link to={config.login} className={cx('btn')}>Đăng nhập</Link>
+                        </div>
                       </div>
-                      <div className={cx('btn--outner')}>
-                        <Link to={config.register} className={cx('btn')}>Đăng ký</Link>
-                        <Link to={config.login} className={cx('btn')}>Đăng nhập</Link>
-                      </div>
-                    </div>
+                    )}
                   </PopperWrapper>
                 </div>
               )}
