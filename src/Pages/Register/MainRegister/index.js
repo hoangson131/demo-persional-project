@@ -11,7 +11,6 @@ function MainRegister() {
     username: String,
     password: String
   }
-  console.log("re--render");
 
   const handleInputAccount = (e) => {
     user.username = e.target.value
@@ -35,7 +34,6 @@ function MainRegister() {
   
 
   const handleRegister = () => {
-    console.log(user);
     axios.post('https://demo-server-shopee.onrender.com/api/users/register', user)
     .then((res) => {
       console.log(res.data);

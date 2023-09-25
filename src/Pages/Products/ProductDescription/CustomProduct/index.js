@@ -16,8 +16,6 @@ function CustomProduct({ models,warning, onDataToParent }, ref) {
   const [amount, setAmount] = useState(1);
   const btnTypeRef = useRef()
   const wapperModelRef=useRef()
-  console.log("ref trong CustomProduct",ref.current);
-  console.log(warning);
 
 
   // const [warning, setWarning] = useState('')
@@ -71,7 +69,6 @@ function CustomProduct({ models,warning, onDataToParent }, ref) {
   };
   
   const toogleActive = (index) => {
-    console.log('set active: ', index);
     onDataToParent(false)
 
     if(wapperModelRef.current.classList.contains(cx('notSelected'))) {

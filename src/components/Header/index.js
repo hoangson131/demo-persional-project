@@ -33,7 +33,7 @@ function Header(props,ref) {
         <OnlyNavbar className={cx('navbar')}/>
         <div className={cx('main__header')}>
             <Link to={config.home} className={cx('box__logo--shopee')}>
-                <Logo    className={cx('logo--shoppe')} />
+                <Logo className={cx('logo--shoppe')} />
             </Link>
             <div className={cx('search__container')}>
                 <div className={cx('searchbar')}>
