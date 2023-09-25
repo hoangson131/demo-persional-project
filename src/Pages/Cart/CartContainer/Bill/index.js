@@ -14,9 +14,7 @@ const cx = classNames.bind(styles)
 function Bill() {
     const dispatch = useDispatch()
     const productsInCart = useSelector(selectorCart)
-    console.log(productsInCart);
     const totalProductCheck = useSelector(totalPriceCart)
-    console.log(totalProductCheck);
 
     const amountProductCheck = () => {
         return productsInCart.filter(product =>{ return product.checked === true}).length

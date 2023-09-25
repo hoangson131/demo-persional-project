@@ -12,7 +12,6 @@ export const toggleCheckedAll = createAction("products/toggleCheckedAll")
 export const actions = {
     buyProduct: (state,action) => {
         const newproductID = action.payload.idProduct
-        console.log(action.payload);
         const existingProduct = state.cart.find(product => product.idProduct === newproductID)
         if (existingProduct) {
             return state         
@@ -67,7 +66,6 @@ export const actions = {
     },
     toggleCheckedProduct: (state, action) => {
         const newState = {...state}
-        console.log(action.payload);
         newState.cart.forEach( product => {
             if (product.idProduct === action.payload) {
                 product.checked = !product.checked
@@ -77,7 +75,6 @@ export const actions = {
         })
     },
     toggleCheckedAll: (state, action) => {
-        console.log(action.payload);
         const newSate = {...state}
         newSate.cart.forEach(product => {
             if(product.checked !== action.payload) {

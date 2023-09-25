@@ -58,14 +58,16 @@ function ProductCart() {
         return (
           <div key={product.id} className={cx('wrapper__product--item')}>
             <div className={cx("box--item1", "shop--name")}>
-              <input type="checkbox" />
-              <div className={cx("common--text", "name")}>{product.infoShop.shopName}</div>
+              <form>
+                <input onChange={() => {}} type="checkbox" />
+                <div className={cx("common--text", "name")}>{product.infoShop.shopName}</div>
+              </form>
             </div>
             <div className={cx("list__product--shop")}>
               <div className={cx("voucher__shop")}>voucher Combo</div>
               <div className={cx("product--item")}>
                 <div className={cx("checkbox", "box--item1")}>
-                  <input type="checkbox" checked={filterValueofId(product.id)[0].checked} onClick={() => handleCheckProduct(product.id)}/>
+                  <form><input onChange={() => {}}  type="checkbox" checked={filterValueofId(product.id)[0].checked} onClick={() => handleCheckProduct(product.id)}/></form>
                 </div>
                 <div className={cx("common--text", "box--item2")}>
                   <Link to={`/products/${product.id}`}>

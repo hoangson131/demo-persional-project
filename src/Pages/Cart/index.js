@@ -1,6 +1,5 @@
 import CartContainer from "./CartContainer";
 import HeaderCart from "./HeaderCart";
-import CartContainerProducts from "./CartContainerProducts";
 import { useSelector } from "react-redux";
 import { selectorCart } from "~/stores/cart/selectors";
 import NotProduct from "./NotProduct";
@@ -20,7 +19,8 @@ function Cart() {
             navigate(config.login);
         } else {
             try {
-                const decoded = jwt_decode(token)   
+                const decoded = jwt_decode(token)
+                console.log(decoded)
             } catch (error) {
                 console.log(error, "Please Login again");
             }
@@ -29,13 +29,13 @@ function Cart() {
 
     useEffect(() => {
         checkLogin()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return (
         <>
             <HeaderCart/>
             {productInCart.length > 0 ? <CartContainer /> : <NotProduct/>}
-            <CartContainerProducts />
         </>
     );
 }

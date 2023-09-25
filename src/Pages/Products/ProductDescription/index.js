@@ -15,14 +15,6 @@ function ProductDescription({data}) {
     const typeRef = useRef()
     const dispatch = useDispatch()
     const showData = data[0]
-//    useEffect(() => {
-//     if (typeRef.current.idType !== null) {
-//         // setNotSelected('')
-//        }
-//    },[])
-
-    console.log(typeRef.current);
-
     const [dataFromChild, setDataFromChild] = useState(false)
 
 
@@ -30,16 +22,13 @@ function ProductDescription({data}) {
         setDataFromChild(data)
     }
 
-    console.log('data from children: ',dataFromChild);
 
 
     //====Handle Click================================
     const handleAddCart = (idProduct) => {
         if(typeRef.current.idType === null) {
-            console.warn("Please select a product")
             handleChildData(true)
         } else {
-            console.log("idType:",typeRef.current.idType);
             dispatch(buyProduct({...typeRef.current, idProduct: idProduct}))
         }
     }

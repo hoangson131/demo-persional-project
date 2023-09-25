@@ -28,22 +28,18 @@ function ShowPicture({data}) {
     }
     const handleNextClick = () => { 
         widthItem.current = listImgRef.current.children[1].offsetWidth
-        console.log(listImgRef.current.getBoundingClientRect());
         listImgRef.current.style.transform = `translateX(-${widthItem.current}px)`;
     }
 
     const handlePrevClick = () => {
         widthItem.current = listImgRef.current.children[1].offsetWidth
-        console.log(listImgRef.current.getBoundingClientRect());
         listImgRef.current.style.transform = `translateX(0px)`;
     }
 
     const handleClickBtn = (des) => {
         if (des === 'next') {
-            console.log('click Next');
             handleNextClick()
         } else if (des === 'prev') {
-            console.log('click Prev');
             handlePrevClick()
         } else {
             return Error('Not Valid')
