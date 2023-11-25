@@ -20,8 +20,7 @@ function OnlyNavbar({className}) {
   const [currentUser, setCurrentUser] = useState(false)
   const token = Cookies.get('token')
 
-  const checkLogin = () => {
-    console.log("checklogin......");
+  function checkLogin() {
     if(token === undefined) {
       return
     } else {
@@ -34,7 +33,7 @@ function OnlyNavbar({className}) {
     }
   }
   useEffect(() => {
-    checkLogin()
+    checkLogin()  
   },[token])
 
   return (
