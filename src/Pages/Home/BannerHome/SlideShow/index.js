@@ -10,6 +10,7 @@ const cx = classNames.bind(styles);
 
 function SlideShow() {
   const data = useContext(DataContext)
+
   const listSlideRef = useRef();
   const dotsRef = useRef();
   const autoSlideIntervalId = useRef();
@@ -49,7 +50,7 @@ function SlideShow() {
       }
     }
     else {
-      alert("Waiting for response UI from API")
+      console.log("Waiting for response UI from API")
     }
   };
 
@@ -84,7 +85,7 @@ function SlideShow() {
       <div className={cx("banner__slideshow")}>
         <div className={cx("slideshow__wrapper")}>
           <ul ref={listSlideRef} className={cx("slide-images")}>
-            {data && data.banner.slideImage.map((item, index) => {
+            {data ? data.banner.slideImage.map((item, index) => {
               return (
                 <li key={index} className={cx('box__image')}>
                   <img
@@ -94,7 +95,9 @@ function SlideShow() {
                   />
                 </li>
               );
-            })}
+            }) : (
+              <img height={235} src="C:\Users\S\Documents\FrontEnd\persional_project\project\src\assets\images\banner-no-image.png" alt="Banner Image"/>
+            )}
           </ul>
           <Button btnBanner className={cx("btn", "prev")} onClick={() => handlePrevSlide()}>
             &#10094;
