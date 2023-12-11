@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import classNames from "classnames/bind";
 
+import bannerWatting from '~/assets/images/waitting-banner.png'
 import styles from "./SlideShow.module.scss";
 import Button from "~/components/Button";
 import { useContext } from "react";
@@ -18,7 +19,6 @@ function SlideShow() {
   let active = 0;
   // const [lengthItems.current, setlengthItems] = useState(0)
   const lengthItems = useRef()
-  let widthItem = 0;
 
   const startAutoSlide = () => {
     if (autoSlideIntervalId.current) {
@@ -40,18 +40,14 @@ function SlideShow() {
   }, [data]);
 
   const reloadSlide = () => {
-    if(data) {
-      if (listSlideRef.current && listSlideRef.current.children && listSlideRef.current.children[0].offsetWidth) {
-        widthItem = listSlideRef.current.children[0].offsetWidth;
+    if(!data) return;
+    if (listSlideRef.current && listSlideRef.current.children && listSlideRef.current.children[0].offsetWidth) {
+        const widthItem = listSlideRef.current.children[0].offsetWidth;
         listSlideRef.current.style.transform = `translateX(${widthItem * -active}px)`;
         const lastActiveDots = [...dotsRef.current.children];
         lastActiveDots.forEach((item) => item.classList.remove(cx("active")));
         dotsRef.current.children[active].classList.add(cx("active"));
-      }
-    }
-    else {
-      console.log("Waiting for response UI from API")
-    }
+      } 
   };
 
   const handleNextSlide = () => {
@@ -96,7 +92,7 @@ function SlideShow() {
                 </li>
               );
             }) : (
-              <img height={235} src="C:\Users\S\Documents\FrontEnd\persional_project\project\src\assets\images\banner-no-image.png" alt="Banner Image"/>
+              <img src={bannerWatting} alt="BannerImage"/>
             )}
           </ul>
           <Button btnBanner className={cx("btn", "prev")} onClick={() => handlePrevSlide()}>

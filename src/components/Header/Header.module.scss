@@ -28,7 +28,7 @@
 }
 
 .box__logo--shopee{
-    width: 202px;
+    max-width: 202px;
     height: 59px;
     padding: 0 40px 0 0;
     margin-bottom: 5px;
@@ -54,7 +54,6 @@
     flex: 1;
     flex-direction: column;
     justify-content: flex-start;
-    width: 840px;
     height: 59px;
 }
 
@@ -106,7 +105,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 10px;
-    width: 138px;
+    width: 11.5%;
     height: 59px;
     cursor: pointer;
     transition: 0.1s ease-in-out;
